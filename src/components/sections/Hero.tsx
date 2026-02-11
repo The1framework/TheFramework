@@ -34,8 +34,8 @@ export function Hero() {
       ref={containerRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      aria-labelledby="hero-heading"
-    >
+      aria-labelledby="hero-heading">
+
       {/* Animated Background */}
       <div className="absolute inset-0 -z-10">
         {/* Gradient orbs */}
@@ -44,14 +44,14 @@ export function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-purple/5 rounded-full blur-3xl" />
         
         {/* Grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
                              linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
             backgroundSize: '60px 60px'
-          }}
-        />
+          }} />
+
       </div>
 
       {/* Mouse-tracked spotlight */}
@@ -59,10 +59,10 @@ export function Hero() {
         className="absolute inset-0 hero-spotlight pointer-events-none -z-5"
         style={{
           '--mouse-x': `${mousePosition.x}%`,
-          '--mouse-y': `${mousePosition.y}%`,
+          '--mouse-y': `${mousePosition.y}%`
         } as React.CSSProperties}
-        aria-hidden="true"
-      />
+        aria-hidden="true" />
+
 
       {/* Content */}
       <div ref={textRef} className="container mx-auto px-6 py-20 text-center">
@@ -73,29 +73,29 @@ export function Hero() {
         )}>
           <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
           <span className="text-sm font-medium text-muted-foreground">
-            Pioneering Digital Excellence
+
           </span>
         </div>
 
         {/* Main Headline with Staggered Animation */}
-        <h1 
+        <h1
           id="hero-heading"
-          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance"
-        >
-          {headlineWords.map((word, index) => (
-            <span
-              key={index}
-              className={cn(
-                'inline-block mr-[0.25em] transition-all duration-500',
-                highlightWords.includes(word) ? 'gradient-text underline-draw' : '',
-                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
-                textVisible && highlightWords.includes(word) && 'visible'
-              )}
-              style={{ transitionDelay: `${200 + index * 80}ms` }}
-            >
+          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance">
+
+          {headlineWords.map((word, index) =>
+          <span
+            key={index}
+            className={cn(
+              'inline-block mr-[0.25em] transition-all duration-500',
+              highlightWords.includes(word) ? 'gradient-text underline-draw' : '',
+              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+              textVisible && highlightWords.includes(word) && 'visible'
+            )}
+            style={{ transitionDelay: `${200 + index * 80}ms` }}>
+
               {word}
             </span>
-          ))}
+          )}
         </h1>
 
         {/* Subheadline */}
@@ -117,8 +117,8 @@ export function Hero() {
             variant="hero"
             size="xl"
             className="magnetic-btn micro-bounce group btn-press"
-            onClick={() => handleScroll('#contact')}
-          >
+            onClick={() => handleScroll('#contact')}>
+
             Start Your Project
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Button>
@@ -128,8 +128,8 @@ export function Hero() {
             variant="heroSecondary"
             size="xl"
             className="magnetic-btn group btn-press"
-            onClick={() => handleScroll('#about')}
-          >
+            onClick={() => handleScroll('#about')}>
+
             <Play className="w-5 h-5" />
             Watch Our Story
           </Button>
@@ -140,31 +140,31 @@ export function Hero() {
           'mt-16 pt-16 border-t border-border/50 transition-all duration-700',
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         )} style={{ transitionDelay: '900ms' }}>
-          <p className="text-sm text-muted-foreground mb-6">Trusted by innovative companies worldwide</p>
+          <p className="text-sm text-muted-foreground mb-6">
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
-            {['TechCorp', 'InnovateLab', 'FutureScale', 'DataFlow', 'CloudNex'].map((company, index) => (
-              <div 
-                key={company} 
+            {['TechCorp', 'InnovateLab', 'FutureScale', 'DataFlow', 'CloudNex'].map((company, index) => <div
+                key={company}
                 className={cn(
                   'text-lg font-semibold text-muted-foreground transition-all duration-500 hover:text-primary hover:scale-110',
                   isLoaded ? 'opacity-100' : 'opacity-0'
                 )}
-                style={{ transitionDelay: `${1000 + index * 100}ms` }}
-              >
+                style={{ transitionDelay: `${1000 + index * 100}ms` }}>
+
                 {company}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-xs text-muted-foreground">Scroll to explore</span>
+        <span className="text-xs text-muted-foreground">
+        </span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center">
           <div className="w-1 h-2 bg-muted-foreground/50 rounded-full mt-2 animate-bounce" />
         </div>
       </div>
-    </section>
-  );
+    </section>);
 }
