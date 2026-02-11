@@ -4,7 +4,7 @@ import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
 import { Services } from '@/components/sections/Services';
 import { ProcessTimeline } from '@/components/sections/ProcessTimeline';
-import { BlogPlaceholder } from '@/components/sections/BlogPlaceholder';
+
 import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/layout/Footer';
@@ -23,7 +23,7 @@ export default function Index() {
         <About />
         <Services />
         <ProcessTimeline />
-        <BlogPlaceholder />
+        
         <FAQ />
         <Contact />
       </main>
