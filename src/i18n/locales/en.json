@@ -1,0 +1,25 @@
+{
+  "header": {
+    "brand": { "logoAlt": "ACHIdigital digital agency" },
+    "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact" },
+    "services": {
+      "viewAll": "View All Services",
+      "aiWebDev": "AI Website Development",
+      "seoAi": "SEO & AI Visibility",
+      "uiux": "UX/UI Design",
+      "performance": "Performance Optimization"
+    },
+    "cta": { "primary": "Get a Free Audit", "primaryShort": "Audit" },
+    "lang": { "en": "EN", "fr": "FR", "lb": "AR" },
+    "aria": {
+      "mainNav": "Main navigation",
+      "desktopNav": "Primary navigation",
+      "mobileNav": "Primary navigation (mobile)",
+      "servicesMenu": "Services menu",
+      "languageSwitcher": "Language switcher",
+      "homeLink": "Go to homepage",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+    }
+  }
+}

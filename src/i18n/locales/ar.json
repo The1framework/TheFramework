@@ -1,0 +1,25 @@
+{
+  "header": {
+    "brand": { "logoAlt": "ACHIdigital وكالة رقمية" },
+    "nav": { "home": "الرئيسية", "about": "من نحن", "services": "الخدمات", "blog": "المدونة", "contact": "تواصل معنا" },
+    "services": {
+      "viewAll": "عرض كل الخدمات",
+      "aiWebDev": "تطوير مواقع بالذكاء الاصطناعي",
+      "seoAi": "سيو وظهور بالذكاء الاصطناعي",
+      "uiux": "تصميم UX/UI",
+      "performance": "تحسين الأداء"
+    },
+    "cta": { "primary": "تدقيق مجاني", "primaryShort": "تدقيق" },
+    "lang": { "en": "EN", "fr": "FR", "lb": "AR" },
+    "aria": {
+      "mainNav": "التنقل الرئيسي",
+      "desktopNav": "التنقل الرئيسي",
+      "mobileNav": "التنقل الرئيسي (الهاتف)",
+      "servicesMenu": "قائمة الخدمات",
+      "languageSwitcher": "مبدّل اللغة",
+      "homeLink": "الانتقال إلى الصفحة الرئيسية",
+      "openMenu": "فتح القائمة",
+      "closeMenu": "إغلاق القائمة"
+    }
+  }
+}
