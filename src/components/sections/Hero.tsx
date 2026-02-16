@@ -23,7 +23,6 @@ export function Hero() {
   const primaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
   const secondaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
 
-  const kicker = (t("home.hero.kicker") as string) || ""
   const headline = (t("home.hero.h1") as string) || ""
   const subheading = (t("home.hero.subheading") as string) || ""
   const complianceNote = (t("home.hero.complianceNote") as string) || ""
@@ -80,14 +79,10 @@ export function Hero() {
       />
 
       <div className="container mx-auto px-6 py-20 text-center">
-        {kicker ? (
-          <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-4 py-2 text-sm text-muted-foreground backdrop-blur">
-            <span className="sr-only">{(t("home.hero.kickerSr") as string) || "Hero positioning"}</span>
-            {kicker}
-          </p>
-        ) : null}
-
-        <h1 id="hero-heading" className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance">
+        <h1
+          id="hero-heading"
+          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance"
+        >
           {headlineWords.map((word, index) => {
             const isHighlighted = highlightWords.has(normalizeWord(word))
             return (
@@ -110,17 +105,16 @@ export function Hero() {
           {subheading}
         </p>
 
+        {/* Trust line (single line, not chips) */}
         {trustItems.length > 0 ? (
-          <ul className="mb-10 flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
+          <p className="mb-10 text-xs md:text-sm text-muted-foreground/80">
             {trustItems.map((item, idx) => (
-              <li
-                key={`${item}-${idx}`}
-                className="rounded-full border border-border/60 bg-background/35 px-3 py-1 text-sm text-muted-foreground backdrop-blur"
-              >
+              <span key={`${item}-${idx}`}>
                 {item}
-              </li>
+                {idx < trustItems.length - 1 ? " • " : ""}
+              </span>
             ))}
-          </ul>
+          </p>
         ) : null}
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 motion-safe:animate-heroFadeUpTranslate motion-reduce:animate-none">
@@ -138,7 +132,7 @@ export function Hero() {
           </Button>
         </div>
 
-        {complianceNote ? <p className="mt-6 text-sm text-muted-foreground">{complianceNote}</p> : null}
+      
       </div>
     </section>
   )

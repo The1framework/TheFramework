@@ -257,15 +257,16 @@
     50% { transform: translateY(-20px) rotate(5deg); }
   }
   
-  /* Micro Bounce CTA */
-  .micro-bounce {
-    animation: micro-bounce 2s ease-in-out infinite;
-  }
-  
-  @keyframes micro-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
+/* Micro Bounce CTA – Slower & Subtle */
+.micro-bounce {
+  animation: micro-bounce 3.5s ease-in-out infinite;
+}
+
+@keyframes micro-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
   
   /* Scroll Progress Bar */
   .scroll-progress {
