@@ -1,6 +1,9 @@
 {
   "header": {
-    "brand": { "logoAlt": "ACHIdigital agence digitale" },
+    "brand": {
+      "logoAlt": "ACHIdigital agence digitale",
+      "name": "AchiDigital"
+    },
     "nav": { "home": "Accueil", "about": "À propos", "services": "Services", "blog": "Blog", "contact": "Contact" },
     "services": {
       "viewAll": "Voir tous les services",
@@ -33,6 +36,120 @@
       "secondaryCtaLabel": "Voir les Services",
       "secondaryCtaAria": "Voir nos services",
       "secondaryCtaHref": "/fr/services"
+    }
+  },
+  "services": {
+    "page": {
+      "hero": {
+        "h1": "Nos Services Digitaux",
+        "supporting": "Un hub clair pour nos services digitaux clés en développement, design, performance et visibilité."
+      },
+      "authority": {
+        "h2": "Périmètre de l’entité et des services",
+        "oneSentence": "ACHIdigital propose des services digitaux ciblés pour garder vos sites et produits rapides, fiables et simples à trouver."
+      },
+      "list": {
+        "h2": "Nos services",
+        "items": {
+          "aiWebsiteDev": {
+            "label": "Développement de sites web avec IA",
+            "aria": "Ouvrir la page du service Développement de sites web avec IA"
+          },
+          "fullStackDev": {
+            "label": "Développement Web & Apps Full-Stack",
+            "aria": "Ouvrir la page du service Développement Web et Applications Full-Stack"
+          },
+          "performanceOptimization": {
+            "label": "Optimisation de site & Performance",
+            "aria": "Ouvrir la page du service Optimisation de site et Performance"
+          },
+          "uxui": {
+            "label": "Design UX/UI & Expérience Utilisateur",
+            "aria": "Ouvrir la page du service Design UX et UI et Expérience Utilisateur"
+          },
+          "seo": {
+            "label": "Référencement naturel (SEO)",
+            "aria": "Ouvrir la page du service Référencement naturel SEO"
+          },
+          "geoLLM": {
+            "label": "Optimisation GEO & LLM (Visibilité IA)",
+            "aria": "Ouvrir la page du service Optimisation GEO et LLM pour la visibilité IA"
+          },
+          "aeo": {
+            "label": "Answer Engine Optimization (AEO)",
+            "aria": "Ouvrir la page du service Answer Engine Optimization AEO"
+          },
+          "ppc": {
+            "label": "Publicité payante (PPC)",
+            "aria": "Ouvrir la page du service Publicité payante PPC"
+          },
+          "contentWriting": {
+            "label": "Rédaction de contenu professionnel",
+            "aria": "Ouvrir la page du service Rédaction de contenu professionnel"
+          },
+          "ecommerce": {
+            "label": "Solutions e-commerce",
+            "aria": "Ouvrir la page du service Solutions e-commerce"
+          },
+          "aiAutomation": {
+            "label": "Intégrations & Automatisation IA avancées",
+            "aria": "Ouvrir la page du service Intégrations et Automatisation IA avancées"
+          }
+        }
+      },
+      "together": {
+        "h2": "Comment nos services fonctionnent ensemble",
+        "body": "Nous concevons le développement, le design, la performance et la visibilité comme un seul système, où chaque amélioration renforce l’ensemble."
+      },
+      "forWho": {
+        "h2": "À qui s’adressent ces services",
+        "items": [
+          "PME et ETI",
+          "SaaS et équipes produit",
+          "Marques e-commerce",
+          "Cabinets et services professionnels",
+          "Fondateurs et directions",
+          "Équipes marketing et growth internes"
+        ]
+      },
+      "outcomes": {
+        "h2": "Résultats que vous pouvez attendre",
+        "items": [
+          "Parcours services clair et structuré",
+          "Expériences plus rapides et plus stables",
+          "Meilleure visibilité et découverte",
+          "Leads et demandes plus qualifiés",
+          "Meilleures performances des campagnes payantes",
+          "Une base digitale prête pour la croissance"
+        ]
+      },
+      "cta": {
+        "h2": "Vous ne savez pas quel service choisir ?",
+        "primary": "Demander un audit gratuit",
+        "secondary": "Obtenir les conseils d’un expert",
+        "tertiary": "Parler à notre équipe"
+      },
+      "faq": {
+        "h2": "FAQ sur nos services",
+        "items": [
+          {
+            "q": "Comment savoir par quel service commencer ?",
+            "a": "Nous commençons par un audit rapide de votre site, de vos indicateurs et de vos priorités, puis proposons un premier périmètre adapté."
+          },
+          {
+            "q": "Peut-on combiner plusieurs services dans une même mission ?",
+            "a": "Oui. De nombreux projets combinent développement, UX et travail sur la visibilité. Nous structurons une feuille de route pour aligner les priorités."
+          },
+          {
+            "q": "Ai-je besoin de services orientés IA si je cible surtout Google Search ?",
+            "a": "Pas toujours. Pour beaucoup d’équipes, la priorité est d’abord un socle technique et SEO solide, les volets IA venant ensuite si nécessaire."
+          },
+          {
+            "q": "Intervenez-vous sur des sites existants ou seulement sur des nouvelles créations ?",
+            "a": "Les deux. Nous pouvons améliorer un site existant ou concevoir un nouveau système lorsque la configuration actuelle devient limitante."
+          }
+        ]
+      }
     }
   }
 }

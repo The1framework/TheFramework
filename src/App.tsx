@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Index from "./pages/Index"
 import NotFound from "./pages/NotFound"
+import Services from "./pages/Services"
+import ServiceSlug from "./pages/ServiceSlug"
 import LangRouter, { useLangRouter } from "@/routing/LangRouter"
 import { localeRoot } from "@/i18n/runtime"
 
@@ -17,6 +19,12 @@ function RoutedApp() {
   return (
     <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
       <Route path="/" element={<Index locale={locale} t={t} />} />
+
+      {/* Services listing (SEO core list, no details) */}
+      <Route path="/services" element={<Services locale={locale} t={t} />} />
+
+      {/* Dynamic single service pages by slug */}
+      <Route path="/services/:serviceSlug" element={<ServiceSlug locale={locale} t={t} />} />
 
       {/* normalize /fr or /lb without trailing slash */}
       <Route path="/fr" element={<Navigate to={localeRoot("fr")} replace />} />

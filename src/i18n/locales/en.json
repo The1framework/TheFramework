@@ -1,6 +1,9 @@
 {
   "header": {
-    "brand": { "logoAlt": "ACHIdigital digital agency" },
+    "brand": {
+      "logoAlt": "ACHIdigital digital agency",
+      "name": "AchiDigital"
+    },
     "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact" },
     "services": {
       "viewAll": "View All Services",
@@ -49,5 +52,590 @@
 
       "complianceNote": "No tracking before consent. Secure, scalable engineering standards."
     }
+  },
+  "servicesIndex": {
+    "items": {
+      "ai-website-development": "AI Website Development",
+      "seo": "Search Engine Optimization (SEO)",
+      "geo-llm-search-optimization": "GEO & LLM Search Optimization (AI Visibility)",
+      "answer-engine-optimization": "Answer Engine Optimization (AEO)",
+      "ai-integrations-automation": "Advanced AI Integrations & Automation"
+    }
+  },
+  "services": {
+    "page": {
+      "hero": {
+        "h1": "Our Digital Services",
+        "supporting": "A clear hub for our core digital services in development, design, performance, and visibility."
+      },
+      "authority": {
+        "h2": "Entity and services scope",
+        "oneSentence": "ACHIdigital delivers focused digital services that keep your website and products fast, reliable, and easy to find."
+      },
+      "list": {
+        "h2": "Our Services",
+        "items": {
+          "aiWebsiteDev": {
+            "label": "AI Website Development",
+            "aria": "Open the AI Website Development service page"
+          },
+          "fullStackDev": {
+            "label": "Full-Stack Web & App Development",
+            "aria": "Open the Full-Stack Web and App Development service page"
+          },
+          "performanceOptimization": {
+            "label": "Website Optimization & Performance Engineering",
+            "aria": "Open the Website Optimization and Performance Engineering service page"
+          },
+          "uxui": {
+            "label": "UX/UI Design & User Experience",
+            "aria": "Open the UX and UI Design and User Experience service page"
+          },
+          "seo": {
+            "label": "Search Engine Optimization (SEO)",
+            "aria": "Open the Search Engine Optimization service page"
+          },
+          "geoLLM": {
+            "label": "GEO & LLM Search Optimization (AI Visibility)",
+            "aria": "Open the GEO and LLM Search Optimization service page"
+          },
+          "aeo": {
+            "label": "Answer Engine Optimization (AEO)",
+            "aria": "Open the Answer Engine Optimization service page"
+          },
+          "ppc": {
+            "label": "Paid Advertising (PPC)",
+            "aria": "Open the Paid Advertising PPC service page"
+          },
+          "contentWriting": {
+            "label": "Content & Professional Writing",
+            "aria": "Open the Content and Professional Writing service page"
+          },
+          "ecommerce": {
+            "label": "E-commerce Solutions",
+            "aria": "Open the E-commerce Solutions service page"
+          },
+          "aiAutomation": {
+            "label": "Advanced AI Integrations & Automation",
+            "aria": "Open the Advanced AI Integrations and Automation service page"
+          }
+        }
+      },
+      "together": {
+        "h2": "How Our Services Work Together",
+        "body": "Development, design, performance, and visibility services are planned as one system, so improvements in one area strengthen the whole."
+      },
+      "forWho": {
+        "h2": "Who These Services Are For",
+        "items": [
+          "Small & mid-size businesses",
+          "SaaS and product teams",
+          "E-commerce brands",
+          "Professional services firms",
+          "Founders and leadership teams",
+          "In-house marketing and growth teams"
+        ]
+      },
+      "outcomes": {
+        "h2": "Outcomes You Can Expect",
+        "items": [
+          "Clear service structure and navigation",
+          "Faster, more stable experiences",
+          "Stronger search and discovery signals",
+          "Higher-quality leads and enquiries",
+          "Better performance from paid campaigns",
+          "A digital foundation that is ready to grow"
+        ]
+      },
+      "cta": {
+        "h2": "Not Sure Which Service You Need?",
+        "primary": "Request a Free Audit",
+        "secondary": "Get Expert Guidance",
+        "tertiary": "Talk to Our Team"
+      },
+      "faq": {
+        "h2": "Services FAQs",
+        "items": [
+          {
+            "q": "How do I know which service to start with?",
+            "a": "We review your website, current performance, and priorities, then recommend a starting point such as a new build, optimization, or a focused visibility engagement."
+          },
+          {
+            "q": "Can we combine multiple services in one engagement?",
+            "a": "Yes. Many projects combine development, UX, and search work. We build a roadmap so technical, content, and visibility efforts support each other."
+          },
+          {
+            "q": "Do I need AI-focused services if I only care about Google Search?",
+            "a": "Not always. For many teams, a strong technical and SEO foundation is the right first step, with AI-related work added when content and visibility needs grow."
+          },
+          {
+            "q": "Do you work on existing websites or only new builds?",
+            "a": "Both. We can improve an existing site or design and build a new one when the current setup limits performance, search, or future growth."
+          }
+        ]
+      }
+    }
+  },
+  "servicePages": {
+    "ai-website-development": {
+      "h1": "AI Website Development Built for Growth, Search, and the AI Era",
+      "hero": {
+        "kicker": "Websites Are No Longer Pages. They Are Intelligent Systems.",
+        "subtitle": "AI Website Development That Performs on Google, AI Search Engines, and Real Users",
+        "p1": "In 2026, websites are no longer static brochures or design projects. They are intelligent digital systems that must perform across multiple surfaces: Google Search, AI answers (ChatGPT, Gemini, Perplexity), paid traffic, and real user journeys.",
+        "p2": "We design and develop custom, AI-ready, SEO-safe websites that load fast, rank reliably, are correctly interpreted by AI engines, and convert visitors into customers — without templates, shortcuts, or risky automation.",
+        "p3": "Your website becomes the foundation that everything else depends on."
+      },
+      "problem": {
+        "h2": "The Problem",
+        "p": "Most businesses try to add AI, SEO, or paid traffic on top of websites that were never built to support them. This results in:",
+        "items": {
+          "1": "Websites that look modern but do not convert",
+          "2": "Slow performance and poor Core Web Vitals",
+          "3": "Inconsistent SEO rankings",
+          "4": "AI engines misunderstanding or ignoring the brand",
+          "5": "Costly redesigns every few years just to stay relevant",
+          "6": "When the website foundation is weak, SEO, AI visibility, and advertising performance all suffer."
+        }
+      },
+      "approach": {
+        "h2": "Our AI-First Website Development Approach",
+        "p1": "We do not treat AI as a gimmick or a shortcut.",
+        "p2": "We treat it as a system-level capability.",
+        "p": "Our AI Website Development approach combines:",
+        "items": {
+          "1": "Modern web engineering (Next.js, React, headless architecture)",
+          "2": "Performance-first and SEO-first foundations",
+          "3": "AI-ready structure that supports GEO, LLM SEO, and AEO",
+          "4": "Conversion-focused UX and scalable content systems"
+        }
+      },
+      "whatIs": {
+        "h2": "What Is AI Website Development",
+        "p1": "Traditional web development builds fixed pages.",
+        "p2": "AI Website Development builds adaptive systems.",
+        "p": "We create websites that are:",
+        "items": {
+          "1": "Structurally clear for search engines and AI models",
+          "2": "Ready for personalization without SEO cloaking",
+          "3": "Designed to scale content, services, and languages",
+          "4": "Built to support AI agents, automation, and analytics when required",
+          "5": "This is not an AI website builder.",
+          "6": "This is custom website design and development engineered for the AI era."
+        }
+      },
+      "whyDifferent": {
+        "h2": "Why Our AI Website Development Is Different",
+        "blocks": {
+          "a": {
+            "title": "Built for AI Interpretation",
+            "body": "Your website is structured so AI engines can understand, summarize, and reference your brand accurately."
+          },
+          "b": {
+            "title": "SEO and Performance as the Base Layer",
+            "body": "Fast load times, clean architecture, Core Web Vitals, and SEO-safe structure are built in from day one."
+          },
+          "c": {
+            "title": "Conversion-Focused by Design",
+            "body": "Visibility alone is not enough. Every layout, section, and call-to-action is designed to support real business outcomes."
+          },
+          "d": {
+            "title": "Fully Custom and Scalable",
+            "body": "No templates, no lock-in. Built on open, scalable technologies that grow with your business."
+          },
+          "e": {
+            "title": "Future-Proof Architecture",
+            "body": "Ready to support GEO, AEO, AI agents, personalization engines, automation, and multilingual expansion."
+          }
+        }
+      },
+      "capabilities": {
+        "h2": "Key Capabilities",
+        "items": {
+          "1": "Custom website design and development aligned with brand and conversion goals",
+          "2": "Performance engineering with Core Web Vitals optimization",
+          "3": "SEO-friendly site architecture and scalable structure",
+          "4": "AI-ready content structure supporting GEO, LLM SEO, and AEO",
+          "5": "Conversion-focused UX and funnel design",
+          "6": "CRM, analytics, and automation integrations",
+          "7": "Multilingual-ready architecture (English, French, Arabic)"
+        }
+      },
+      "process": {
+        "h2": "Our Process",
+        "items": {
+          "1": "Discovery and strategy aligned with business goals and growth plans",
+          "2": "Architecture and SEO planning for scalability and AI readiness",
+          "3": "UX and interface design focused on trust and conversion",
+          "4": "Development using modern, scalable technologies",
+          "5": "Performance, accessibility, and technical SEO hardening",
+          "6": "Launch with a clear roadmap for SEO, AI visibility, and growth"
+        }
+      },
+      "results": {
+        "h2": "Results You Can Expect",
+        "items": {
+          "1": "Faster websites with strong Core Web Vitals",
+          "2": "Improved SEO stability and scalability",
+          "3": "Clearer AI interpretation and visibility",
+          "4": "Higher engagement and conversion rates",
+          "5": "A website that evolves with your business instead of limiting it"
+        }
+      },
+      "related": {
+        "h2": "Related Services"
+      },
+      "finalCta": {
+        "h2": "Ready to Build a Future-Proof Website",
+        "p1": "Stop patching outdated websites with new tools.",
+        "p2": "Build a scalable digital foundation designed for growth, search, and AI.",
+        "primary": "Book a Free Strategy Session",
+        "secondary": "View All Services"
+      }
+    },
+
+    "seo": {
+      "h1": "Search Engine Optimization Built for Long-Term Rankings and Growth",
+      "hero": {
+        "kicker": "SEO Is Still the Foundation of Online Visibility",
+        "subtitle": "Search Engine Optimization That Drives Rankings, Traffic, and Qualified Leads",
+        "p1": "Search engines remain the primary source of high-intent traffic. In 2026, SEO is no longer about tricks or shortcuts — it is about technical excellence, authoritative content, and performance-driven user experience.",
+        "p2": "We deliver professional SEO services that improve search visibility, build long-term authority, and generate qualified traffic that converts — while creating a strong foundation for AI search, GEO, and answer engines.",
+        "p3": ""
+      },
+      "problem": {
+        "h2": "The Problem",
+        "p": "Many businesses invest in SEO but see little return because their strategy is fragmented or outdated. Common issues include:",
+        "items": {
+          "1": "Rankings that fluctuate without clear reasons",
+          "2": "Traffic that does not convert into leads or sales",
+          "3": "Slow websites with poor Core Web Vitals",
+          "4": "Content created without search intent or structure",
+          "5": "SEO treated as an add-on instead of a foundation",
+          "6": "Without a solid SEO strategy, growth becomes unpredictable and expensive."
+        }
+      },
+      "approach": {
+        "h2": "Our SEO Approach",
+        "p": "We treat SEO as a core business system, not a checklist. Our SEO strategy is built on three pillars:",
+        "items": {
+          "1": "Technical foundation",
+          "2": "Search intent and content relevance",
+          "3": "Authority and trust signals",
+          "4": "This ensures your website ranks consistently, attracts high-intent users, and scales without breaking performance."
+        }
+      },
+      "whatIs": {
+        "h2": "What Is SEO in 2026",
+        "p": "Modern SEO focuses on technical quality, performance, content aligned with intent, clear site structure, internal linking, and trust signals. Strong SEO also feeds AI search engines with reliable structured information."
+      },
+      "whyDifferent": {
+        "h2": "Why Our SEO Services Are Different",
+        "blocks": {
+          "a": { "title": "Technical SEO as the Base Layer", "body": "We start with speed, Core Web Vitals, crawlability, indexing, and architecture." },
+          "b": { "title": "Intent-Driven Content Strategy", "body": "We optimize for how real users search, compare, and decide — not just keywords." },
+          "c": { "title": "Performance and UX Matter", "body": "Fast, usable, mobile-first experiences are rewarded by search engines." },
+          "d": { "title": "SEO That Supports AI Search", "body": "Structure, schema planning, and authority help AI engines understand and trust your brand." },
+          "e": { "title": "Long-Term, Ethical SEO", "body": "No shortcuts, no spam, no risky tactics. Built to last." }
+        }
+      },
+      "capabilities": {
+        "h2": "Core SEO Services Included",
+        "items": {
+          "1": "Technical SEO and Core Web Vitals optimization",
+          "2": "Crawlability and indexation fixes",
+          "3": "Schema and structured data planning",
+          "4": "Keyword, intent, and opportunity research",
+          "5": "On-page optimization and internal linking",
+          "6": "Authority, trust signals, and competitor benchmarking"
+        }
+      },
+      "process": {
+        "h2": "Our SEO Process",
+        "items": {
+          "1": "Audit and baseline analysis",
+          "2": "Keyword, intent, and opportunity mapping",
+          "3": "Technical fixes and performance optimization",
+          "4": "On-page and content optimization",
+          "5": "Authority building and trust reinforcement",
+          "6": "Monitoring, reporting, and continuous improvement"
+        }
+      },
+      "results": {
+        "h2": "Results You Can Expect",
+        "items": {
+          "1": "Improved rankings for high-value keywords",
+          "2": "More qualified organic traffic",
+          "3": "Better conversion rates from search users",
+          "4": "Stronger technical foundation for growth",
+          "5": "SEO that supports AI visibility and paid campaigns"
+        }
+      },
+      "related": { "h2": "Related Services" },
+      "finalCta": {
+        "h2": "Ready to Build Sustainable Search Visibility",
+        "p1": "Stop chasing rankings that disappear.",
+        "p2": "Build a search strategy designed for long-term growth and measurable ROI.",
+        "primary": "Request a Free SEO Audit",
+        "secondary": "View All Services"
+      }
+    },
+
+    "geo-llm-search-optimization": {
+      "h1": "GEO & LLM Search Optimization for AI Visibility and Brand Authority",
+      "hero": {
+        "kicker": "Search Is No Longer Just Google",
+        "subtitle": "Get Discovered, Cited, and Recommended by AI Search Engines",
+        "p1": "In 2026, users increasingly discover businesses through AI-powered search engines such as ChatGPT, Google Gemini, Perplexity, and AI Overviews.",
+        "p2": "These systems do not simply rank websites — they interpret, summarize, and recommend information.",
+        "p3": "We ensure your brand is correctly understood, trusted, and cited by AI engines while remaining aligned with traditional SEO best practices."
+      },
+      "problem": {
+        "h2": "The Problem",
+        "p": "Ranking on Google does not automatically guarantee AI visibility. Common issues include:",
+        "items": {
+          "1": "AI engines misinterpreting or oversimplifying brand information",
+          "2": "Competitors being cited instead of you, even when you rank well",
+          "3": "Inconsistent brand descriptions across AI answers",
+          "4": "Content that ranks but is not suitable for AI summarization",
+          "5": "No visibility tracking for AI search surfaces"
+        }
+      },
+      "approach": {
+        "h2": "Our GEO & LLM Optimization Approach",
+        "p": "We optimize your digital presence so AI engines can understand, trust, and accurately reference your brand. Our approach combines:",
+        "items": {
+          "1": "Strong SEO foundations",
+          "2": "Entity-based optimization",
+          "3": "Structured, citation-friendly content",
+          "4": "Consistent brand signals across the web"
+        }
+      },
+      "whatIs": {
+        "h2": "What Is GEO & LLM Search Optimization",
+        "p": "GEO focuses on how AI systems interpret and present information. LLM Search Optimization ensures models recognize your brand as consistent and reference-worthy — improving AI answers, citations, and recommendations."
+      },
+      "whyDifferent": {
+        "h2": "Why Our GEO & LLM Optimization Is Different",
+        "blocks": {
+          "a": { "title": "Built on SEO, Not Replacing It", "body": "AI visibility depends on strong SEO foundations — we build on them." },
+          "b": { "title": "Entity and Authority Focus", "body": "Clear entity definitions and expertise signals reduce AI confusion." },
+          "c": { "title": "Citation-Friendly Structure", "body": "Formatting and structure increase the likelihood of being cited." },
+          "d": { "title": "Consistency Across AI Surfaces", "body": "We align on-site and off-site brand signals to avoid hallucinated descriptions." },
+          "e": { "title": "Measurable and Ethical", "body": "No risky tactics. Transparent optimization for long-term relevance." }
+        }
+      },
+      "capabilities": {
+        "h2": "Core GEO & LLM Optimization Capabilities",
+        "items": {
+          "1": "Entity-based optimization and brand clarity",
+          "2": "AI-friendly content structure and phrasing",
+          "3": "Semantic reinforcement of expertise and services",
+          "4": "Alignment of on-site and off-site signals",
+          "5": "Monitoring of AI visibility, mentions, and citations"
+        }
+      },
+      "process": {
+        "h2": "Our Process",
+        "items": {
+          "1": "AI visibility and brand interpretation audit",
+          "2": "Entity and content gap analysis",
+          "3": "Optimization planning",
+          "4": "Content and structure refinement",
+          "5": "Authority and consistency reinforcement",
+          "6": "Monitoring and iterative improvement"
+        }
+      },
+      "results": {
+        "h2": "Results You Can Expect",
+        "items": {
+          "1": "Increased visibility in AI-generated answers",
+          "2": "More accurate brand representation across AI tools",
+          "3": "Higher likelihood of being cited and recommended",
+          "4": "Stronger authority signals feeding both AI and search engines",
+          "5": "Improved traffic quality and trust"
+        }
+      },
+      "related": { "h2": "Related Services" },
+      "finalCta": {
+        "h2": "Ready to Take Control of Your AI Visibility",
+        "p1": "AI search is already influencing buying decisions.",
+        "p2": "Make sure your brand is represented clearly, accurately, and authoritatively.",
+        "primary": "Request a Free AI Visibility Audit",
+        "secondary": "View All Services"
+      }
+    },
+
+    "answer-engine-optimization": {
+      "h1": "Answer Engine Optimization to Own Direct Answers and Zero-Click Visibility",
+      "hero": {
+        "kicker": "Visibility Is No Longer Only About Rankings",
+        "subtitle": "Answer Engine Optimization That Makes Your Brand the Direct Answer",
+        "p1": "Users increasingly expect instant, direct answers — through featured snippets, AI Overviews, voice assistants, and conversational interfaces.",
+        "p2": "We position your content as the preferred answer source so your brand appears clearly and authoritatively where decisions are made — even when users do not click.",
+        "p3": ""
+      },
+      "problem": {
+        "h2": "The Problem",
+        "p": "Many businesses still optimize only for traditional rankings. Common challenges include:",
+        "items": {
+          "1": "Losing visibility to featured snippets and AI answers",
+          "2": "Content ranking but not being selected as the answer",
+          "3": "Inconsistent or partial answers shown by search engines",
+          "4": "Missed opportunities in zero-click and voice search results",
+          "5": "No structure optimized for answer engines"
+        }
+      },
+      "approach": {
+        "h2": "Our AEO Approach",
+        "p": "We optimize for answer selection, not just ranking, using:",
+        "items": {
+          "1": "Clear, concise, answer-first structures",
+          "2": "Question-based optimization aligned with real queries",
+          "3": "Machine-readable formatting for answer extraction",
+          "4": "Authority and clarity reinforcement"
+        }
+      },
+      "whatIs": {
+        "h2": "What Is Answer Engine Optimization",
+        "p": "AEO structures content so search engines and AI systems can extract, validate, and display direct answers — across snippets, AI Overviews, voice search, and zero-click results."
+      },
+      "whyDifferent": {
+        "h2": "Why Our AEO Services Are Different",
+        "blocks": {
+          "a": { "title": "Answer-First, Not Keyword-First", "body": "Clarity and usefulness come before keyword density." },
+          "b": { "title": "Structured for Extraction", "body": "We design blocks, lists, tables, and FAQs that engines can parse and trust." },
+          "c": { "title": "Aligned With SEO and GEO", "body": "AEO builds on SEO foundations and supports AI visibility without conflict." },
+          "d": { "title": "Ethical and Sustainable", "body": "No manipulation. Accurate, authoritative, user-focused answers." }
+        }
+      },
+      "capabilities": {
+        "h2": "Core AEO Capabilities",
+        "items": {
+          "1": "Question and conversational query research",
+          "2": "Answer-first content structuring",
+          "3": "FAQ and Q&A optimization",
+          "4": "Featured snippet targeting",
+          "5": "Voice search support and formatting",
+          "6": "Schema planning for answer eligibility"
+        }
+      },
+      "process": {
+        "h2": "Our Process",
+        "items": {
+          "1": "Answer visibility and snippet audit",
+          "2": "Question and intent mapping",
+          "3": "Content restructuring and optimization",
+          "4": "Answer formatting and schema planning",
+          "5": "Testing across search and AI surfaces",
+          "6": "Monitoring and continuous refinement"
+        }
+      },
+      "results": {
+        "h2": "Results You Can Expect",
+        "items": {
+          "1": "Increased visibility in featured snippets and AI answers",
+          "2": "Stronger presence in zero-click results",
+          "3": "Higher trust and recall at decision moments",
+          "4": "Improved performance of SEO and GEO strategies"
+        }
+      },
+      "related": { "h2": "Related Services" },
+      "finalCta": {
+        "h2": "Ready to Become the Answer",
+        "p1": "When users ask questions, your brand should be the response they see first.",
+        "p2": "Request an AEO assessment to identify missed answer opportunities.",
+        "primary": "Request a Free AEO Assessment",
+        "secondary": "View All Services"
+      }
+    },
+
+    "ai-integrations-automation": {
+      "h1": "Advanced AI Integrations and Automation for Scalable Business Operations",
+      "hero": {
+        "kicker": "AI Should Improve How Your Business Operates",
+        "subtitle": "Advanced AI Integrations and Automation That Reduce Manual Work and Increase Efficiency",
+        "p1": "AI is not only about visibility and search. When implemented correctly, it becomes an operational advantage that improves efficiency, decision-making, and customer experience.",
+        "p2": "We design and implement AI integrations and automation systems that connect your website, tools, and data into intelligent workflows — reducing manual effort and enabling scalable growth.",
+        "p3": ""
+      },
+      "problem": {
+        "h2": "The Problem",
+        "p": "Many businesses experiment with AI tools but fail to achieve real impact. Common issues include:",
+        "items": {
+          "1": "Isolated AI tools with no integration",
+          "2": "Manual processes that slow teams down",
+          "3": "Leads not routed or qualified efficiently",
+          "4": "Customer inquiries handled inconsistently",
+          "5": "Automation built without strategy or oversight"
+        }
+      },
+      "approach": {
+        "h2": "Our AI Integration and Automation Approach",
+        "p": "We focus on practical, business-driven implementation with safeguards and real workflows, ensuring:",
+        "items": {
+          "1": "Integrations connect to real processes",
+          "2": "Automation supports business goals",
+          "3": "Data flows securely and reliably",
+          "4": "Human oversight remains in control"
+        }
+      },
+      "whatIs": {
+        "h2": "What Are Advanced AI Integrations and Automation",
+        "p": "This service connects AI models, APIs, and business systems to automate tasks, enhance decisions, and personalize interactions — including agents, workflow automation, lead routing, support automation, and decision systems."
+      },
+      "whyDifferent": {
+        "h2": "Why Our AI Automation Services Are Different",
+        "blocks": {
+          "a": { "title": "Strategy Before Tools", "body": "We define the process first, then apply AI where it creates measurable value." },
+          "b": { "title": "Integrated, Not Isolated", "body": "AI connects to your website, CRM, analytics, and internal tools to avoid silos." },
+          "c": { "title": "Human-in-the-Loop Design", "body": "Safeguards, review points, and escalation paths are built in." },
+          "d": { "title": "Scalable and Secure", "body": "Reliable APIs, modular architecture, and best practices for data protection." },
+          "e": { "title": "SEO-Safe and Brand-Safe", "body": "All AI interactions respect governance, compliance, and consistency." }
+        }
+      },
+      "capabilities": {
+        "h2": "Core AI Integration and Automation Capabilities",
+        "items": {
+          "1": "AI chatbots and assistants for websites",
+          "2": "Lead qualification and routing automation",
+          "3": "Appointment booking and follow-up automation",
+          "4": "CRM and marketing tool integrations",
+          "5": "Internal workflow automation",
+          "6": "Custom AI API integrations"
+        }
+      },
+      "process": {
+        "h2": "Our Process",
+        "items": {
+          "1": "Workflow and opportunity assessment",
+          "2": "Use-case definition and prioritization",
+          "3": "System architecture and integration planning",
+          "4": "Model and tool integration",
+          "5": "Testing, validation, and safeguards",
+          "6": "Deployment, monitoring, and optimization"
+        }
+      },
+      "results": {
+        "h2": "Results You Can Expect",
+        "items": {
+          "1": "Reduced manual workload for teams",
+          "2": "Faster response times and better customer experience",
+          "3": "More efficient lead handling and follow-ups",
+          "4": "Improved operational consistency",
+          "5": "AI systems that scale with your business"
+        }
+      },
+      "related": { "h2": "Related Services" },
+      "finalCta": {
+        "h2": "Ready to Automate What Matters",
+        "p1": "AI should make your business simpler, not more complex.",
+        "p2": "Request an automation assessment to identify safe, high-impact opportunities.",
+        "primary": "Request a Free AI Automation Assessment",
+        "secondary": "View All Services"
+      }
+    }
   }
 }
+
+

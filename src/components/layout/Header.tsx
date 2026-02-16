@@ -49,11 +49,11 @@ export function Header({
   locale,
   brand,
   servicesDropdown = [
-    { href: "/services", labelKey: "header.services.viewAll" },
     { href: "/services/ai-website-development", labelKey: "header.services.aiWebDev" },
-    { href: "/services/seo-ai-visibility", labelKey: "header.services.seoAi" },
-    { href: "/services/ui-ux-design", labelKey: "header.services.uiux" },
-    { href: "/services/performance-optimization", labelKey: "header.services.performance" },
+    { href: "/services/seo", labelKey: "header.services.seo" },
+    { href: "/services/geo-llm-search-optimization", labelKey: "header.services.geo" },
+    { href: "/services/answer-engine-optimization", labelKey: "header.services.aeo" },
+    { href: "/services/ai-integrations-automation", labelKey: "header.services.aiAutomation" },
   ],
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -86,6 +86,9 @@ export function Header({
 
   const ctaHref = hrefFor(locale, "/contact")
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : hrefFor(locale, "/")
+
+  const openServices = () => setIsServicesOpen(true)
+  const closeServices = () => setIsServicesOpen(false)
 
   return (
     <header
@@ -145,9 +148,14 @@ export function Header({
               </a>
             </li>
 
-            <li className="relative">
-              <button
-                type="button"
+            {/* Services: hover dropdown + click opens /services */}
+            <li
+              className="relative"
+              onMouseEnter={openServices}
+              onMouseLeave={closeServices}
+            >
+              <a
+                href={nav[2].href}
                 className={cn(
                   "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
                   isServicesOpen && "text-foreground"
@@ -155,16 +163,16 @@ export function Header({
                 aria-haspopup="menu"
                 aria-expanded={isServicesOpen}
                 aria-controls={servicesMenuId}
-                onClick={() => setIsServicesOpen((v) => !v)}
+                onFocus={openServices}
                 onBlur={(e) => {
                   const next = e.relatedTarget as HTMLElement | null
                   if (next && e.currentTarget.parentElement?.contains(next)) return
-                  setIsServicesOpen(false)
+                  closeServices()
                 }}
               >
                 {t("header.nav.services")}
                 <ChevronDown className="w-4 h-4" aria-hidden="true" />
-              </button>
+              </a>
 
               <div
                 id={servicesMenuId}
