@@ -21,5 +21,18 @@
       "openMenu": "Ouvrir le menu",
       "closeMenu": "Fermer le menu"
     }
+  },
+  "home": {
+    "hero": {
+      "h1": "Agence de Développement Web IA & Croissance Digitale",
+      "h1Highlights": ["Web", "Croissance"],
+      "subheading": "Des sites rapides, orientés conversion, prêts pour le SEO, la confiance et l’ère de l’IA.",
+      "primaryCtaLabel": "Audit IA Gratuit de Votre Site",
+      "primaryCtaAria": "Obtenir un audit IA gratuit de votre site",
+      "primaryCtaHref": "/fr/contact",
+      "secondaryCtaLabel": "Voir les Services",
+      "secondaryCtaAria": "Voir nos services",
+      "secondaryCtaHref": "/fr/services"
+    }
   }
 }

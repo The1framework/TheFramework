@@ -21,5 +21,18 @@
       "openMenu": "فتح القائمة",
       "closeMenu": "إغلاق القائمة"
     }
+  },
+    "home": {
+    "hero": {
+      "h1": "وكالة تطوير مواقع بالذكاء الاصطناعي ونمو رقمي",
+      "h1Highlights": ["مواقع", "نمو"],
+      "subheading": "مواقع عالية الأداء وموجهة للتحويل، جاهزة للسيو والثقة وعصر الذكاء الاصطناعي.",
+      "primaryCtaLabel": "احصل على تدقيق مجاني لموقعك بالذكاء الاصطناعي",
+      "primaryCtaAria": "احصل على تدقيق مجاني لموقعك بالذكاء الاصطناعي",
+      "primaryCtaHref": "/lb/contact",
+      "secondaryCtaLabel": "عرض الخدمات",
+      "secondaryCtaAria": "عرض خدماتنا",
+      "secondaryCtaHref": "/lb/services"
+    }
   }
 }

@@ -1,32 +1,48 @@
-import { useRef, useState, useEffect } from "react"
+import { useMemo, useRef } from "react"
+import type { CSSProperties } from "react"
 import { Button } from "@/components/ui/button"
 import { useMagneticButton } from "@/hooks/useMagneticButton"
 import { useMousePosition } from "@/hooks/useMousePosition"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useI18n } from "@/i18n/useI18n"
+
+function normalizeWord(w: string) {
+  return w
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "")
+    .trim()
+}
 
 export function Hero() {
+  const { t } = useI18n()
+
   const containerRef = useRef<HTMLElement>(null)
   const mousePosition = useMousePosition(containerRef)
-  const primaryBtnProps = useMagneticButton<HTMLButtonElement>(0.2)
-  const secondaryBtnProps = useMagneticButton<HTMLButtonElement>(0.2)
-  const { ref: textRef, isVisible: textVisible } = useScrollReveal<HTMLDivElement>(0.1)
-  const [isLoaded, setIsLoaded] = useState(false)
 
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+  const primaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
+  const secondaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
 
-  const handleScroll = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+  const kicker = (t("home.hero.kicker") as string) || ""
+  const headline = (t("home.hero.h1") as string) || ""
+  const subheading = (t("home.hero.subheading") as string) || ""
+  const complianceNote = (t("home.hero.complianceNote") as string) || ""
 
-  const headlineWords = ["We", "Build", "Digital", "Experiences", "That", "Drive", "Growth"]
-  const highlightWords = ["Digital", "Experiences"]
+  const headlineWords = useMemo(() => headline.split(/\s+/).filter(Boolean), [headline])
+
+  const highlightWords = useMemo(() => {
+    const list = t("home.hero.h1Highlights") as unknown
+    const arr = Array.isArray(list) ? (list as string[]) : []
+    return new Set(arr.map(normalizeWord).filter(Boolean))
+  }, [t])
+
+  const trustItems = useMemo(() => {
+    const list = t("home.hero.trustItems") as unknown
+    return Array.isArray(list) ? (list as string[]) : []
+  }, [t])
+
+  const primaryHref = (t("home.hero.primaryCtaHref") as string) || "/contact"
+  const secondaryHref = (t("home.hero.secondaryCtaHref") as string) || "/services"
 
   return (
     <section
@@ -35,14 +51,13 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       aria-labelledby="hero-heading"
     >
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl floating-shape" />
         <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl floating-shape"
           style={{ animationDelay: "-3s" }}
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-neon-purple/5 rounded-full blur-3xl" />
-
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -59,77 +74,72 @@ export function Hero() {
           {
             "--mouse-x": `${mousePosition.x}%`,
             "--mouse-y": `${mousePosition.y}%`,
-          } as React.CSSProperties
+          } as CSSProperties
         }
         aria-hidden="true"
       />
 
-      <div ref={textRef} className="container mx-auto px-6 py-20 text-center">
-        <h1
-          id="hero-heading"
-          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance"
-        >
-          {headlineWords.map((word, index) => (
-            <span
-              key={index}
-              className={cn(
-                "inline-block mr-[0.25em] transition-all duration-500",
-                highlightWords.includes(word) ? "gradient-text underline-draw" : "",
-                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-                textVisible && highlightWords.includes(word) && "visible"
-              )}
-              style={{ transitionDelay: `${200 + index * 80}ms` }}
-            >
-              {word}
-            </span>
-          ))}
+      <div className="container mx-auto px-6 py-20 text-center">
+        {kicker ? (
+          <p className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-4 py-2 text-sm text-muted-foreground backdrop-blur">
+            <span className="sr-only">{(t("home.hero.kickerSr") as string) || "Hero positioning"}</span>
+            {kicker}
+          </p>
+        ) : null}
+
+        <h1 id="hero-heading" className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance">
+          {headlineWords.map((word, index) => {
+            const isHighlighted = highlightWords.has(normalizeWord(word))
+            return (
+              <span
+                key={`${word}-${index}`}
+                className={cn(
+                  "inline-block mr-[0.25em]",
+                  isHighlighted ? "gradient-text underline-draw" : "",
+                  "motion-safe:animate-heroWordUpTranslate motion-reduce:animate-none"
+                )}
+                style={{ animationDelay: `${80 + index * 45}ms` } as CSSProperties}
+              >
+                {word}
+              </span>
+            )
+          })}
         </h1>
 
-        <p
-          className={cn(
-            "text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto text-balance transition-all duration-700",
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          )}
-          style={{ transitionDelay: "600ms" }}
-        >
-          Transform your vision into reality with cutting-edge web solutions, AI-powered innovation, and strategic
-          digital marketing.
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance motion-safe:animate-heroFadeUpTranslate motion-reduce:animate-none">
+          {subheading}
         </p>
 
-        <div
-          className={cn(
-            "flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700",
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          )}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <Button
-            {...primaryBtnProps}
-            variant="hero"
-            size="xl"
-            className="magnetic-btn micro-bounce group btn-press"
-            onClick={() => handleScroll("#contact")}
-          >
-            Start Your Project
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+        {trustItems.length > 0 ? (
+          <ul className="mb-10 flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
+            {trustItems.map((item, idx) => (
+              <li
+                key={`${item}-${idx}`}
+                className="rounded-full border border-border/60 bg-background/35 px-3 py-1 text-sm text-muted-foreground backdrop-blur"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 motion-safe:animate-heroFadeUpTranslate motion-reduce:animate-none">
+          <Button asChild variant="hero" size="xl" className="magnetic-btn micro-bounce group btn-press">
+            <a {...primaryBtnProps} href={primaryHref} aria-label={t("home.hero.primaryCtaAria") as string}>
+              {t("home.hero.primaryCtaLabel") as string}
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </a>
           </Button>
 
-          <Button
-            {...secondaryBtnProps}
-            variant="heroSecondary"
-            size="xl"
-            className="magnetic-btn group btn-press"
-            onClick={() => handleScroll("#about")}
-          >
-            <Play className="w-5 h-5" />
-            Watch Our Story
+          <Button asChild variant="heroSecondary" size="xl" className="magnetic-btn group btn-press">
+            <a {...secondaryBtnProps} href={secondaryHref} aria-label={t("home.hero.secondaryCtaAria") as string}>
+              {t("home.hero.secondaryCtaLabel") as string}
+            </a>
           </Button>
         </div>
 
-        
+        {complianceNote ? <p className="mt-6 text-sm text-muted-foreground">{complianceNote}</p> : null}
       </div>
-
-      
     </section>
   )
 }

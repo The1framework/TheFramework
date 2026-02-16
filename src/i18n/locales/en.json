@@ -21,5 +21,33 @@
       "openMenu": "Open menu",
       "closeMenu": "Close menu"
     }
+  },
+"home": {
+    "hero": {
+      "kicker": "Digital Agency • SEO-First • Performance Engineered",
+      "kickerSr": "Hero positioning and category descriptor",
+
+      "h1": "Web Development & SEO Solutions for Business Growth",
+      "h1Highlights": ["Development", "SEO", "Growth"],
+
+      "subheading": "High-performance, conversion-driven websites built for search visibility, trust, and long-term growth.",
+
+      "trustItems": [
+        "SEO-first architecture",
+        "Core Web Vitals optimized",
+        "Multilingual EN / FR / AR",
+        "Privacy-first & consent-compliant"
+      ],
+
+      "primaryCtaLabel": "Get a Free Website Audit",
+      "primaryCtaAria": "Get a free website audit",
+      "primaryCtaHref": "/contact",
+
+      "secondaryCtaLabel": "View Services",
+      "secondaryCtaAria": "View our services",
+      "secondaryCtaHref": "/services",
+
+      "complianceNote": "No tracking before consent. Secure, scalable engineering standards."
+    }
   }
 }
