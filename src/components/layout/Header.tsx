@@ -80,7 +80,6 @@ export function Header({
     { key: "home", href: hrefFor(locale, "/"), labelKey: "header.nav.home" },
     { key: "about", href: hrefFor(locale, "/about"), labelKey: "header.nav.about" },
     { key: "services", href: hrefFor(locale, "/services"), labelKey: "header.nav.services" },
-    { key: "blog", href: hrefFor(locale, "/blog"), labelKey: "header.nav.blog" },
     { key: "contact", href: hrefFor(locale, "/contact"), labelKey: "header.nav.contact" },
   ] as const
 
@@ -209,14 +208,7 @@ export function Header({
               </a>
             </li>
 
-            <li>
-              <a
-                href={nav[4].href}
-                className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
-              >
-                {t(nav[4].labelKey)}
-              </a>
-            </li>
+       
           </ul>
         </div>
 
