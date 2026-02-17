@@ -31,6 +31,106 @@
       "closeMenu": "Close menu"
     }
   },
+  "entity": {
+    "definition": "ACHIdigital is a website development and digital growth agency specializing in high-performance, conversion-focused business websites."
+  },
+  "footer": {
+    "aria": {
+      "footer": "Site footer"
+    },
+    "brand": {
+      "homeAria": "Go to homepage",
+      "namePrefix": "Achi",
+      "nameAccent": "Digital",
+      "description": "A credibility-first studio for modern web engineering and search visibility."
+    },
+    "columns": {
+      "company": { "title": "Company", "aria": "Company links" },
+      "legal": { "title": "Legal", "aria": "Legal links" }
+    },
+    "links": {
+      "company": {
+        "home": { "label": "Home" },
+        "about": { "label": "About" },
+        "services": { "label": "Services" },
+        "contact": { "label": "Contact" }
+      },
+      "legal": {
+        "privacy": { "label": "Privacy Policy", "href": "/privacy-policy" },
+        "terms": { "label": "Terms of Service", "href": "/terms-of-service" },
+        "cookies": { "label": "Cookie Policy", "href": "/cookie-policy" }
+      },
+      "social": {
+        "twitter": { "href": "https://twitter.com", "aria": "Open Twitter" },
+        "linkedin": { "href": "https://linkedin.com", "aria": "Open LinkedIn" },
+        "github": { "href": "https://github.com", "aria": "Open GitHub" },
+        "instagram": { "href": "https://instagram.com", "aria": "Open Instagram" }
+      }
+    },
+    "bottom": {
+      "prefix": "©",
+      "suffix": "AchiDigital. All rights reserved."
+    }
+  },
+ "about": {
+    "hero": {
+      "titlePrefix": "About",
+      "titleAccent": "AchiDigital",
+      "titleSuffix": "",
+      "description": "We build modern websites with an engineering mindset focused on clarity, performance, and long-term growth."
+    },
+    "entity": {
+      "heading": "Official Entity Definition"
+    },
+    "links": {
+      "services": {
+        "label": "Explore Services",
+        "aria": "Go to the services page"
+      },
+      "contact": {
+        "label": "Contact",
+        "aria": "Jump to the contact section"
+      }
+    },
+    "sections": {
+      "different": {
+        "h2": "What Makes Us Different",
+        "items": {
+          "a": {
+            "h3": "Strategy Before Design",
+            "p": "We align structure, messaging, and intent before polishing visuals so the final result makes sense to users and search engines."
+          },
+          "b": {
+            "h3": "Performance Before Effects",
+            "p": "We protect Core Web Vitals and real loading speed. Motion is allowed only when it stays lightweight and SEO-safe."
+          },
+          "c": {
+            "h3": "SEO-Safe Engineering",
+            "p": "We build clean semantics, stable routing, and indexable content no hidden text, no risky hacks, no fragile dependencies."
+          },
+          "d": {
+            "h3": "Long-Term Growth Mindset",
+            "p": "We design systems that can scale: multilingual-ready, maintainable, and easy to expand without rebuilding everything."
+          }
+        }
+      },
+      "philosophy": {
+        "h2": "We Don’t Build Websites - We Build Growth Systems",
+        "p": "A website should not be a static brochure. It should guide decisions, communicate trust, and support visibility across search and user journeys. That requires strong architecture, clarity, and ongoing refinement not just a one-time design."
+      },
+      "responsible": {
+        "h2": "Our Responsible Approach",
+        "tag": "Trust • Privacy • SEO-Safe",
+        "p": "We use modern tools responsibly and professionally. We don’t use tactics that compromise trust, privacy, or indexing integrity.",
+        "items": {
+          "a": "No cloaking. Google and users see the same core content.",
+          "b": "No dynamic SEO text swapping or keyword manipulation.",
+          "c": "Privacy-first mindset with careful handling of data and tracking.",
+          "d": "Human oversight on decisions that affect messaging, quality, and accuracy."
+        }
+      }
+    }
+  },
   "home": {
     "hero": {
       "kicker": "Digital Agency • SEO-First • Performance Engineered",
@@ -189,7 +289,7 @@
         "kicker": "Websites Are No Longer Pages. They Are Intelligent Systems.",
         "subtitle": "AI Website Development That Performs on Google, AI Search Engines, and Real Users",
         "p1": "In 2026, websites are no longer static brochures or design projects. They are intelligent digital systems that must perform across multiple surfaces: Google Search, AI answers (ChatGPT, Gemini, Perplexity), paid traffic, and real user journeys.",
-        "p2": "We design and develop custom, AI-ready, SEO-safe websites that load fast, rank reliably, are correctly interpreted by AI engines, and convert visitors into customers — without templates, shortcuts, or risky automation.",
+        "p2": "We design and develop custom, AI-ready, SEO-safe websites that load fast, rank reliably, are correctly interpreted by AI engines, and convert visitors into customers without templates, shortcuts, or risky automation.",
         "p3": "Your website becomes the foundation that everything else depends on."
       },
       "problem": {
@@ -305,8 +405,8 @@
       "hero": {
         "kicker": "SEO Is Still the Foundation of Online Visibility",
         "subtitle": "Search Engine Optimization That Drives Rankings, Traffic, and Qualified Leads",
-        "p1": "Search engines remain the primary source of high-intent traffic. In 2026, SEO is no longer about tricks or shortcuts — it is about technical excellence, authoritative content, and performance-driven user experience.",
-        "p2": "We deliver professional SEO services that improve search visibility, build long-term authority, and generate qualified traffic that converts — while creating a strong foundation for AI search, GEO, and answer engines.",
+        "p1": "Search engines remain the primary source of high-intent traffic. In 2026, SEO is no longer about tricks or shortcuts it is about technical excellence, authoritative content, and performance-driven user experience.",
+        "p2": "We deliver professional SEO services that improve search visibility, build long-term authority, and generate qualified traffic that converts - while creating a strong foundation for AI search, GEO, and answer engines.",
         "p3": ""
       },
       "problem": {
@@ -339,7 +439,7 @@
         "h2": "Why Our SEO Services Are Different",
         "blocks": {
           "a": { "title": "Technical SEO as the Base Layer", "body": "We start with speed, Core Web Vitals, crawlability, indexing, and architecture." },
-          "b": { "title": "Intent-Driven Content Strategy", "body": "We optimize for how real users search, compare, and decide — not just keywords." },
+          "b": { "title": "Intent-Driven Content Strategy", "body": "We optimize for how real users search, compare, and decide not just keywords." },
           "c": { "title": "Performance and UX Matter", "body": "Fast, usable, mobile-first experiences are rewarded by search engines." },
           "d": { "title": "SEO That Supports AI Search", "body": "Structure, schema planning, and authority help AI engines understand and trust your brand." },
           "e": { "title": "Long-Term, Ethical SEO", "body": "No shortcuts, no spam, no risky tactics. Built to last." }
@@ -393,7 +493,7 @@
         "kicker": "Search Is No Longer Just Google",
         "subtitle": "Get Discovered, Cited, and Recommended by AI Search Engines",
         "p1": "In 2026, users increasingly discover businesses through AI-powered search engines such as ChatGPT, Google Gemini, Perplexity, and AI Overviews.",
-        "p2": "These systems do not simply rank websites — they interpret, summarize, and recommend information.",
+        "p2": "These systems do not simply rank websites, they interpret, summarize, and recommend information.",
         "p3": "We ensure your brand is correctly understood, trusted, and cited by AI engines while remaining aligned with traditional SEO best practices."
       },
       "problem": {
@@ -419,12 +519,12 @@
       },
       "whatIs": {
         "h2": "What Is GEO & LLM Search Optimization",
-        "p": "GEO focuses on how AI systems interpret and present information. LLM Search Optimization ensures models recognize your brand as consistent and reference-worthy — improving AI answers, citations, and recommendations."
+        "p": "GEO focuses on how AI systems interpret and present information. LLM Search Optimization ensures models recognize your brand as consistent and reference-worthy improving AI answers, citations, and recommendations."
       },
       "whyDifferent": {
         "h2": "Why Our GEO & LLM Optimization Is Different",
         "blocks": {
-          "a": { "title": "Built on SEO, Not Replacing It", "body": "AI visibility depends on strong SEO foundations — we build on them." },
+          "a": { "title": "Built on SEO, Not Replacing It", "body": "AI visibility depends on strong SEO foundations - we build on them." },
           "b": { "title": "Entity and Authority Focus", "body": "Clear entity definitions and expertise signals reduce AI confusion." },
           "c": { "title": "Citation-Friendly Structure", "body": "Formatting and structure increase the likelihood of being cited." },
           "d": { "title": "Consistency Across AI Surfaces", "body": "We align on-site and off-site brand signals to avoid hallucinated descriptions." },
@@ -477,8 +577,8 @@
       "hero": {
         "kicker": "Visibility Is No Longer Only About Rankings",
         "subtitle": "Answer Engine Optimization That Makes Your Brand the Direct Answer",
-        "p1": "Users increasingly expect instant, direct answers — through featured snippets, AI Overviews, voice assistants, and conversational interfaces.",
-        "p2": "We position your content as the preferred answer source so your brand appears clearly and authoritatively where decisions are made — even when users do not click.",
+        "p1": "Users increasingly expect instant, direct answers through featured snippets, AI Overviews, voice assistants, and conversational interfaces.",
+        "p2": "We position your content as the preferred answer source so your brand appears clearly and authoritatively where decisions are made even when users do not click.",
         "p3": ""
       },
       "problem": {
@@ -504,7 +604,7 @@
       },
       "whatIs": {
         "h2": "What Is Answer Engine Optimization",
-        "p": "AEO structures content so search engines and AI systems can extract, validate, and display direct answers — across snippets, AI Overviews, voice search, and zero-click results."
+        "p": "AEO structures content so search engines and AI systems can extract, validate, and display direct answers across snippets, AI Overviews, voice search, and zero-click results."
       },
       "whyDifferent": {
         "h2": "Why Our AEO Services Are Different",
@@ -562,7 +662,7 @@
         "kicker": "AI Should Improve How Your Business Operates",
         "subtitle": "Advanced AI Integrations and Automation That Reduce Manual Work and Increase Efficiency",
         "p1": "AI is not only about visibility and search. When implemented correctly, it becomes an operational advantage that improves efficiency, decision-making, and customer experience.",
-        "p2": "We design and implement AI integrations and automation systems that connect your website, tools, and data into intelligent workflows — reducing manual effort and enabling scalable growth.",
+        "p2": "We design and implement AI integrations and automation systems that connect your website, tools, and data into intelligent workflows reducing manual effort and enabling scalable growth.",
         "p3": ""
       },
       "problem": {
@@ -588,7 +688,7 @@
       },
       "whatIs": {
         "h2": "What Are Advanced AI Integrations and Automation",
-        "p": "This service connects AI models, APIs, and business systems to automate tasks, enhance decisions, and personalize interactions — including agents, workflow automation, lead routing, support automation, and decision systems."
+        "p": "This service connects AI models, APIs, and business systems to automate tasks, enhance decisions, and personalize interactions including agents, workflow automation, lead routing, support automation, and decision systems."
       },
       "whyDifferent": {
         "h2": "Why Our AI Automation Services Are Different",
@@ -726,7 +826,7 @@
 
     "toast": {
       "title": "Message sent",
-      "description": "Thanks — we’ll reply by email soon."
+      "description": "Thanks! we’ll reply soon."
     },
 
     "schema": {

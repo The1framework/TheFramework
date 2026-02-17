@@ -306,7 +306,7 @@ export function Contact() {
               <h3 className="font-semibold mb-3">{t("contact.business.title") as string}</h3>
               <div className="text-sm text-muted-foreground space-y-1">
                 <p className="text-foreground font-medium">{t("contact.business.name") as string}</p>
-                <p>{t("contact.business.entityLine") as string}</p>
+                <p>{t("entity.definition") as string}</p>
                 <p>{t("contact.business.areaServed") as string}</p>
               </div>
             </div>
@@ -364,6 +364,7 @@ export function Contact() {
               "@type": "Organization",
               name: t("contact.schema.orgName") as string,
               url: t("contact.schema.url") as string,
+              description: t("entity.definition") as string,
               email: t("contact.business.emailValue") as string,
               telephone: t("contact.business.phoneValue") as string,
               areaServed: t("contact.schema.areaServed") as string,

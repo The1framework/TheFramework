@@ -31,6 +31,192 @@
       "closeMenu": "Fermer le menu"
     }
   },
+  "entity": {
+    "definition": "ACHIdigital est une agence digitale axée sur une architecture SEO‑first, la performance et la visibilité long terme."
+  },
+  "footer": {
+    "aria": {
+      "footer": "Pied de page"
+    },
+    "brand": {
+      "homeAria": "Aller à l’accueil",
+      "namePrefix": "Achi",
+      "nameAccent": "Digital",
+      "description": "Un studio orienté crédibilité pour l’ingénierie web moderne et la visibilité."
+    },
+    "columns": {
+      "company": { "title": "Entreprise", "aria": "Liens entreprise" },
+      "legal": { "title": "Mentions légales", "aria": "Liens légaux" }
+    },
+    "links": {
+      "company": {
+        "home": { "label": "Accueil" },
+        "about": { "label": "À propos" },
+        "services": { "label": "Services" },
+        "contact": { "label": "Contact" }
+      },
+      "legal": {
+        "privacy": { "label": "Politique de confidentialité", "href": "/privacy-policy" },
+        "terms": { "label": "Conditions d’utilisation", "href": "/terms-of-service" },
+        "cookies": { "label": "Politique des cookies", "href": "/cookie-policy" }
+      },
+      "social": {
+        "twitter": { "href": "https://twitter.com", "aria": "Ouvrir Twitter" },
+        "linkedin": { "href": "https://linkedin.com", "aria": "Ouvrir LinkedIn" },
+        "github": { "href": "https://github.com", "aria": "Ouvrir GitHub" },
+        "instagram": { "href": "https://instagram.com", "aria": "Ouvrir Instagram" }
+      }
+    },
+    "bottom": {
+      "prefix": "©",
+      "suffix": "AchiDigital. Tous droits réservés."
+    }
+  },
+  "about": {
+    "hero": {
+      "kicker": "À propos",
+      "titlePrefix": "Conçu pour la",
+      "titleAccent": "confiance",
+      "titleSuffix": "et la clarté",
+      "description": "Une vue d’ensemble courte et factuelle de qui nous sommes et comment nous travaillons."
+    },
+    "entity": {
+      "heading": "Définition officielle de l’entité"
+    },
+    "sections": {
+      "who": {
+        "h2": "Qui nous sommes",
+        "p": "Nous construisons des sites professionnels comme des systèmes durables—rapides, fiables et faits pour évoluer. Clarté, structure et résultats mesurables."
+      },
+      "beliefs": {
+        "h2": "Ce que nous croyons",
+        "items": {
+          "a": { "h3": "Clarté avant complexité", "p": "Une structure simple facilite SEO, UX et maintenance." },
+          "b": { "h3": "La performance, c’est la confiance", "p": "Vitesse et stabilité protègent crédibilité et conversion." },
+          "c": { "h3": "SEO‑safe par conception", "p": "Hiérarchie sémantique et navigation crawlable—sans artifices." }
+        }
+      },
+      "different": {
+        "h2": "Ce qui nous distingue",
+        "items": {
+          "a": { "h3": "Exécution orientée ingénierie", "p": "Nous traitons le site comme une infrastructure critique." },
+          "b": { "h3": "Fondations orientées conversion", "p": "La structure soutient leads et parcours clairs." },
+          "c": { "h3": "Systèmes maintenables", "p": "Moins de dette technique, itérations prévisibles." },
+          "d": { "h3": "Pensé pour le multilingue", "p": "Expériences EN/FR/AR cohérentes et stables." }
+        }
+      },
+      "standards": {
+        "h2": "Qualité & standards",
+        "p": "Un site professionnel doit être stable, sécurisé et mesurable. Nos standards sont la base :",
+        "items": {
+          "a": "Discipline performance (Core Web Vitals)",
+          "b": "SEO technique (crawlabilité et indexabilité)",
+          "c": "UX avec accessibilité en tête",
+          "d": "Hygiène sécurité et formulaires renforcés",
+          "e": "Privacy‑first et suivi basé sur le consentement"
+        }
+      }
+    },
+    "missionVision": {
+      "h2": "Mission & Vision",
+      "mission": { "h3": "Mission", "p": "Fournir des bases digitales durables pour la croissance et la visibilité." },
+      "vision": { "h3": "Vision", "p": "Aider les entreprises à rester compréhensibles et trouvables dans la recherche IA." }
+    },
+    "story": {
+      "h2": "Notre histoire",
+      "p1": "Placeholder : un paragraphe d’origine et de focus (factuel).",
+      "p2": "Placeholder : un paragraphe d’évolution (sans liste de services)."
+    },
+    "different": {
+      "h2": "Ce qui nous distingue",
+      "cards": {
+        "a": { "h3": "Message entity‑first", "p": "Placeholder : langage clair pour humains et machines." },
+        "b": { "h3": "Architecture SEO‑first", "p": "Placeholder : structure faite pour être comprise." },
+        "c": { "h3": "Discipline performance", "p": "Placeholder : rapidité qui protège la conversion." },
+        "d": { "h3": "Qualité d’ingénierie", "p": "Placeholder : livraisons prévisibles et maintenables." },
+        "e": { "h3": "IA responsable", "p": "Placeholder : contrôle humain et garde‑fous mesurables." },
+        "f": { "h3": "Vision long terme", "p": "Placeholder : systèmes pensés pour durer." }
+      }
+    },
+    "growthSystems": {
+      "h2": "Philosophie des systèmes de croissance",
+      "kicker": "Philosophie",
+      "quote": "Nous ne construisons pas des sites — nous construisons des systèmes de croissance",
+      "supporting": "Placeholder : stratégie, ingénierie et visibilité comme un seul système.",
+      "chapters": {
+        "a": { "h3": "Positionnement et clarté d’entité", "p": "Placeholder : définitions qui réduisent l’ambiguïté." },
+        "b": { "h3": "Architecture de l’information", "p": "Placeholder : structure lisible pour utilisateurs et search." },
+        "c": { "h3": "Performance = confiance", "p": "Placeholder : vitesse et fiabilité renforcent la crédibilité." },
+        "d": { "h3": "Mesure et itération", "p": "Placeholder : décisions guidées par des signaux." }
+      }
+    },
+    "responsibleAi": {
+      "h2": "Approche IA responsable",
+      "lead": "Placeholder : l’IA sert la qualité et la vitesse, sans masquer ni tromper.",
+      "items": {
+        "a": { "h3": "Responsabilité humaine", "p": "Placeholder : validation et décisions finales par des personnes." },
+        "b": { "h3": "Sécurité et confidentialité", "p": "Placeholder : données contrôlées et minimisées." },
+        "c": { "h3": "Transparence", "p": "Placeholder : traçabilité et explications." },
+        "d": { "h3": "Contrôles de sécurité", "p": "Placeholder : validation, monitoring, rollback." }
+      }
+    },
+    "audiences": {
+      "h2": "Avec qui nous travaillons",
+      "items": {
+        "a": "Fondateurs et direction",
+        "b": "Équipes produit et engineering",
+        "c": "Équipes marketing et growth",
+        "d": "Cabinets et services professionnels",
+        "e": "Marques e‑commerce",
+        "f": "SaaS et produits digitaux"
+      }
+    },
+    "principles": {
+      "h2": "Notre approche pour chaque projet",
+      "lead": "Vue par principes (sans étapes détaillées).",
+      "items": {
+        "a": { "h3": "Clarté avant complexité", "p": "Placeholder : le simple tient dans le temps." },
+        "b": { "h3": "Compréhension par la recherche", "p": "Placeholder : contenu et structure interprétables." },
+        "c": { "h3": "Performance par défaut", "p": "Placeholder : vitesse et stabilité comme base." },
+        "d": { "h3": "Accessibilité et UX", "p": "Placeholder : inclusif dès la conception." },
+        "e": { "h3": "Culture sécurité", "p": "Placeholder : réduire le risque par des standards." },
+        "f": { "h3": "Maintenabilité", "p": "Placeholder : changements futurs abordables." }
+      }
+    },
+    "standards": {
+      "h2": "Qualité, sécurité & standards d’ingénierie",
+      "lead": "Placeholder : résumé orienté confiance sur nos standards de qualité.",
+      "items": {
+        "a": { "h3": "Contrôle de version", "p": "Placeholder : changements traçables et revus." },
+        "b": { "h3": "Stratégie de tests", "p": "Placeholder : validation des parcours critiques." },
+        "c": { "h3": "Budgets performance", "p": "Placeholder : objectifs mesurables de vitesse." },
+        "d": { "h3": "Paramètres sûrs", "p": "Placeholder : configurations sécurisées et moindre privilège." },
+        "e": { "h3": "Prêt pour le monitoring", "p": "Placeholder : observabilité pour la production." }
+      }
+    },
+    "leadership": {
+      "h2": "Leadership & expertise",
+      "items": {
+        "a": { "h3": "Leadership technique", "p": "Placeholder : architecture et supervision engineering." },
+        "b": { "h3": "Stratégie search & contenu", "p": "Placeholder : clarté d’entité et découvrabilité." },
+        "c": { "h3": "Vision produit", "p": "Placeholder : contraintes et résultats mesurables." }
+      }
+    },
+    "partnership": {
+      "h2": "Partenariat long terme",
+      "p1": "Placeholder : penser évolution, pas projet unique.",
+      "p2": "Placeholder : documentation, handoff et itération."
+    },
+    "cta": {
+      "h2": "Discutons quand vous êtes prêt",
+      "lead": "Points d’entrée sans pression pour une question ou un alignement rapide.",
+      "links": {
+        "conversation": { "label": "Démarrer une conversation", "aria": "Démarrer une conversation" },
+        "strategyCall": { "label": "Demander un appel stratégique", "aria": "Demander un appel stratégique" },
+        "team": { "label": "Parler à l’équipe", "aria": "Envoyer un email à l’équipe" }
+      }
+    }
+  },
   "home": {
     "hero": {
       "h1": "Agence de Développement Web IA & Croissance Digitale",

@@ -8,6 +8,7 @@ import Index from "./pages/Index"
 import NotFound from "./pages/NotFound"
 import Services from "./pages/Services"
 import ServiceSlug from "./pages/ServiceSlug"
+import About from "./pages/About"
 import LangRouter, { useLangRouter } from "@/routing/LangRouter"
 import { localeRoot } from "@/i18n/runtime"
 
@@ -19,6 +20,9 @@ function RoutedApp() {
   return (
     <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
       <Route path="/" element={<Index locale={locale} t={t} />} />
+
+      {/* About (entity + E-E-A-T) */}
+      <Route path="/about" element={<About locale={locale} t={t} />} />
 
       {/* Services listing (SEO core list, no details) */}
       <Route path="/services" element={<Services locale={locale} t={t} />} />

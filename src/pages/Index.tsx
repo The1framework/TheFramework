@@ -35,7 +35,6 @@ logoSrc: "AchiDigital.jpeg",
       <main>
         <Hero />
         <About />
-        <Services />
         <ProcessTimeline />
         <FAQ />
         <Contact />
