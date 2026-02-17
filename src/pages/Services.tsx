@@ -41,11 +41,7 @@ type ServiceItem = {
 }
 
 const SERVICES: ServiceItem[] = [
-  {
-    key: "aiWebsiteDev",
-    href: "/services/ai-website-development",
-    icon: Cpu,
-  },
+ 
   {
     key: "fullStackDev",
     href: "/services/full-stack-web-app-development",

@@ -1,10 +1,11 @@
 // src/components/layout/Header.tsx
+import type React from "react"
 import { useEffect, useId, useMemo, useState } from "react"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { buildSwitchLocaleHref } from "@/utils/langRouting"
-import { useLocation, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 type HeaderProps = {
   t: (key: string) => string
@@ -38,11 +39,16 @@ function localePrefix(locale: HeaderProps["locale"]) {
   return ""
 }
 
-function hrefFor(locale: HeaderProps["locale"], path: string) {
+/**
+ * IMPORTANT:
+ * - React Router already handles basename={import.meta.env.BASE_URL}
+ * - So internal Link "to" MUST NOT include BASE_URL (/ACHI)
+ */
+function routerTo(locale: HeaderProps["locale"], path: string) {
   const pref = localePrefix(locale)
   const p = path.startsWith("/") ? path : `/${path}`
-  const full = `${pref}${p}` || "/"
-  return withBase(full === "/en" ? "/" : full)
+  const full = `${pref}${p}`
+  return full === "/en" ? "/" : full
 }
 
 export function Header({
@@ -76,7 +82,8 @@ export function Header({
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const isHome = location.pathname === "/" || location.pathname === "/fr" || location.pathname === "/lb"
+  const normalizedPath = useMemo(() => location.pathname.replace(/\/$/, "") || "/", [location.pathname])
+  const isHome = normalizedPath === "/" || normalizedPath === "/fr" || normalizedPath === "/lb"
 
   const currentFull = useMemo(() => {
     return window.location.pathname + (window.location.search || "") + (window.location.hash || "")
@@ -86,51 +93,53 @@ export function Header({
   const langHrefFr = useMemo(() => buildSwitchLocaleHref("fr", currentFull), [currentFull])
   const langHrefLb = useMemo(() => buildSwitchLocaleHref("lb", currentFull), [currentFull])
 
-  const homePath = hrefFor(locale, "/")
+  const homeTo = routerTo(locale, "/")
 
   const scrollToContact = () => {
     const targetId = "contact"
     let tries = 0
-    const maxTries = 30
+    const maxTries = 60
 
     const tick = () => {
       const el = document.getElementById(targetId)
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" })
+        el.scrollIntoView({ behavior: "auto", block: "start" })
         return
       }
       tries += 1
-      if (tries < maxTries) {
-        window.requestAnimationFrame(tick)
-      }
+      if (tries < maxTries) window.requestAnimationFrame(tick)
     }
 
     window.requestAnimationFrame(tick)
   }
 
+  // When URL becomes ...#contact (either on home already or after navigation), jump immediately
+  useEffect(() => {
+    if (location.hash === "#contact") scrollToContact()
+  }, [location.hash, location.pathname])
+
   const onContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     setIsMenuOpen(false)
+    setIsServicesOpen(false)
 
     if (isHome) {
-      history.replaceState(null, "", "#contact")
+      if (location.hash !== "#contact") history.replaceState(null, "", "#contact")
       scrollToContact()
       return
     }
 
-    navigate(`${homePath}#contact`, { replace: false })
-    scrollToContact()
+    navigate(`${homeTo}#contact`)
   }
 
   const nav = [
-    { key: "home", href: hrefFor(locale, "/"), labelKey: "header.nav.home" },
-    { key: "about", href: hrefFor(locale, "/about"), labelKey: "header.nav.about" },
-    { key: "services", href: hrefFor(locale, "/services"), labelKey: "header.nav.services" },
-    { key: "contact", href: `${homePath}#contact`, labelKey: "header.nav.contact" },
+    { key: "home", to: routerTo(locale, "/"), labelKey: "header.nav.home" },
+    { key: "about", to: routerTo(locale, "/about"), labelKey: "header.nav.about" },
+    { key: "services", to: routerTo(locale, "/services"), labelKey: "header.nav.services" },
   ] as const
 
-  const ctaHref = `${homePath}#contact`
-  const homeHref = brand.homeHref ? withBase(brand.homeHref) : hrefFor(locale, "/")
+  const ctaHref = `${withBase(homeTo)}#contact`
+  const homeHref = brand.homeHref ? withBase(brand.homeHref) : withBase(homeTo)
 
   const openServices = () => setIsServicesOpen(true)
   const closeServices = () => setIsServicesOpen(false)
@@ -145,7 +154,8 @@ export function Header({
       )}
     >
       <nav aria-label={t("header.aria.mainNav")} className="flex items-center justify-between gap-3">
-        <a href={homeHref} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
+        {/* Brand / Logo */}
+        <Link to={homeTo} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
           <div className="w-10 h-10 rounded-xl bg-primary neon-glow overflow-hidden transition-transform group-hover:scale-110">
             {brand.logoSrc ? (
               <img
@@ -165,31 +175,33 @@ export function Header({
           </div>
 
           <span className="font-display font-bold text-xl text-foreground">{brand.name}</span>
-        </a>
+        </Link>
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1" aria-label={t("header.aria.desktopNav")}>
           <ul className="flex items-center gap-1" role="list">
             <li>
-              <a
-                href={nav[0].href}
+              <Link
+                to={nav[0].to}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
                 {t(nav[0].labelKey)}
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href={nav[1].href}
+              <Link
+                to={nav[1].to}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
                 {t(nav[1].labelKey)}
-              </a>
+              </Link>
             </li>
 
+            {/* Services: hover dropdown + click opens /services */}
             <li className="relative" onMouseEnter={openServices} onMouseLeave={closeServices}>
-              <a
-                href={nav[2].href}
+              <Link
+                to={nav[2].to}
                 className={cn(
                   "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
                   isServicesOpen && "text-foreground"
@@ -201,7 +213,7 @@ export function Header({
               >
                 {t("header.nav.services")}
                 <ChevronDown className="w-4 h-4" aria-hidden="true" />
-              </a>
+              </Link>
 
               <div
                 id={servicesMenuId}
@@ -215,14 +227,14 @@ export function Header({
                 <ul className="p-2" role="list">
                   {servicesDropdown.map((item) => (
                     <li key={item.href}>
-                      <a
+                      <Link
                         role="menuitem"
-                        href={hrefFor(locale, item.href)}
+                        to={routerTo(locale, item.href)}
                         className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
                         onClick={() => setIsServicesOpen(false)}
                       >
                         {t(item.labelKey)}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -231,16 +243,17 @@ export function Header({
 
             <li>
               <a
-                href={nav[3].href}
+                href={`${homeHref}#contact`}
                 onClick={onContactClick}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
-                {t(nav[3].labelKey)}
+                {t("header.nav.contact")}
               </a>
             </li>
           </ul>
         </div>
 
+        {/* Right cluster: CTA + Language */}
         <div className="hidden md:flex items-center gap-3">
           <Button asChild variant="hero" size="default">
             <a href={ctaHref} onClick={onContactClick}>
@@ -284,6 +297,7 @@ export function Header({
           </div>
         </div>
 
+        {/* Mobile: CTA + Hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <Button asChild variant="hero" size="sm">
             <a href={ctaHref} onClick={onContactClick}>
@@ -303,6 +317,7 @@ export function Header({
         </div>
       </nav>
 
+      {/* Mobile menu */}
       <div
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300",
@@ -312,60 +327,58 @@ export function Header({
       >
         <div className="flex flex-col gap-2 pb-4">
           <ul className="flex flex-col gap-1" role="list" aria-label={t("header.aria.mobileNav")}>
-            {nav.map((item) => {
-              if (item.key === "services") {
-                return (
-                  <li key={item.key} className="rounded-xl border border-white/10 bg-muted/10">
-                    <a
-                      href={item.href}
-                      className="flex items-center justify-between px-4 py-3 text-muted-foreground hover:text-foreground transition-colors font-medium"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {t(item.labelKey)}
-                    </a>
+            <li>
+              <Link
+                to={nav[0].to}
+                className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(nav[0].labelKey)}
+              </Link>
+            </li>
 
-                    <div className="px-2 pb-2">
-                      {servicesDropdown.map((s) => (
-                        <a
-                          key={s.href}
-                          href={hrefFor(locale, s.href)}
-                          className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/30 transition-colors"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {t(s.labelKey)}
-                        </a>
-                      ))}
-                    </div>
-                  </li>
-                )
-              }
+            <li>
+              <Link
+                to={nav[1].to}
+                className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(nav[1].labelKey)}
+              </Link>
+            </li>
 
-              if (item.key === "contact") {
-                return (
-                  <li key={item.key}>
-                    <a
-                      href={item.href}
-                      onClick={onContactClick}
-                      className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                    >
-                      {t(item.labelKey)}
-                    </a>
-                  </li>
-                )
-              }
+            <li className="rounded-xl border border-white/10 bg-muted/10">
+              <Link
+                to={nav[2].to}
+                className="flex items-center justify-between px-4 py-3 text-muted-foreground hover:text-foreground transition-colors font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t(nav[2].labelKey)}
+              </Link>
 
-              return (
-                <li key={item.key}>
-                  <a
-                    href={item.href}
-                    className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+              <div className="px-2 pb-2">
+                {servicesDropdown.map((s) => (
+                  <Link
+                    key={s.href}
+                    to={routerTo(locale, s.href)}
+                    className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/30 transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {t(item.labelKey)}
-                  </a>
-                </li>
-              )
-            })}
+                    {t(s.labelKey)}
+                  </Link>
+                ))}
+              </div>
+            </li>
+
+            <li>
+              <a
+                href={`${homeHref}#contact`}
+                onClick={onContactClick}
+                className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+              >
+                {t("header.nav.contact")}
+              </a>
+            </li>
           </ul>
 
           <div className="pt-2 flex items-center justify-between px-2">
