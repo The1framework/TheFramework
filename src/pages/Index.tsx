@@ -3,7 +3,6 @@ import { useEffect } from "react"
 import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
-import { Services } from "@/components/sections/Services"
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline"
 import { FAQ } from "@/components/sections/FAQ"
 import { Contact } from "@/components/sections/Contact"
@@ -21,26 +20,25 @@ export default function Index({ locale, t }: IndexProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-     <Header
-       locale={locale}
-       t={t}
-       brand={{
-       name: "AchiDigital",
-logoSrc: "AchiDigital.jpeg",
-       logoAltKey: "header.brand.logoAlt",
-      }}
+      <Header
+        locale={locale}
+        t={t}
+        brand={{
+          name: "AchiDigital",
+          logoSrc: "/AchiDigital.jpeg",
+          logoAltKey: "header.brand.logoAlt"
+        }}
       />
-
 
       <main>
         <Hero />
-        <About />
+        <About t={t} />
         <ProcessTimeline />
         <FAQ />
         <Contact />
       </main>
 
-      <Footer />
+      <Footer locale={locale} t={t} />
     </div>
   )
 }

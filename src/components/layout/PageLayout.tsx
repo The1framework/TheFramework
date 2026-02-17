@@ -11,20 +11,20 @@ type Props = {
 
 export function PageLayout({ locale, t, children }: Props) {
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
       <Header
         locale={locale}
         t={t}
         brand={{
-          name: "ACHIdigital",
+          name: "AchiDigital",
           logoSrc: "/AchiDigital.jpeg",
-          logoAltKey: "header.brand.logoAlt",
+          logoAltKey: "header.brand.logoAlt"
         }}
       />
 
-      {children}
+      <main>{children}</main>
 
       <Footer locale={locale} t={t} />
-    </>
+    </div>
   )
 }

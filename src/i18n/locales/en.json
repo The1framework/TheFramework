@@ -31,45 +31,77 @@
       "closeMenu": "Close menu"
     }
   },
+   "aboutSection": {
+    "header": {
+      "kicker": "About",
+      "titlePrefix": "Built for",
+      "titleAccent": "Performance",
+      "titleSuffix": "",
+      "description": "Minimal, SEO-safe, and performance-first websites with premium design details that stay lightweight."
+    },
+    "focus": {
+      "title": "Our Focus",
+      "description": "Strategy before visuals, performance before effects, and clarity before complexity so your site stays fast, indexable, and scalable."
+    },
+    "chips": {
+      "a": "SEO-safe structure",
+      "b": "Core Web Vitals",
+      "c": "Clean semantics",
+      "d": "Long-term maintainability"
+    },
+    "values": {
+      "a": {
+        "title": "Mission-Driven",
+        "description": "We focus on measurable outcomes that align with your business goals."
+      },
+      "b": {
+        "title": "Innovation First",
+        "description": "We use modern web standards and smart systems to keep you ahead."
+      },
+      "c": {
+        "title": "Client-Centric",
+        "description": "We build long-term partnerships through clarity, delivery, and reliability."
+      },
+      "d": {
+        "title": "Growth Focused",
+        "description": "Every build is designed to scale — performance, SEO, and maintainability."
+      }
+    },
+    "footerLine": "Designed to feel premium. Built to stay lightweight, stable, and easy to evolve."
+  },
   "entity": {
     "definition": "ACHIdigital is a website development and digital growth agency specializing in high-performance, conversion-focused business websites."
   },
-  "footer": {
-    "aria": {
-      "footer": "Site footer"
-    },
+ "footer": {
     "brand": {
-      "homeAria": "Go to homepage",
-      "namePrefix": "Achi",
-      "nameAccent": "Digital",
-      "description": "A credibility-first studio for modern web engineering and search visibility."
+      "name": "AchiDigital",
+      "logoSrc": "/AchiDigital.jpeg",
+      "logoAlt": "AchiDigital logo",
+      "wordA": "Achi",
+      "wordB": "Digital",
+      "description": "Performance-driven digital services built for growth, visibility, and long-term scalability."
     },
     "columns": {
-      "company": { "title": "Company", "aria": "Company links" },
-      "legal": { "title": "Legal", "aria": "Legal links" }
-    },
-    "links": {
       "company": {
-        "home": { "label": "Home" },
-        "about": { "label": "About" },
-        "services": { "label": "Services" },
-        "contact": { "label": "Contact" }
+        "title": "Company",
+        "links": {
+          "home": "Home",
+          "about": "About",
+          "services": "Services"
+        }
       },
       "legal": {
-        "privacy": { "label": "Privacy Policy", "href": "/privacy-policy" },
-        "terms": { "label": "Terms of Service", "href": "/terms-of-service" },
-        "cookies": { "label": "Cookie Policy", "href": "/cookie-policy" }
-      },
-      "social": {
-        "twitter": { "href": "https://twitter.com", "aria": "Open Twitter" },
-        "linkedin": { "href": "https://linkedin.com", "aria": "Open LinkedIn" },
-        "github": { "href": "https://github.com", "aria": "Open GitHub" },
-        "instagram": { "href": "https://instagram.com", "aria": "Open Instagram" }
+        "title": "Legal",
+        "links": {
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "cookies": "Cookie Policy"
+        }
       }
     },
     "bottom": {
       "prefix": "©",
-      "suffix": "AchiDigital. All rights reserved."
+      "suffix": "All rights reserved."
     }
   },
  "about": {
