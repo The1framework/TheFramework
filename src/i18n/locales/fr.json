@@ -5,12 +5,18 @@
       "name": "AchiDigital"
     },
     "nav": { "home": "Accueil", "about": "À propos", "services": "Services", "blog": "Blog", "contact": "Contact" },
-    "services": {
-      "viewAll": "Voir tous les services",
-      "aiWebDev": "Développement Web IA",
-      "seoAi": "SEO & Visibilité IA",
-      "uiux": "Design UX/UI",
-      "performance": "Optimisation des performances"
+     "services": {
+      "aiWebDev": "Développement de sites web (IA)",
+      "fullStack": "Développement Web & Apps Full-Stack",
+      "performance": "Optimisation & Performance (Core Web Vitals)",
+      "uxui": "UX/UI Design & Expérience Utilisateur",
+      "seo": "Référencement Naturel (SEO)",
+      "geo": "Optimisation GEO & LLM (Visibilité IA)",
+      "aeo": "Optimisation pour les moteurs de réponse (AEO)",
+      "ppc": "Publicité Payante (PPC)",
+      "content": "Rédaction de contenu & écriture professionnelle",
+      "ecommerce": "Solutions E-commerce",
+      "aiAutomation": "Intégrations IA & Automatisation avancée"
     },
     "cta": { "primary": "Audit gratuit", "primaryShort": "Audit" },
     "lang": { "en": "EN", "fr": "FR", "lb": "AR" },

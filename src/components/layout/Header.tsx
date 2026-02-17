@@ -49,10 +49,15 @@ export function Header({
   locale,
   brand,
   servicesDropdown = [
-    { href: "/services/ai-website-development", labelKey: "header.services.aiWebDev" },
+    { href: "/services/full-stack-web-app-development", labelKey: "header.services.fullStack" },
+    { href: "/services/website-optimization-performance-engineering", labelKey: "header.services.performance" },
+    { href: "/services/ux-ui-design-user-experience", labelKey: "header.services.uxui" },
     { href: "/services/seo", labelKey: "header.services.seo" },
     { href: "/services/geo-llm-search-optimization", labelKey: "header.services.geo" },
     { href: "/services/answer-engine-optimization", labelKey: "header.services.aeo" },
+    { href: "/services/paid-advertising-ppc", labelKey: "header.services.ppc" },
+    { href: "/services/content-professional-writing", labelKey: "header.services.content" },
+    { href: "/services/ecommerce-solutions", labelKey: "header.services.ecommerce" },
     { href: "/services/ai-integrations-automation", labelKey: "header.services.aiAutomation" },
   ],
 }: HeaderProps) {
@@ -76,7 +81,7 @@ export function Header({
   const langHrefFr = useMemo(() => buildSwitchLocaleHref("fr", currentFull), [currentFull])
   const langHrefLb = useMemo(() => buildSwitchLocaleHref("lb", currentFull), [currentFull])
 
-   const nav = [
+  const nav = [
     { key: "home", href: hrefFor(locale, "/"), labelKey: "header.nav.home" },
     { key: "about", href: hrefFor(locale, "/about"), labelKey: "header.nav.about" },
     { key: "services", href: hrefFor(locale, "/services"), labelKey: "header.nav.services" },
@@ -84,7 +89,7 @@ export function Header({
     { key: "contact", href: hrefFor(locale, "/") + "#contact", labelKey: "header.nav.contact" },
   ] as const
 
-    // ✅ CTA should also go to the Home section anchor
+  // ✅ CTA should also go to the Home section anchor
   const ctaHref = hrefFor(locale, "/") + "#contact"
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : hrefFor(locale, "/")
 
@@ -149,57 +154,53 @@ export function Header({
               </a>
             </li>
 
-            {/* Services: hover dropdown + click opens /services */}
-            <li
-              className="relative"
-              onMouseEnter={openServices}
-              onMouseLeave={closeServices}
-            >
-              <a
-                href={nav[2].href}
-                className={cn(
-                  "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
-                  isServicesOpen && "text-foreground"
-                )}
-                aria-haspopup="menu"
-                aria-expanded={isServicesOpen}
-                aria-controls={servicesMenuId}
-                onFocus={openServices}
-                onBlur={(e) => {
-                  const next = e.relatedTarget as HTMLElement | null
-                  if (next && e.currentTarget.parentElement?.contains(next)) return
-                  closeServices()
-                }}
-              >
-                {t("header.nav.services")}
-                <ChevronDown className="w-4 h-4" aria-hidden="true" />
-              </a>
+          {/* Services: hover dropdown + click opens /services */}
+<li
+  className="relative"
+  onMouseEnter={openServices}
+  onMouseLeave={closeServices}
+>
+  <a
+    href={nav[2].href}
+    className={cn(
+      "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
+      isServicesOpen && "text-foreground"
+    )}
+    aria-haspopup="menu"
+    aria-expanded={isServicesOpen}
+    aria-controls={servicesMenuId}
+    onFocus={openServices}
+  >
+    {t("header.nav.services")}
+    <ChevronDown className="w-4 h-4" aria-hidden="true" />
+  </a>
 
-              <div
-                id={servicesMenuId}
-                role="menu"
-                aria-label={t("header.aria.servicesMenu")}
-                className={cn(
-                  "absolute left-0 mt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
-                  isServicesOpen ? "block" : "hidden"
-                )}
-              >
-                <ul className="p-2" role="list">
-                  {servicesDropdown.slice(0, 6).map((item) => (
-                    <li key={item.href}>
-                      <a
-                        role="menuitem"
-                        href={hrefFor(locale, item.href)}
-                        className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        {t(item.labelKey)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
+  <div
+    id={servicesMenuId}
+    role="menu"
+    aria-label={t("header.aria.servicesMenu")}
+    className={cn(
+      "absolute left-0 mt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
+      isServicesOpen ? "block" : "hidden"
+    )}
+  >
+    <ul className="p-2" role="list">
+      {servicesDropdown.map((item) => (
+        <li key={item.href}>
+          <a
+            role="menuitem"
+            href={hrefFor(locale, item.href)}
+            className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
+            onClick={() => setIsServicesOpen(false)}
+          >
+            {t(item.labelKey)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</li>
+
 
             <li>
               <a
@@ -209,8 +210,6 @@ export function Header({
                 {t(nav[3].labelKey)}
               </a>
             </li>
-
-       
           </ul>
         </div>
 
@@ -301,7 +300,7 @@ export function Header({
                     </a>
 
                     <div className="px-2 pb-2">
-                      {servicesDropdown.slice(0, 6).map((s) => (
+                      {servicesDropdown.map((s) => (
                         <a
                           key={s.href}
                           href={hrefFor(locale, s.href)}
