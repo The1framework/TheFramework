@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { buildSwitchLocaleHref } from "@/utils/langRouting"
+import { useLocation, useNavigate } from "react-router-dom"
 
 type HeaderProps = {
   t: (key: string) => string
@@ -65,6 +66,8 @@ export function Header({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const servicesMenuId = useId()
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24)
@@ -72,6 +75,8 @@ export function Header({
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const isHome = location.pathname === "/" || location.pathname === "/fr" || location.pathname === "/lb"
 
   const currentFull = useMemo(() => {
     return window.location.pathname + (window.location.search || "") + (window.location.hash || "")
@@ -81,16 +86,50 @@ export function Header({
   const langHrefFr = useMemo(() => buildSwitchLocaleHref("fr", currentFull), [currentFull])
   const langHrefLb = useMemo(() => buildSwitchLocaleHref("lb", currentFull), [currentFull])
 
+  const homePath = hrefFor(locale, "/")
+
+  const scrollToContact = () => {
+    const targetId = "contact"
+    let tries = 0
+    const maxTries = 30
+
+    const tick = () => {
+      const el = document.getElementById(targetId)
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" })
+        return
+      }
+      tries += 1
+      if (tries < maxTries) {
+        window.requestAnimationFrame(tick)
+      }
+    }
+
+    window.requestAnimationFrame(tick)
+  }
+
+  const onContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    setIsMenuOpen(false)
+
+    if (isHome) {
+      history.replaceState(null, "", "#contact")
+      scrollToContact()
+      return
+    }
+
+    navigate(`${homePath}#contact`, { replace: false })
+    scrollToContact()
+  }
+
   const nav = [
     { key: "home", href: hrefFor(locale, "/"), labelKey: "header.nav.home" },
     { key: "about", href: hrefFor(locale, "/about"), labelKey: "header.nav.about" },
     { key: "services", href: hrefFor(locale, "/services"), labelKey: "header.nav.services" },
-    // ✅ Contact should go to the Home section anchor
-    { key: "contact", href: hrefFor(locale, "/") + "#contact", labelKey: "header.nav.contact" },
+    { key: "contact", href: `${homePath}#contact`, labelKey: "header.nav.contact" },
   ] as const
 
-  // ✅ CTA should also go to the Home section anchor
-  const ctaHref = hrefFor(locale, "/") + "#contact"
+  const ctaHref = `${homePath}#contact`
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : hrefFor(locale, "/")
 
   const openServices = () => setIsServicesOpen(true)
@@ -106,12 +145,7 @@ export function Header({
       )}
     >
       <nav aria-label={t("header.aria.mainNav")} className="flex items-center justify-between gap-3">
-        {/* Brand / Logo */}
-        <a
-          href={homeHref}
-          className="flex items-center gap-2 group min-w-[160px]"
-          aria-label={t("header.aria.homeLink")}
-        >
+        <a href={homeHref} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
           <div className="w-10 h-10 rounded-xl bg-primary neon-glow overflow-hidden transition-transform group-hover:scale-110">
             {brand.logoSrc ? (
               <img
@@ -133,7 +167,6 @@ export function Header({
           <span className="font-display font-bold text-xl text-foreground">{brand.name}</span>
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1" aria-label={t("header.aria.desktopNav")}>
           <ul className="flex items-center gap-1" role="list">
             <li>
@@ -154,57 +187,52 @@ export function Header({
               </a>
             </li>
 
-          {/* Services: hover dropdown + click opens /services */}
-<li
-  className="relative"
-  onMouseEnter={openServices}
-  onMouseLeave={closeServices}
->
-  <a
-    href={nav[2].href}
-    className={cn(
-      "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
-      isServicesOpen && "text-foreground"
-    )}
-    aria-haspopup="menu"
-    aria-expanded={isServicesOpen}
-    aria-controls={servicesMenuId}
-    onFocus={openServices}
-  >
-    {t("header.nav.services")}
-    <ChevronDown className="w-4 h-4" aria-hidden="true" />
-  </a>
+            <li className="relative" onMouseEnter={openServices} onMouseLeave={closeServices}>
+              <a
+                href={nav[2].href}
+                className={cn(
+                  "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
+                  isServicesOpen && "text-foreground"
+                )}
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
+                aria-controls={servicesMenuId}
+                onFocus={openServices}
+              >
+                {t("header.nav.services")}
+                <ChevronDown className="w-4 h-4" aria-hidden="true" />
+              </a>
 
-  <div
-    id={servicesMenuId}
-    role="menu"
-    aria-label={t("header.aria.servicesMenu")}
-    className={cn(
-      "absolute left-0 mt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
-      isServicesOpen ? "block" : "hidden"
-    )}
-  >
-    <ul className="p-2" role="list">
-      {servicesDropdown.map((item) => (
-        <li key={item.href}>
-          <a
-            role="menuitem"
-            href={hrefFor(locale, item.href)}
-            className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
-            onClick={() => setIsServicesOpen(false)}
-          >
-            {t(item.labelKey)}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</li>
-
+              <div
+                id={servicesMenuId}
+                role="menu"
+                aria-label={t("header.aria.servicesMenu")}
+                className={cn(
+                  "absolute left-0 mt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
+                  isServicesOpen ? "block" : "hidden"
+                )}
+              >
+                <ul className="p-2" role="list">
+                  {servicesDropdown.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        role="menuitem"
+                        href={hrefFor(locale, item.href)}
+                        className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        {t(item.labelKey)}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
 
             <li>
               <a
                 href={nav[3].href}
+                onClick={onContactClick}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
                 {t(nav[3].labelKey)}
@@ -213,10 +241,11 @@ export function Header({
           </ul>
         </div>
 
-        {/* Right cluster: CTA + Language */}
         <div className="hidden md:flex items-center gap-3">
           <Button asChild variant="hero" size="default">
-            <a href={ctaHref}>{t("header.cta.primary")}</a>
+            <a href={ctaHref} onClick={onContactClick}>
+              {t("header.cta.primary")}
+            </a>
           </Button>
 
           <div className="flex items-center gap-2" aria-label={t("header.aria.languageSwitcher")}>
@@ -255,10 +284,11 @@ export function Header({
           </div>
         </div>
 
-        {/* Mobile: CTA + Hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <Button asChild variant="hero" size="sm">
-            <a href={ctaHref}>{t("header.cta.primaryShort")}</a>
+            <a href={ctaHref} onClick={onContactClick}>
+              {t("header.cta.primaryShort")}
+            </a>
           </Button>
 
           <button
@@ -268,16 +298,11 @@ export function Header({
             aria-label={isMenuOpen ? t("header.aria.closeMenu") : t("header.aria.openMenu")}
             aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" aria-hidden="true" />
-            ) : (
-              <Menu className="w-6 h-6" aria-hidden="true" />
-            )}
+            {isMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300",
@@ -311,6 +336,20 @@ export function Header({
                         </a>
                       ))}
                     </div>
+                  </li>
+                )
+              }
+
+              if (item.key === "contact") {
+                return (
+                  <li key={item.key}>
+                    <a
+                      href={item.href}
+                      onClick={onContactClick}
+                      className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    >
+                      {t(item.labelKey)}
+                    </a>
                   </li>
                 )
               }
@@ -363,7 +402,7 @@ export function Header({
             </div>
 
             <Button asChild variant="hero" size="sm">
-              <a href={ctaHref} onClick={() => setIsMenuOpen(false)}>
+              <a href={ctaHref} onClick={onContactClick}>
                 {t("header.cta.primary")}
               </a>
             </Button>

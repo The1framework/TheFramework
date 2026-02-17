@@ -475,7 +475,7 @@ export default function Services(_: ServicesPageProps) {
         </section>
       </main>
 
-      <Footer />
+    <Footer locale={locale} t={t as (key: string) => string} />
     </div>
   )
 }
