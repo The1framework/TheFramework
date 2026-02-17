@@ -76,14 +76,16 @@ export function Header({
   const langHrefFr = useMemo(() => buildSwitchLocaleHref("fr", currentFull), [currentFull])
   const langHrefLb = useMemo(() => buildSwitchLocaleHref("lb", currentFull), [currentFull])
 
-  const nav = [
+   const nav = [
     { key: "home", href: hrefFor(locale, "/"), labelKey: "header.nav.home" },
     { key: "about", href: hrefFor(locale, "/about"), labelKey: "header.nav.about" },
     { key: "services", href: hrefFor(locale, "/services"), labelKey: "header.nav.services" },
-    { key: "contact", href: hrefFor(locale, "/contact"), labelKey: "header.nav.contact" },
+    // ✅ Contact should go to the Home section anchor
+    { key: "contact", href: hrefFor(locale, "/") + "#contact", labelKey: "header.nav.contact" },
   ] as const
 
-  const ctaHref = hrefFor(locale, "/contact")
+    // ✅ CTA should also go to the Home section anchor
+  const ctaHref = hrefFor(locale, "/") + "#contact"
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : hrefFor(locale, "/")
 
   const openServices = () => setIsServicesOpen(true)

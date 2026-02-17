@@ -25,7 +25,7 @@
       "closeMenu": "Close menu"
     }
   },
-"home": {
+  "home": {
     "hero": {
       "kicker": "Digital Agency • SEO-First • Performance Engineered",
       "kickerSr": "Hero positioning and category descriptor",
@@ -38,7 +38,7 @@
       "trustItems": [
         "SEO-first architecture",
         "Core Web Vitals optimized",
-        "Multilingual EN / FR / AR",
+        "Multilingual",
         "Privacy-first & consent-compliant"
       ],
 
@@ -635,7 +635,103 @@
         "secondary": "View All Services"
       }
     }
+  },
+  
+  "contact": {
+    "heading": "Contact Us",
+    "intro": "Reach out for business inquiries or project discussions. Every message is reviewed personally and handled with confidentiality.",
+
+    "business": {
+      "title": "Business Information",
+      "name": "ACHI Digital",
+      "entityLine": "Web development and digital services for modern businesses.",
+      "areaServed": "Based in Lebanon. Serving clients locally and internationally.",
+      "emailLabel": "Email",
+      "emailValue": "achi.gr@hotmail.com",
+      "phoneLabel": "Phone",
+      "phoneValue": "+961 03 322 811",
+      "phoneTel": "+96103322811",
+      "locationLabel": "Location",
+      "locationValue": "Lebanon",
+      "locationHref": "#contact"
+    },
+
+    "methods": {
+      "whatsappLabel": "WhatsApp",
+      "whatsappValue": "Message us on WhatsApp",
+      "whatsappHref": "https://wa.me/96170000000"
+    },
+
+    "form": {
+      "honeypotLabel": "Website",
+      "fullName": {
+        "label": "Full Name *",
+        "placeholder": "Your name"
+      },
+      "businessEmail": {
+        "label": "Business Email *",
+        "placeholder": "name@company.com"
+      },
+      "company": {
+        "label": "Company (Optional)",
+        "placeholder": "Company name"
+      },
+      "service": {
+        "label": "Service Interest *",
+        "placeholder": "Select a service",
+        "help": "This helps us route your message to the right person.",
+        "options": {
+          "web": "Website Development",
+          "seo": "SEO & Visibility",
+          "design": "UI/UX Design",
+          "ecommerce": "E-commerce",
+          "other": "Other"
+        }
+      },
+      "message": {
+        "label": "Message *",
+        "placeholder": "Tell us what you want to build."
+      },
+      "submit": "Send Message",
+      "submitSubmitting": "Sending…"
+    },
+
+    "privacy": {
+      "text": "Your information is kept private and used only to respond.",
+      "privacyLabel": "Privacy Policy",
+      "privacyHref": "/privacy",
+      "cookiesLabel": "Cookie Policy",
+      "cookiesHref": "/cookies"
+    },
+
+    "next": {
+      "title": "What Happens Next",
+      "text": "We’ll reply by email with next steps. If needed, we may suggest a short call to clarify scope."
+    },
+
+    "alt": {
+      "title": "Prefer an alternative?",
+      "emailText": "Prefer email?",
+      "emailLinkLabel": "Send us an email",
+      "servicesText": "Not ready yet?",
+      "servicesLinkLabel": "Explore our services",
+      "servicesHref": "/services"
+    },
+
+    "toast": {
+      "title": "Message sent",
+      "description": "Thanks — we’ll reply by email soon."
+    },
+
+    "schema": {
+      "orgName": "ACHI Digital",
+      "url": "https://achidigital.com",
+      "areaServed": "Lebanon",
+      "contactType": "customer support",
+      "availableLanguage": "en, fr, ar"
+    }
   }
+
 }
 
 
