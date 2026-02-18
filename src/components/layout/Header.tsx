@@ -220,7 +220,7 @@ export function Header({
                 role="menu"
                 aria-label={t("header.aria.servicesMenu")}
                 className={cn(
-                  "absolute left-0 mt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
+                  "absolute left-0 top-full pt-2 min-w-[260px] rounded-xl border border-white/20 bg-background/70 backdrop-blur-xl shadow-lg overflow-hidden",
                   isServicesOpen ? "block" : "hidden"
                 )}
               >
