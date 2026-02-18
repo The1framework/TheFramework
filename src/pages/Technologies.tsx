@@ -435,37 +435,7 @@ export default function Technologies({ locale, t }: Props) {
           </div>
         </section>
 
-        <section
-          ref={finalCta.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 pt-10 pb-20",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            finalCta.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div
-            className={cn(
-              "relative overflow-hidden rounded-3xl border bg-card/60 backdrop-blur-xl p-8 sm:p-10",
-              "border-primary/15 shadow-sm",
-              "hover:border-primary/30 hover:shadow-xl transition-all duration-300"
-            )}
-          >
-            <div className="pointer-events-none absolute -top-24 right-0 h-64 w-64 rounded-full bg-primary/12 blur-3xl" aria-hidden="true" />
-            <div className="relative flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-2xl">
-                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.cta.h2") as string}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.cta.p") as string}</p>
-              </div>
-
-              <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
-                <a href={contactHref} aria-label={t("technologies.cta.aria") as string}>
-                  {t("technologies.cta.button") as string}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
+       
       </main>
 
       <Footer

@@ -93,40 +93,7 @@ export function AboutPage({ locale, t }: Props) {
           
                 </div>
 
-                {/* Entity definition (visual emphasis, still single sentence) */}
-                <div className="lg:col-span-5">
-                  <div
-                    className={cn(
-                      "rounded-2xl border border-primary/25 bg-white/5 px-5 py-4",
-                      "shadow-[0_0_40px_rgba(56,189,248,0.14)]",
-                      "backdrop-blur-xl"
-                    )}
-                  >
-                    <p className={cn("text-sm md:text-base text-muted-foreground/95", textAlign)}>
-                      <span className="font-semibold text-foreground">{t("about.entity.heading")}</span>
-                      <span className="text-muted-foreground"> - </span>
-                      <span>{t("entity.definition")}</span>
-                    </p>
-
-                    {/* light internal links inside hero (not a new section) */}
-                    <div className={cn("mt-4 flex flex-col sm:flex-row gap-2", isRTL && "sm:justify-end")}>
-                      <a
-                        href={hrefFor(locale, "/services")}
-                        className="inline-flex items-center justify-center rounded-xl px-4 py-2 border border-white/12 bg-background/40 backdrop-blur-xl font-semibold text-foreground hover:border-white/25 transition-colors"
-                        aria-label={t("about.links.services.aria")}
-                      >
-                        {t("about.links.services.label")}
-                      </a>
-                      <a
-                        href={hrefFor(locale, "/") + "#contact"}
-                        className="inline-flex items-center justify-center rounded-xl px-4 py-2 bg-primary text-primary-foreground font-semibold neon-glow hover:opacity-95 transition-opacity"
-                        aria-label={t("about.links.contact.aria")}
-                      >
-                        {t("about.links.contact.label")}
-                      </a>
-                    </div>
-                  </div>
-                </div>
+           
               </div>
 
               {/* subtle animated divider */}
@@ -181,54 +148,9 @@ export function AboutPage({ locale, t }: Props) {
             </div>
           </div>
 
-          {/* Philosophy (kept, but styled as a standout “quote” card) */}
-          <div
-            className={cn(
-              "mt-6 rounded-3xl border border-white/10 bg-gradient-to-br from-primary/12 via-background/80 to-accent/10 p-7 glass-panel",
-              "shadow-[0_0_55px_rgba(56,189,248,0.12)]",
-              alignAuto
-            )}
-          >
-            <h2 className={cn("text-xl md:text-2xl font-display font-semibold", textAlign)}>
-              {t("about.sections.philosophy.h2")}
-            </h2>
-            <p className={cn("mt-3 text-muted-foreground", textAlign)}>{t("about.sections.philosophy.p")}</p>
-          </div>
         </section>
 
-        {/* RESPONSIBLE (kept, but tighter + better layout) */}
-        <section
-          ref={responsibleRef}
-          aria-labelledby="about-responsible-h2"
-          className={cn("mt-12 md:mt-14", reveal(responsibleVisible))}
-        >
-          <div className="glass-panel rounded-3xl border border-primary/25 bg-white/5 shadow-[0_0_45px_rgba(56,189,248,0.14)] overflow-hidden">
-            <div className="p-7 md:p-9">
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                <h2 id="about-responsible-h2" className={cn("text-2xl md:text-3xl font-display font-semibold", textAlign)}>
-                  {t("about.sections.responsible.h2")}
-                </h2>
-                <div className={cn("text-xs text-muted-foreground", textAlign)}>
-                  {t("about.sections.responsible.tag")}
-                </div>
-              </div>
-
-              <p className={cn("mt-4 text-muted-foreground max-w-3xl", textAlign, alignAuto)}>
-                {t("about.sections.responsible.p")}
-              </p>
-
-              <ul className={cn("mt-6 grid grid-cols-1 md:grid-cols-2 gap-4", textAlign)} role="list">
-                {(["a", "b", "c", "d"] as const).map((id) => (
-                  <li key={id} className="rounded-2xl border border-white/10 bg-background/40 backdrop-blur-xl px-5 py-4">
-                    <span className="font-medium text-foreground">{t(`about.sections.responsible.items.${id}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent" aria-hidden="true" />
-          </div>
-        </section>
+       
 
        
       </div>

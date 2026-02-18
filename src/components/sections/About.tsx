@@ -125,11 +125,7 @@ export function About({ t }: Props) {
               </div>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-white/10 text-center">
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                {t("aboutSection.footerLine")}
-              </p>
-            </div>
+        
           </div>
         </div>
       </div>

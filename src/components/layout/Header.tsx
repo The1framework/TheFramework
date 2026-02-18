@@ -272,38 +272,11 @@ export function Header({
           </Button>
 
           <div className="flex items-center gap-2" aria-label={t("header.aria.languageSwitcher")}>
-            <a
-              href={langHrefEn}
-              className={cn(
-                "text-sm font-semibold px-2 py-1 rounded-md border border-white/15 hover:border-white/30 transition-colors",
-                locale === "en" ? "text-foreground" : "text-muted-foreground"
-              )}
-              aria-current={locale === "en" ? "page" : undefined}
-            >
-              {t("header.lang.en")}
-            </a>
+       
 
-            <a
-              href={langHrefFr}
-              className={cn(
-                "text-sm font-semibold px-2 py-1 rounded-md border border-white/15 hover:border-white/30 transition-colors",
-                locale === "fr" ? "text-foreground" : "text-muted-foreground"
-              )}
-              aria-current={locale === "fr" ? "page" : undefined}
-            >
-              {t("header.lang.fr")}
-            </a>
+         
 
-            <a
-              href={langHrefLb}
-              className={cn(
-                "text-sm font-semibold px-2 py-1 rounded-md border border-white/15 hover:border-white/30 transition-colors",
-                locale === "lb" ? "text-foreground" : "text-muted-foreground"
-              )}
-              aria-current={locale === "lb" ? "page" : undefined}
-            >
-              {t("header.lang.lb")}
-            </a>
+          
           </div>
         </div>
 
