@@ -55,7 +55,7 @@ export function Footer({ locale, t, brand }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
             <a href={homeHref} className="flex items-center gap-3 mb-6">
-              <img src={logoSrc} alt={logoAlt} className="w-10 h-10 object-contain" />
+             <img src={withBase(logoSrc)} alt={logoAlt} className="w-10 h-10 object-contain" />
               <span className="font-display font-bold text-xl">
                 {t("footer.brand.wordA") as string}
                 <span className="gradient-text">{t("footer.brand.wordB") as string}</span>
