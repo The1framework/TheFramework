@@ -6,15 +6,14 @@
     },
     "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact" },
  "services": {
-      "aiWebDev": "AI Website Development",
-      "fullStack": "Full-Stack Web & App Development",
+      "fullStack": "Full-Stack Development",
       "performance": "Website Optimization & Performance Engineering",
-      "uxui": "UX/UI Design & User Experience",
+      "uxui": "UX/UI Design",
       "seo": "Search Engine Optimization (SEO)",
       "geo": "GEO & LLM Search Optimization (AI Visibility)",
       "aeo": "Answer Engine Optimization (AEO)",
       "ppc": "Paid Advertising (PPC)",
-      "content": "Content & Professional Writing",
+      "content": "Content Writing",
       "ecommerce": "E-commerce Solutions",
       "aiAutomation": "Advanced AI Integrations & Automation"
     },
@@ -218,16 +217,16 @@
             "aria": "Open the AI Website Development service page"
           },
           "fullStackDev": {
-            "label": "Full-Stack Web & App Development",
-            "aria": "Open the Full-Stack Web and App Development service page"
+            "label": "Full-Stack Development",
+            "aria": "Open the Full-Stack Development service page"
           },
           "performanceOptimization": {
             "label": "Website Optimization & Performance Engineering",
             "aria": "Open the Website Optimization and Performance Engineering service page"
           },
           "uxui": {
-            "label": "UX/UI Design & User Experience",
-            "aria": "Open the UX and UI Design and User Experience service page"
+            "label": "UX/UI Design",
+            "aria": "Open the UX and UI Design service page"
           },
           "seo": {
             "label": "Search Engine Optimization (SEO)",
@@ -246,8 +245,8 @@
             "aria": "Open the Paid Advertising PPC service page"
           },
           "contentWriting": {
-            "label": "Content & Professional Writing",
-            "aria": "Open the Content and Professional Writing service page"
+            "label": "Content Writing",
+            "aria": "Open the Content Writing service page"
           },
           "ecommerce": {
             "label": "E-commerce Solutions",
