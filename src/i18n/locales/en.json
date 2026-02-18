@@ -4,7 +4,7 @@
       "logoAlt": "ACHIdigital digital agency",
       "name": "AchiDigital"
     },
-    "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact" },
+    "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact",      "technologies": "Technologies" },
  "services": {
       "fullStack": "Full-Stack Development",
       "performance": "Website Optimization & Performance Engineering",
@@ -199,121 +199,112 @@
       "ai-integrations-automation": "Advanced AI Integrations & Automation"
     }
   },
-  "services": {
-    "page": {
-      "hero": {
-        "h1": "Our Digital Services",
-        "supporting": "A clear hub for our core digital services in development, design, performance, and visibility."
+ 
+ 
+  
+  "contact": {
+    "heading": "Contact Us",
+    "intro": "Reach out for business inquiries or project discussions. Every message is reviewed personally and handled with confidentiality.",
+
+    "business": {
+      "title": "Business Information",
+      "name": "ACHI Digital",
+      "entityLine": "Web development and digital services for modern businesses.",
+      "areaServed": "Based in Lebanon. Serving clients locally and internationally.",
+      "emailLabel": "Email",
+      "emailValue": "achi.gr@hotmail.com",
+      "phoneLabel": "Phone",
+      "phoneValue": "+961 03 322 811",
+      "phoneTel": "+96103322811",
+      "locationLabel": "Location",
+      "locationValue": "Lebanon",
+      "locationHref": "#contact"
+    },
+
+    "methods": {
+      "whatsappLabel": "WhatsApp",
+      "whatsappValue": "Message us on WhatsApp",
+      "whatsappHref": "https://wa.me/96170000000"
+    },
+
+    "form": {
+      "honeypotLabel": "Website",
+      "fullName": {
+        "label": "Full Name *",
+        "placeholder": "Your name"
       },
-      "authority": {
-        "h2": "Entity and services scope",
-        "oneSentence": "ACHIdigital delivers focused digital services that keep your website and products fast, reliable, and easy to find."
+      "businessEmail": {
+        "label": "Business Email *",
+        "placeholder": "name@company.com"
       },
-      "list": {
-        "h2": "Our Services",
-        "items": {
-          "aiWebsiteDev": {
-            "label": "AI Website Development",
-            "aria": "Open the AI Website Development service page"
-          },
-          "fullStackDev": {
-            "label": "Full-Stack Development",
-            "aria": "Open the Full-Stack Development service page"
-          },
-          "performanceOptimization": {
-            "label": "Website Optimization & Performance Engineering",
-            "aria": "Open the Website Optimization and Performance Engineering service page"
-          },
-          "uxui": {
-            "label": "UX/UI Design",
-            "aria": "Open the UX and UI Design service page"
-          },
-          "seo": {
-            "label": "Search Engine Optimization (SEO)",
-            "aria": "Open the Search Engine Optimization service page"
-          },
-          "geoLLM": {
-            "label": "GEO & LLM Search Optimization (AI Visibility)",
-            "aria": "Open the GEO and LLM Search Optimization service page"
-          },
-          "aeo": {
-            "label": "Answer Engine Optimization (AEO)",
-            "aria": "Open the Answer Engine Optimization service page"
-          },
-          "ppc": {
-            "label": "Paid Advertising (PPC)",
-            "aria": "Open the Paid Advertising PPC service page"
-          },
-          "contentWriting": {
-            "label": "Content Writing",
-            "aria": "Open the Content Writing service page"
-          },
-          "ecommerce": {
-            "label": "E-commerce Solutions",
-            "aria": "Open the E-commerce Solutions service page"
-          },
-          "aiAutomation": {
-            "label": "Advanced AI Integrations & Automation",
-            "aria": "Open the Advanced AI Integrations and Automation service page"
-          }
+      "company": {
+        "label": "Company (Optional)",
+        "placeholder": "Company name"
+      },
+      "service": {
+        "label": "Service Interest *",
+        "placeholder": "Select a service",
+        "help": "This helps us route your message to the right person.",
+        "options": {
+          "web": "Website Development",
+          "seo": "SEO & Visibility",
+          "design": "UI/UX Design",
+          "ecommerce": "E-commerce",
+          "other": "Other"
         }
       },
-      "together": {
-        "h2": "How Our Services Work Together",
-        "body": "Development, design, performance, and visibility services are planned as one system, so improvements in one area strengthen the whole."
+      "message": {
+        "label": "Message *",
+        "placeholder": "Tell us what you want to build."
       },
-      "forWho": {
-        "h2": "Who These Services Are For",
-        "items": [
-          "Small & mid-size businesses",
-          "SaaS and product teams",
-          "E-commerce brands",
-          "Professional services firms",
-          "Founders and leadership teams",
-          "In-house marketing and growth teams"
-        ]
-      },
-      "outcomes": {
-        "h2": "Outcomes You Can Expect",
-        "items": [
-          "Clear service structure and navigation",
-          "Faster, more stable experiences",
-          "Stronger search and discovery signals",
-          "Higher-quality leads and enquiries",
-          "Better performance from paid campaigns",
-          "A digital foundation that is ready to grow"
-        ]
-      },
-      "cta": {
-        "h2": "Not Sure Which Service You Need?",
-        "primary": "Request a Free Audit",
-        "secondary": "Get Expert Guidance",
-        "tertiary": "Talk to Our Team"
-      },
-      "faq": {
-        "h2": "Services FAQs",
-        "items": [
-          {
-            "q": "How do I know which service to start with?",
-            "a": "We review your website, current performance, and priorities, then recommend a starting point such as a new build, optimization, or a focused visibility engagement."
-          },
-          {
-            "q": "Can we combine multiple services in one engagement?",
-            "a": "Yes. Many projects combine development, UX, and search work. We build a roadmap so technical, content, and visibility efforts support each other."
-          },
-          {
-            "q": "Do I need AI-focused services if I only care about Google Search?",
-            "a": "Not always. For many teams, a strong technical and SEO foundation is the right first step, with AI-related work added when content and visibility needs grow."
-          },
-          {
-            "q": "Do you work on existing websites or only new builds?",
-            "a": "Both. We can improve an existing site or design and build a new one when the current setup limits performance, search, or future growth."
-          }
-        ]
-      }
+      "submit": "Send Message",
+      "submitSubmitting": "Sending…"
+    },
+
+    "privacy": {
+      "text": "Your information is kept private and used only to respond.",
+      "privacyLabel": "Privacy Policy",
+      "privacyHref": "/privacy",
+      "cookiesLabel": "Cookie Policy",
+      "cookiesHref": "/cookies"
+    },
+
+    "next": {
+      "title": "What Happens Next",
+      "text": "We’ll reply by email with next steps. If needed, we may suggest a short call to clarify scope."
+    },
+
+    "alt": {
+      "title": "Prefer an alternative?",
+      "emailText": "Prefer email?",
+      "emailLinkLabel": "Send us an email",
+      "servicesText": "Not ready yet?",
+      "servicesLinkLabel": "Explore our services",
+      "servicesHref": "/services"
+    },
+
+    "toast": {
+      "title": "Message sent",
+      "description": "Thanks! we’ll reply soon."
+    },
+
+    "schema": {
+      "orgName": "ACHI Digital",
+      "url": "https://achidigital.com",
+      "areaServed": "Lebanon",
+      "contactType": "customer support",
+      "availableLanguage": "en, fr, ar"
     }
   },
-  "servicePages": {
+  "seo": {
+    "siteUrl": "https://achidigital.github.io/ACHI",
+    "organization": {
+      "name": "AchiDigital",
+      "url": "https://achidigital.github.io/ACHI",
+      "logo": "https://achidigital.github.io/ACHI/AchiDigital.jpeg"
+    }
+  },
+   "servicePages": {
     "ai-website-development": {
       "h1": "AI Website Development Built for Growth, Search, and the AI Era",
       "hero": {
@@ -774,101 +765,242 @@
     }
   },
   
-  "contact": {
-    "heading": "Contact Us",
-    "intro": "Reach out for business inquiries or project discussions. Every message is reviewed personally and handled with confidentiality.",
-
-    "business": {
-      "title": "Business Information",
-      "name": "ACHI Digital",
-      "entityLine": "Web development and digital services for modern businesses.",
-      "areaServed": "Based in Lebanon. Serving clients locally and internationally.",
-      "emailLabel": "Email",
-      "emailValue": "achi.gr@hotmail.com",
-      "phoneLabel": "Phone",
-      "phoneValue": "+961 03 322 811",
-      "phoneTel": "+96103322811",
-      "locationLabel": "Location",
-      "locationValue": "Lebanon",
-      "locationHref": "#contact"
-    },
-
-    "methods": {
-      "whatsappLabel": "WhatsApp",
-      "whatsappValue": "Message us on WhatsApp",
-      "whatsappHref": "https://wa.me/96170000000"
-    },
-
-    "form": {
-      "honeypotLabel": "Website",
-      "fullName": {
-        "label": "Full Name *",
-        "placeholder": "Your name"
+  "services": {
+    "page": {
+      "hero": {
+        "h1": "Our Digital Services",
+        "supporting": "A clear hub for our core digital services in development, design, performance, and visibility."
       },
-      "businessEmail": {
-        "label": "Business Email *",
-        "placeholder": "name@company.com"
+      "authority": {
+        "h2": "Entity and services scope",
+        "oneSentence": "ACHIdigital delivers focused digital services that keep your website and products fast, reliable, and easy to find."
       },
-      "company": {
-        "label": "Company (Optional)",
-        "placeholder": "Company name"
-      },
-      "service": {
-        "label": "Service Interest *",
-        "placeholder": "Select a service",
-        "help": "This helps us route your message to the right person.",
-        "options": {
-          "web": "Website Development",
-          "seo": "SEO & Visibility",
-          "design": "UI/UX Design",
-          "ecommerce": "E-commerce",
-          "other": "Other"
+      "list": {
+        "h2": "Our Services",
+        "items": {
+          "aiWebsiteDev": {
+            "label": "AI Website Development",
+            "aria": "Open the AI Website Development service page"
+          },
+          "fullStackDev": {
+            "label": "Full-Stack Development",
+            "aria": "Open the Full-Stack Development service page"
+          },
+          "performanceOptimization": {
+            "label": "Website Optimization & Performance Engineering",
+            "aria": "Open the Website Optimization and Performance Engineering service page"
+          },
+          "uxui": {
+            "label": "UX/UI Design",
+            "aria": "Open the UX and UI Design service page"
+          },
+          "seo": {
+            "label": "Search Engine Optimization (SEO)",
+            "aria": "Open the Search Engine Optimization service page"
+          },
+          "geoLLM": {
+            "label": "GEO & LLM Search Optimization (AI Visibility)",
+            "aria": "Open the GEO and LLM Search Optimization service page"
+          },
+          "aeo": {
+            "label": "Answer Engine Optimization (AEO)",
+            "aria": "Open the Answer Engine Optimization service page"
+          },
+          "ppc": {
+            "label": "Paid Advertising (PPC)",
+            "aria": "Open the Paid Advertising PPC service page"
+          },
+          "contentWriting": {
+            "label": "Content Writing",
+            "aria": "Open the Content Writing service page"
+          },
+          "ecommerce": {
+            "label": "E-commerce Solutions",
+            "aria": "Open the E-commerce Solutions service page"
+          },
+          "aiAutomation": {
+            "label": "Advanced AI Integrations & Automation",
+            "aria": "Open the Advanced AI Integrations and Automation service page"
+          }
         }
       },
-      "message": {
-        "label": "Message *",
-        "placeholder": "Tell us what you want to build."
+      "together": {
+        "h2": "How Our Services Work Together",
+        "body": "Development, design, performance, and visibility services are planned as one system, so improvements in one area strengthen the whole."
       },
-      "submit": "Send Message",
-      "submitSubmitting": "Sending…"
+      "forWho": {
+        "h2": "Who These Services Are For",
+        "items": [
+          "Small & mid-size businesses",
+          "SaaS and product teams",
+          "E-commerce brands",
+          "Professional services firms",
+          "Founders and leadership teams",
+          "In-house marketing and growth teams"
+        ]
+      },
+      "outcomes": {
+        "h2": "Outcomes You Can Expect",
+        "items": [
+          "Clear service structure and navigation",
+          "Faster, more stable experiences",
+          "Stronger search and discovery signals",
+          "Higher-quality leads and enquiries",
+          "Better performance from paid campaigns",
+          "A digital foundation that is ready to grow"
+        ]
+      },
+      "cta": {
+        "h2": "Not Sure Which Service You Need?",
+        "primary": "Request a Free Audit",
+        "secondary": "Get Expert Guidance",
+        "tertiary": "Talk to Our Team"
+      },
+      "faq": {
+        "h2": "Services FAQs",
+        "items": [
+          {
+            "q": "How do I know which service to start with?",
+            "a": "We review your website, current performance, and priorities, then recommend a starting point such as a new build, optimization, or a focused visibility engagement."
+          },
+          {
+            "q": "Can we combine multiple services in one engagement?",
+            "a": "Yes. Many projects combine development, UX, and search work. We build a roadmap so technical, content, and visibility efforts support each other."
+          },
+          {
+            "q": "Do I need AI-focused services if I only care about Google Search?",
+            "a": "Not always. For many teams, a strong technical and SEO foundation is the right first step, with AI-related work added when content and visibility needs grow."
+          },
+          {
+            "q": "Do you work on existing websites or only new builds?",
+            "a": "Both. We can improve an existing site or design and build a new one when the current setup limits performance, search, or future growth."
+          }
+        ]
+      }
+    },
+    "single": {
+      "breadcrumb": {
+        "aria": "Breadcrumb",
+        "servicesHub": "Services"
+      },
+      "related": {
+        "aria": "Related services link"
+      },
+      "notFound": {
+        "metaTitle": "Service Not Found",
+        "metaDescription": "The requested service page does not exist. Browse all services to find the right option.",
+        "breadcrumbServices": "Services",
+        "h1": "Service Not Found",
+        "supporting": "The page you’re looking for is not available. Explore the services list to choose the right page.",
+        "ctaPrimaryLabel": "View All Services",
+        "ctaPrimaryAria": "Go to the services page",
+        "ctaSecondaryLabel": "Go Home",
+        "ctaSecondaryAria": "Go to the homepage"
+      }
+    }
+  },
+  "technologies": {
+    "hero": {
+      "kicker": "Technology",
+      "h1": "Web & AI Technologies Behind High-Performance Websites",
+      "sub": "A curated stack built for speed, stability, and AI-ready growth — designed to scale without sacrificing SEO, performance, or user experience.",
+      "primary": "Explore Our Services",
+      "primaryAria": "Explore our services",
+      "secondary": "Start Your Project",
+      "secondaryAria": "Start your project"
     },
 
-    "privacy": {
-      "text": "Your information is kept private and used only to respond.",
-      "privacyLabel": "Privacy Policy",
-      "privacyHref": "/privacy",
-      "cookiesLabel": "Cookie Policy",
-      "cookiesHref": "/cookies"
+    "why": {
+      "h2": "Why the Right Technology Stack Matters",
+      "p": "Your technology stack shapes speed, crawlability, security, and how easily your platform can evolve — especially when adding automation or AI-powered features.",
+      "bullets": "Performance impacts search visibility and conversions.\nCore Web Vitals matter for rankings and UX.\nScalable foundations reduce long-term cost.\nSecure systems protect data and trust.\nAI-ready architecture enables smarter workflows.\nCleaner builds mean faster deployments and fewer bugs.",
+      "authority": "Our stack decisions are guided by measurable performance, SEO compatibility, scalability requirements, and AI integration readiness."
     },
 
-    "next": {
-      "title": "What Happens Next",
-      "text": "We’ll reply by email with next steps. If needed, we may suggest a short call to clarify scope."
+    "stack": {
+      "h2": "Our Core Technology Stack",
+      "p": "A clean, modern stack — designed for speed, stability, and AI-ready growth.",
+      "hoverHint": "Hover to reveal details",
+
+      "frontend": {
+        "title": "Frontend",
+        "desc": "Modern UI systems built for fast rendering, accessibility, and scalable interfaces.",
+        "chips": "React\nTypeScript\nTailwind CSS\nVite"
+      },
+
+      "backend": {
+        "title": "Backend & Infrastructure",
+        "desc": "Modular, API-first foundations for secure, scalable platforms and integrations.",
+        "chips": "Node.js\nServerless\nPostgreSQL\nREST APIs"
+      },
+
+      "ai": {
+        "title": "AI & Automation",
+        "desc": "AI-ready architecture for assistants, workflows, semantic search, and intelligent automation.",
+        "chips": "OpenAI / LLMs\nVector Databases\nEmbeddings\nAI Agents"
+      },
+
+      "seo": {
+        "title": "Performance & SEO",
+        "desc": "SEO and speed built into the foundation — not added later.",
+        "chips": "SSR / SSG\nStructured Data\nCore Web Vitals\nCaching / CDN"
+      },
+
+      "security": {
+        "title": "Security",
+        "desc": "Secure-by-design practices for reliable systems and safer data handling.",
+        "chips": "HTTPS\nSecure Headers\nAccess Control\nBest Practices"
+      },
+
+      "devops": {
+        "title": "Deployment & DevOps",
+        "desc": "Reliable delivery with automated pipelines and performance-aware releases.",
+        "chips": "CI/CD\nGitHub Actions\nCloud Hosting"
+      }
     },
 
-    "alt": {
-      "title": "Prefer an alternative?",
-      "emailText": "Prefer email?",
-      "emailLinkLabel": "Send us an email",
-      "servicesText": "Not ready yet?",
-      "servicesLinkLabel": "Explore our services",
-      "servicesHref": "/services"
+    "choose": {
+      "h2": "How We Choose the Right Tech for Each Project",
+      "p": "We select technologies based on your business goals and measurable outcomes — not trends.",
+      "statement": "We don’t pick tools for hype. We choose a stack based on performance targets, SEO requirements, scalability needs, security standards, and AI-readiness — aligned with your budget and timeline.",
+      "points": "Business goals first\nSEO requirements\nScalability needs\nBudget alignment\nAI-readiness\nLong-term maintainability"
     },
 
-    "toast": {
-      "title": "Message sent",
-      "description": "Thanks! we’ll reply soon."
+    "faq": {
+      "h2": "Frequently Asked Questions",
+      "p": "Quick answers about our technology choices, SEO foundations, and AI-ready architecture.",
+      "q1": "What technology stack do you use?",
+      "a1": "We use a modern web stack centered around React, TypeScript, and performance-first tooling, with scalable backend options and AI-ready architecture when needed.",
+      "q2": "Why does your stack help with SEO?",
+      "a2": "Because we prioritize crawlability, fast load times, clean structure, and performance metrics like Core Web Vitals — which directly affect search visibility and user experience.",
+      "q3": "Can your websites scale as the business grows?",
+      "a3": "Yes. We build modular foundations that support growth — from new pages and features to integrations, automation, and more advanced infrastructure over time.",
+      "q4": "Can your stack support AI integrations?",
+      "a4": "Yes. We design for AI-readiness with structured data, integration-friendly APIs, and architecture that supports assistants, automation workflows, and semantic search without harming SEO."
     },
 
-    "schema": {
-      "orgName": "ACHI Digital",
-      "url": "https://achidigital.com",
-      "areaServed": "Lebanon",
-      "contactType": "customer support",
-      "availableLanguage": "en, fr, ar"
+    "cta": {
+      "h2": "Build With a Future-Proof Technology Stack",
+      "p": "If you want speed, SEO, and AI-ready growth — the foundation matters. Let’s build a stack that scales with your business.",
+      "button": "Start Your Project",
+      "aria": "Start your project"
+    },
+
+    "logos": {
+      "react": "React logo",
+      "next": "Next.js logo",
+      "typescript": "TypeScript logo",
+      "tailwind": "Tailwind CSS logo",
+      "vite": "Vite logo",
+      "node": "Node.js logo",
+      "github": "GitHub logo",
+      "vercel": "Vercel logo",
+      "githubPages": "GitHub Pages logo"
     }
   }
-
 }
+
+
+
 
 

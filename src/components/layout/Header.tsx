@@ -132,11 +132,13 @@ export function Header({
     navigate(`${homeTo}#contact`)
   }
 
-  const nav = [
-    { key: "home", to: routerTo(locale, "/"), labelKey: "header.nav.home" },
-    { key: "about", to: routerTo(locale, "/about"), labelKey: "header.nav.about" },
-    { key: "services", to: routerTo(locale, "/services"), labelKey: "header.nav.services" },
-  ] as const
+ const nav = [
+  { key: "home", to: routerTo(locale, "/"), labelKey: "header.nav.home" },
+  { key: "about", to: routerTo(locale, "/about"), labelKey: "header.nav.about" },
+  { key: "services", to: routerTo(locale, "/services"), labelKey: "header.nav.services" },
+  { key: "technologies", to: routerTo(locale, "/technologies"), labelKey: "header.nav.technologies" },
+] as const
+
 
   const ctaHref = `${withBase(homeTo)}#contact`
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : withBase(homeTo)
@@ -239,6 +241,14 @@ export function Header({
                   ))}
                 </ul>
               </div>
+            </li>
+            <li>
+                <Link
+                  to={nav[3].to}
+                  className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
+                >
+                  {t(nav[3].labelKey)}
+                </Link>
             </li>
 
             <li>
@@ -369,6 +379,15 @@ export function Header({
                 ))}
               </div>
             </li>
+            <li>
+  <Link
+    to={nav[3].to}
+    className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+    onClick={() => setIsMenuOpen(false)}
+  >
+    {t(nav[3].labelKey)}
+  </Link>
+</li>
 
             <li>
               <a
