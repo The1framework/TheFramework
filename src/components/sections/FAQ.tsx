@@ -84,10 +84,7 @@ export function FAQ({ locale, t }: Props) {
               sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             )}
           >
-            <p className="text-muted-foreground mb-4">{t("faq.cta.line") as string}</p>
-            <a href="#contact" className="animated-underline text-lg font-semibold text-primary">
-              {t("faq.cta.link") as string}
-            </a>
+         
           </div>
         </div>
       </div>

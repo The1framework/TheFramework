@@ -40,7 +40,7 @@ export function Hero() {
     return Array.isArray(list) ? (list as string[]) : []
   }, [t])
 
-  const primaryHref = (t("home.hero.primaryCtaHref") as string) || "/contact"
+const primaryHref = "/#contact"
   const secondaryHref = (t("home.hero.secondaryCtaHref") as string) || "/services"
 
   return (

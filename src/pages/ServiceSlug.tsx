@@ -515,18 +515,8 @@ export default function ServiceSlug({ locale, t }: Props) {
                     ))}
                 </div>
 
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
 
-                <div className="mt-5">
-                  <a
-                    href={heroCtaSecondaryHref}
-                    className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
-                    aria-label={heroCtaSecondaryAria}
-                  >
-                    {heroCtaSecondaryLabel}
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </a>
-                </div>
+               
               </div>
             </div>
           </div>

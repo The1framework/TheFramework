@@ -55,26 +55,21 @@ export function Footer({ locale, t, brand }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
             <a href={homeHref} className="flex items-center gap-3 mb-6">
-             <img src={withBase(logoSrc)} alt={logoAlt} className="w-10 h-10 object-contain" />
+              <img src={withBase(logoSrc)} alt={logoAlt} className="w-10 h-10 object-contain" />
               <span className="font-display font-bold text-xl">
                 {t("footer.brand.wordA") as string}
                 <span className="gradient-text">{t("footer.brand.wordB") as string}</span>
               </span>
             </a>
 
-            <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
-              {t("footer.brand.description")}
-            </p>
+            <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">{t("footer.brand.description")}</p>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">{t("footer.columns.company.title")}</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href={hrefFor(locale, "/")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a href={hrefFor(locale, "/")} className="text-muted-foreground hover:text-foreground transition-colors">
                   {t("footer.columns.company.links.home")}
                 </a>
               </li>
@@ -89,14 +84,20 @@ export function Footer({ locale, t, brand }: Props) {
               <li>
                 <a
                   href={hrefFor(locale, "/services")}
-                  className={cn(
-                    "text-muted-foreground hover:text-foreground transition-colors",
-                    "opacity-80"
-                  )}
+                  className={cn("text-muted-foreground hover:text-foreground transition-colors")}
                 >
                   {t("footer.columns.company.links.services")}
                 </a>
               </li>
+              <li>
+                <a
+                  href={hrefFor(locale, "/technologies")}
+                  className={cn("text-muted-foreground hover:text-foreground transition-colors")}
+                >
+                  {t("footer.columns.company.links.technologies")}
+                </a>
+              </li>
+           
             </ul>
           </div>
 

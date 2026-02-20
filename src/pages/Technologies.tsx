@@ -256,11 +256,14 @@ export default function Technologies({ locale, t }: Props) {
               </a>
             </Button>
 
-            <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
-              <a href={contactHref} aria-label={t("technologies.hero.secondaryAria") as string}>
-                {t("technologies.hero.secondary") as string}
-              </a>
-            </Button>
+           <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
+  <a
+    href="/#contact"
+    aria-label={t("technologies.hero.secondaryAria") as string}
+  >
+    {t("technologies.hero.secondary") as string}
+  </a>
+</Button>
           </div>
         </div>
       </section>
