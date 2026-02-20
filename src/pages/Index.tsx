@@ -1,12 +1,10 @@
 // src/pages/Index.tsx
 import { useEffect } from "react"
-import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline"
 import { FAQ } from "@/components/sections/FAQ"
 import { Contact } from "@/components/sections/Contact"
-import { Footer } from "@/components/layout/Footer"
 
 type IndexProps = {
   locale: "en" | "fr" | "lb"
@@ -19,26 +17,12 @@ export default function Index({ locale, t }: IndexProps) {
   }, [])
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header
-        locale={locale}
-        t={t}
-        brand={{
-          name: "Framework",
-          logoSrc: "/logo.png",
-          logoAltKey: "header.brand.logoAlt"
-        }}
-      />
-
-      <main>
-        <Hero />
-        <About t={t} />
-        <ProcessTimeline />
-        <FAQ locale={locale} t={t} />
-        <Contact />
-      </main>
-
-      <Footer locale={locale} t={t} />
-    </div>
+    <main>
+      <Hero />
+      <About t={t} />
+      <ProcessTimeline />
+      <FAQ locale={locale} t={t} />
+      <Contact />
+    </main>
   )
 }

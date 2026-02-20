@@ -77,14 +77,14 @@ export function AboutPage({ locale, t }: Props) {
                 <h1
   id="about-h1"
   className={cn(
-    "text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary",
+    "text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-[#28509E]",
     textAlign
   )}
 >
   <span>{t("about.hero.titlePrefix")}</span>{" "}
   <span>{t("about.hero.titleAccent")}</span>
   {t("about.hero.titleSuffix") ? <span> {t("about.hero.titleSuffix")}</span> : null}
-</h1>
+                </h1>
 
 
 

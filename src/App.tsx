@@ -1,4 +1,5 @@
 // src/App.tsx
+import type React from "react"
 import { Toaster } from "@/components/ui/toaster"
 import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -8,6 +9,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import LangRouter, { useLangRouter } from "@/routing/LangRouter"
 import ScrollToTop from "@/routing/ScrollToTop"
 import { localeRoot } from "@/i18n/runtime"
+
+import { PageLayout } from "@/components/layout/PageLayout"
 
 import Index from "@/pages/Index"
 import NotFound from "@/pages/NotFound"
@@ -21,22 +24,28 @@ const queryClient = new QueryClient()
 function RoutedApp() {
   const { locale, t, cleanLocation } = useLangRouter()
 
+  const wrap = (node: React.ReactNode) => (
+    <PageLayout locale={locale} t={t}>
+      {node}
+    </PageLayout>
+  )
+
   return (
     <>
       <ScrollToTop />
       <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
-        <Route path="/" element={<Index locale={locale} t={t} />} />
-        <Route path="/about" element={<About locale={locale} t={t} />} />
-        <Route path="/services" element={<Services locale={locale} t={t} />} />
-        <Route path="/services/:serviceSlug" element={<ServiceSlug locale={locale} t={t} />} />
-        <Route path="/technologies" element={<Technologies locale={locale} t={t} />} />
+        <Route path="/" element={wrap(<Index locale={locale} t={t} />)} />
+        <Route path="/about" element={wrap(<About locale={locale} t={t} />)} />
+        <Route path="/services" element={wrap(<Services locale={locale} t={t} />)} />
+        <Route path="/services/:serviceSlug" element={wrap(<ServiceSlug locale={locale} t={t} />)} />
+        <Route path="/technologies" element={wrap(<Technologies locale={locale} t={t} />)} />
 
         <Route path="/fr" element={<Navigate to={localeRoot("fr")} replace />} />
         <Route path="/fr/" element={<Navigate to={localeRoot("fr")} replace />} />
         <Route path="/lb" element={<Navigate to={localeRoot("lb")} replace />} />
         <Route path="/lb/" element={<Navigate to={localeRoot("lb")} replace />} />
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={wrap(<NotFound locale={locale} t={t} />)} />
       </Routes>
     </>
   )

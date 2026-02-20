@@ -1,3 +1,4 @@
+// src/components/layout/PageLayout.tsx
 import type { ReactNode } from "react"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
@@ -10,9 +11,10 @@ type Props = {
 
 export function PageLayout({ locale, t, children }: Props) {
   const brand = {
-    name: (t("seo.organization.name") as string) || "Framework",
-    logoSrc: (t("header.brand.logoSrc") as string) || undefined,
+    name: "The Framework",
+    logoSrc: "/logo.png",
     logoAltKey: "header.brand.logoAlt",
+    homeHref: "/",
   }
 
   return (

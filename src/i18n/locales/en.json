@@ -1473,7 +1473,20 @@
       }
     }
   }
- }
+ },"notFound": {
+  "hero": {
+    "h1": "Page Not Found",
+    "highlightWords": "Not Found",
+    "description": "The page you're looking for doesn't exist or may have been moved. Use the buttons below to recover quickly."
+  },
+  "cta": {
+    "home": "Back to Home",
+    "back": "Go Back"
+  },
+  "meta": {
+    "requestedPath": "Requested path:"
+  }
+}
 }
 
 

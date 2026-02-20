@@ -9,24 +9,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 import { buildPathWithLocale } from "@/utils/langRouting"
 
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
-
 type Props = {
   locale: "en" | "fr" | "lb"
   t: (key: string) => string
-}
-
-function withBase(path: string) {
-  if (!path) return ""
-  if (path.startsWith("http://") || path.startsWith("https://")) return path
-  if (path.startsWith("mailto:") || path.startsWith("tel:")) return path
-
-  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "")
-  const p = path.startsWith("/") ? path : `/${path}`
-
-  if (base && p.startsWith(`${base}/`)) return p
-  return `${base}${p}`.replace(/\/{2,}/g, "/")
 }
 
 function parseLines(value: string) {
@@ -100,9 +85,7 @@ function TechCard({
 
           <div className="min-w-0">
             <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t("technologies.stack.hoverHint") as string}
-            </p>
+            <p className="mt-1 text-xs text-muted-foreground">{t("technologies.stack.hoverHint") as string}</p>
           </div>
         </div>
 
@@ -167,290 +150,246 @@ export default function Technologies({ locale, t }: Props) {
 
   const hero = useScrollReveal<HTMLElement>(0.08)
   const why = useScrollReveal<HTMLElement>(0.12)
-  const grid = useScrollReveal<HTMLElement>(0.10)
-  const choose = useScrollReveal<HTMLElement>(0.10)
+  const grid = useScrollReveal<HTMLElement>(0.1)
+  const choose = useScrollReveal<HTMLElement>(0.1)
   const faq = useScrollReveal<HTMLElement>(0.12)
-  const finalCta = useScrollReveal<HTMLElement>(0.12)
 
   const whyBullets = useMemo(() => parseLines(t("technologies.why.bullets") as string), [t])
 
- const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
 
-const cards = useMemo(() => {
-  const tech = (file: string) => `${base}tech/${file}`.replace(/\/{2,}/g, "/")
+  const cards = useMemo(() => {
+    const tech = (file: string) => `${base}tech/${file}`.replace(/\/{2,}/g, "/")
 
-  return [
-    {
-      key: "frontend",
-      icon: <Layers className="h-5 w-5" />,
-      title: t("technologies.stack.frontend.title") as string,
-      desc: t("technologies.stack.frontend.desc") as string,
-      chips: parseLines(t("technologies.stack.frontend.chips") as string),
-      logos: [
-        { src: tech("react.svg"), altKey: "technologies.logos.react" },
-        { src: tech("nextdotjs.svg"), altKey: "technologies.logos.next" },
-        { src: tech("typescript.svg"), altKey: "technologies.logos.typescript" },
-        { src: tech("tailwindcss.svg"), altKey: "technologies.logos.tailwind" },
-        { src: tech("vite.svg"), altKey: "technologies.logos.vite" }
-      ]
-    },
-    {
-      key: "backend",
-      icon: <Server className="h-5 w-5" />,
-      title: t("technologies.stack.backend.title") as string,
-      desc: t("technologies.stack.backend.desc") as string,
-      chips: parseLines(t("technologies.stack.backend.chips") as string),
-      logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }]
-    },
-    {
-      key: "ai",
-      icon: <Cpu className="h-5 w-5" />,
-      title: t("technologies.stack.ai.title") as string,
-      desc: t("technologies.stack.ai.desc") as string,
-      chips: parseLines(t("technologies.stack.ai.chips") as string),
-      logos: []
-    },
-    {
-      key: "seo",
-      icon: <Zap className="h-5 w-5" />,
-      title: t("technologies.stack.seo.title") as string,
-      desc: t("technologies.stack.seo.desc") as string,
-      chips: parseLines(t("technologies.stack.seo.chips") as string),
-      logos: []
-    },
-    {
-      key: "security",
-      icon: <Shield className="h-5 w-5" />,
-      title: t("technologies.stack.security.title") as string,
-      desc: t("technologies.stack.security.desc") as string,
-      chips: parseLines(t("technologies.stack.security.chips") as string),
-      logos: []
-    },
-    {
-      key: "devops",
-      icon: <Sparkles className="h-5 w-5" />,
-      title: t("technologies.stack.devops.title") as string,
-      desc: t("technologies.stack.devops.desc") as string,
-      chips: parseLines(t("technologies.stack.devops.chips") as string),
-      logos: [
-        { src: tech("github.svg"), altKey: "technologies.logos.github" },
-        { src: tech("githubpages.svg"), altKey: "technologies.logos.githubPages" },
-        { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" }
-      ]
-    }
-  ]
-}, [t, base])
-
-
-  const homeHref = buildPathWithLocale(locale, "/")
+    return [
+      {
+        key: "frontend",
+        icon: <Layers className="h-5 w-5" />,
+        title: t("technologies.stack.frontend.title") as string,
+        desc: t("technologies.stack.frontend.desc") as string,
+        chips: parseLines(t("technologies.stack.frontend.chips") as string),
+        logos: [
+          { src: tech("react.svg"), altKey: "technologies.logos.react" },
+          { src: tech("nextdotjs.svg"), altKey: "technologies.logos.next" },
+          { src: tech("typescript.svg"), altKey: "technologies.logos.typescript" },
+          { src: tech("tailwindcss.svg"), altKey: "technologies.logos.tailwind" },
+          { src: tech("vite.svg"), altKey: "technologies.logos.vite" }
+        ]
+      },
+      {
+        key: "backend",
+        icon: <Server className="h-5 w-5" />,
+        title: t("technologies.stack.backend.title") as string,
+        desc: t("technologies.stack.backend.desc") as string,
+        chips: parseLines(t("technologies.stack.backend.chips") as string),
+        logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }]
+      },
+      {
+        key: "ai",
+        icon: <Cpu className="h-5 w-5" />,
+        title: t("technologies.stack.ai.title") as string,
+        desc: t("technologies.stack.ai.desc") as string,
+        chips: parseLines(t("technologies.stack.ai.chips") as string),
+        logos: []
+      },
+      {
+        key: "seo",
+        icon: <Zap className="h-5 w-5" />,
+        title: t("technologies.stack.seo.title") as string,
+        desc: t("technologies.stack.seo.desc") as string,
+        chips: parseLines(t("technologies.stack.seo.chips") as string),
+        logos: []
+      },
+      {
+        key: "security",
+        icon: <Shield className="h-5 w-5" />,
+        title: t("technologies.stack.security.title") as string,
+        desc: t("technologies.stack.security.desc") as string,
+        chips: parseLines(t("technologies.stack.security.chips") as string),
+        logos: []
+      },
+      {
+        key: "devops",
+        icon: <Sparkles className="h-5 w-5" />,
+        title: t("technologies.stack.devops.title") as string,
+        desc: t("technologies.stack.devops.desc") as string,
+        chips: parseLines(t("technologies.stack.devops.chips") as string),
+        logos: [
+          { src: tech("github.svg"), altKey: "technologies.logos.github" },
+          { src: tech("githubpages.svg"), altKey: "technologies.logos.githubPages" },
+          { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" }
+        ]
+      }
+    ]
+  }, [t, base])
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header
-        locale={locale}
-        t={t}
-        brand={{
-          name: "Framework",
-          logoSrc: "/logo.png",
-          logoAltKey: "header.brand.logoAlt",
-          homeHref
-        }}
-      />
+    <main className="relative">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-[40%] -left-32 h-[420px] w-[420px] rounded-full bg-primary/8 blur-3xl" />
+        <div className="absolute bottom-[-180px] right-[-140px] h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
+      </div>
 
-      <main className="relative">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-          <div className="absolute top-[40%] -left-32 h-[420px] w-[420px] rounded-full bg-primary/8 blur-3xl" />
-          <div className="absolute bottom-[-180px] right-[-140px] h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
+      <section
+        ref={hero.ref}
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-10",
+          "opacity-0 translate-y-4 transition-all duration-700",
+          hero.isVisible && "opacity-100 translate-y-0"
+        )}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary">
+            {t("technologies.hero.h1") as string}
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+            {t("technologies.hero.sub") as string}
+          </p>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
+              <a href={servicesHref} aria-label={t("technologies.hero.primaryAria") as string}>
+                {t("technologies.hero.primary") as string}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </a>
+            </Button>
+
+            <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
+              <a href={contactHref} aria-label={t("technologies.hero.secondaryAria") as string}>
+                {t("technologies.hero.secondary") as string}
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        ref={why.ref}
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 py-10",
+          "opacity-0 translate-y-4 transition-all duration-700",
+          why.isVisible && "opacity-100 translate-y-0"
+        )}
+      >
+        <div className="mx-auto grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.why.h2") as string}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.why.p") as string}</p>
+          </div>
+
+          <div className="lg:col-span-7">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {whyBullets.map((b, idx) => (
+                <div
+                  key={`${b}-${idx}`}
+                  className={cn(
+                    "rounded-2xl border bg-card/55 backdrop-blur-xl p-4",
+                    "border-primary/15 transition-all duration-300",
+                    "hover:border-primary/30 hover:shadow-lg"
+                  )}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 h-8 w-8 rounded-xl bg-primary/10 text-primary grid place-items-center" aria-hidden="true">
+                      <Zap className="h-4 w-4" />
+                    </div>
+                    <p className="text-sm leading-relaxed text-foreground/90">{b}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-4 text-xs text-muted-foreground">{t("technologies.why.authority") as string}</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        ref={grid.ref}
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 py-10",
+          "opacity-0 translate-y-4 transition-all duration-700",
+          grid.isVisible && "opacity-100 translate-y-0"
+        )}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.stack.h2") as string}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.stack.p") as string}</p>
         </div>
 
-        <section
-          ref={hero.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 pt-28 pb-10",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            hero.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {cards.map((c) => (
+            <TechCard key={c.key} t={t} icon={c.icon} title={c.title} desc={c.desc} chips={c.chips} logos={c.logos} />
+          ))}
+        </div>
+      </section>
 
-           <h1
-  className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary"
->
-  {t("technologies.hero.h1") as string}
-</h1>
-
-
-            <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {t("technologies.hero.sub") as string}
-            </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
-                <a href={servicesHref} aria-label={t("technologies.hero.primaryAria") as string}>
-                  {t("technologies.hero.primary") as string}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </a>
-              </Button>
-
-              <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
-                <a href={contactHref} aria-label={t("technologies.hero.secondaryAria") as string}>
-                  {t("technologies.hero.secondary") as string}
-                </a>
-              </Button>
-            </div>
+      <section
+        ref={choose.ref}
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 py-10",
+          "opacity-0 translate-y-4 transition-all duration-700",
+          choose.isVisible && "opacity-100 translate-y-0"
+        )}
+      >
+        <div className="grid gap-8 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.choose.h2") as string}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.choose.p") as string}</p>
           </div>
-        </section>
 
-        <section
-          ref={why.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 py-10",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            why.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div className="mx-auto grid gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t("technologies.why.h2") as string}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {t("technologies.why.p") as string}
-              </p>
-            </div>
+          <div className="lg:col-span-7">
+            <div
+              className={cn(
+                "rounded-2xl border bg-card/60 backdrop-blur-xl p-6",
+                "border-primary/15 shadow-sm",
+                "hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+              )}
+            >
+              <p className="text-sm leading-relaxed text-foreground/90">{t("technologies.choose.statement") as string}</p>
 
-            <div className="lg:col-span-7">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {whyBullets.map((b, idx) => (
-                  <div
-                    key={`${b}-${idx}`}
-                    className={cn(
-                      "rounded-2xl border bg-card/55 backdrop-blur-xl p-4",
-                      "border-primary/15 transition-all duration-300",
-                      "hover:border-primary/30 hover:shadow-lg"
-                    )}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="mt-0.5 h-8 w-8 rounded-xl bg-primary/10 text-primary grid place-items-center" aria-hidden="true">
-                        <Zap className="h-4 w-4" />
-                      </div>
-                      <p className="text-sm leading-relaxed text-foreground/90">{b}</p>
-                    </div>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {parseLines(t("technologies.choose.points") as string).map((p, idx) => (
+                  <div key={`${p}-${idx}`} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                      <Sparkles className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm text-foreground/90">{p}</span>
                   </div>
                 ))}
               </div>
-
-              <p className="mt-4 text-xs text-muted-foreground">{t("technologies.why.authority") as string}</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section
-          ref={grid.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 py-10",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            grid.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {t("technologies.stack.h2") as string}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              {t("technologies.stack.p") as string}
-            </p>
-          </div>
+      <section
+        ref={faq.ref}
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 py-10",
+          "opacity-0 translate-y-4 transition-all duration-700",
+          faq.isVisible && "opacity-100 translate-y-0"
+        )}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.faq.h2") as string}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.faq.p") as string}</p>
+        </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {cards.map((c) => (
-              <TechCard key={c.key} t={t} icon={c.icon} title={c.title} desc={c.desc} chips={c.chips} logos={c.logos} />
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-primary/15 bg-card/60 backdrop-blur-xl p-2">
+          <Accordion type="single" collapsible className="w-full">
+            {["1", "2", "3", "4"].map((n) => (
+              <AccordionItem key={n} value={`faq-${n}`} className="border-b border-primary/10 last:border-b-0">
+                <AccordionTrigger className="px-4 text-left">{t(`technologies.faq.q${n}`) as string}</AccordionTrigger>
+                <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">
+                  {t(`technologies.faq.a${n}`) as string}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
-        </section>
-
-        <section
-          ref={choose.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 py-10",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            choose.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div className="grid gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t("technologies.choose.h2") as string}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                {t("technologies.choose.p") as string}
-              </p>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div
-                className={cn(
-                  "rounded-2xl border bg-card/60 backdrop-blur-xl p-6",
-                  "border-primary/15 shadow-sm",
-                  "hover:border-primary/30 hover:shadow-xl transition-all duration-300"
-                )}
-              >
-                <p className="text-sm leading-relaxed text-foreground/90">{t("technologies.choose.statement") as string}</p>
-
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {parseLines(t("technologies.choose.points") as string).map((p, idx) => (
-                    <div key={`${p}-${idx}`} className="flex items-start gap-3">
-                      <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-                        <Sparkles className="h-4 w-4" />
-                      </span>
-                      <span className="text-sm text-foreground/90">{p}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          ref={faq.ref}
-          className={cn(
-            "relative z-10 mx-auto max-w-6xl px-6 py-10",
-            "opacity-0 translate-y-4 transition-all duration-700",
-            faq.isVisible && "opacity-100 translate-y-0"
-          )}
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t("technologies.faq.h2") as string}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">{t("technologies.faq.p") as string}</p>
-          </div>
-
-          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-primary/15 bg-card/60 backdrop-blur-xl p-2">
-            <Accordion type="single" collapsible className="w-full">
-              {["1", "2", "3", "4"].map((n) => (
-                <AccordionItem key={n} value={`faq-${n}`} className="border-b border-primary/10 last:border-b-0">
-                  <AccordionTrigger className="px-4 text-left">{t(`technologies.faq.q${n}`) as string}</AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4 text-sm text-muted-foreground">{t(`technologies.faq.a${n}`) as string}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
-
-       
-      </main>
-
-      <Footer
-        locale={locale}
-        t={t}
-        brand={{
-          name: "Framework",
-          logoSrc: "/logo.png",
-          logoAltKey: "header.brand.logoAlt",
-          homeHref
-        }}
-      />
-    </div>
+          </Accordion>
+        </div>
+      </section>
+    </main>
   )
 }
