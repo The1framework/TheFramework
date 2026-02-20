@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 
 import LangRouter, { useLangRouter } from "@/routing/LangRouter"
+import ScrollToTop from "@/routing/ScrollToTop"
 import { localeRoot } from "@/i18n/runtime"
 
 import Index from "@/pages/Index"
@@ -21,31 +22,23 @@ function RoutedApp() {
   const { locale, t, cleanLocation } = useLangRouter()
 
   return (
-    <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
-      {/* Home */}
-      <Route path="/" element={<Index locale={locale} t={t} />} />
+    <>
+      <ScrollToTop />
+      <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
+        <Route path="/" element={<Index locale={locale} t={t} />} />
+        <Route path="/about" element={<About locale={locale} t={t} />} />
+        <Route path="/services" element={<Services locale={locale} t={t} />} />
+        <Route path="/services/:serviceSlug" element={<ServiceSlug locale={locale} t={t} />} />
+        <Route path="/technologies" element={<Technologies locale={locale} t={t} />} />
 
-      {/* About (entity + E-E-A-T) */}
-      <Route path="/about" element={<About locale={locale} t={t} />} />
+        <Route path="/fr" element={<Navigate to={localeRoot("fr")} replace />} />
+        <Route path="/fr/" element={<Navigate to={localeRoot("fr")} replace />} />
+        <Route path="/lb" element={<Navigate to={localeRoot("lb")} replace />} />
+        <Route path="/lb/" element={<Navigate to={localeRoot("lb")} replace />} />
 
-      {/* Services listing (SEO core list, no details) */}
-      <Route path="/services" element={<Services locale={locale} t={t} />} />
-
-      {/* Dynamic single service pages by slug */}
-      <Route path="/services/:serviceSlug" element={<ServiceSlug locale={locale} t={t} />} />
-
-      {/* Technologies */}
-      <Route path="/technologies" element={<Technologies locale={locale} t={t} />} />
-
-      {/* Normalize /fr or /lb visits to locale root */}
-      <Route path="/fr" element={<Navigate to={localeRoot("fr")} replace />} />
-      <Route path="/fr/" element={<Navigate to={localeRoot("fr")} replace />} />
-      <Route path="/lb" element={<Navigate to={localeRoot("lb")} replace />} />
-      <Route path="/lb/" element={<Navigate to={localeRoot("lb")} replace />} />
-
-      {/* 404 */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   )
 }
 

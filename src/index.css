@@ -490,3 +490,6 @@
 .animate-heroFadeUpTranslate {
   animation: heroFadeUpTranslate 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
+:root {
+  --primary: 219 57% 39%; /* ≈ #28509E */
+}

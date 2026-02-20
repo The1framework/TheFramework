@@ -174,72 +174,73 @@ export default function Technologies({ locale, t }: Props) {
 
   const whyBullets = useMemo(() => parseLines(t("technologies.why.bullets") as string), [t])
 
-  const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
+ const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
+
+const cards = useMemo(() => {
   const tech = (file: string) => `${base}tech/${file}`.replace(/\/{2,}/g, "/")
 
-  const cards = useMemo(
-    () => [
-      {
-        key: "frontend",
-        icon: <Layers className="h-5 w-5" />,
-        title: t("technologies.stack.frontend.title") as string,
-        desc: t("technologies.stack.frontend.desc") as string,
-        chips: parseLines(t("technologies.stack.frontend.chips") as string),
-        logos: [
-          { src: tech("react.svg"), altKey: "technologies.logos.react" },
-          { src: tech("nextdotjs.svg"), altKey: "technologies.logos.next" },
-          { src: tech("typescript.svg"), altKey: "technologies.logos.typescript" },
-          { src: tech("tailwindcss.svg"), altKey: "technologies.logos.tailwind" },
-          { src: tech("vite.svg"), altKey: "technologies.logos.vite" }
-        ]
-      },
-      {
-        key: "backend",
-        icon: <Server className="h-5 w-5" />,
-        title: t("technologies.stack.backend.title") as string,
-        desc: t("technologies.stack.backend.desc") as string,
-        chips: parseLines(t("technologies.stack.backend.chips") as string),
-        logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }]
-      },
-      {
-        key: "ai",
-        icon: <Cpu className="h-5 w-5" />,
-        title: t("technologies.stack.ai.title") as string,
-        desc: t("technologies.stack.ai.desc") as string,
-        chips: parseLines(t("technologies.stack.ai.chips") as string),
-        logos: []
-      },
-      {
-        key: "seo",
-        icon: <Zap className="h-5 w-5" />,
-        title: t("technologies.stack.seo.title") as string,
-        desc: t("technologies.stack.seo.desc") as string,
-        chips: parseLines(t("technologies.stack.seo.chips") as string),
-        logos: []
-      },
-      {
-        key: "security",
-        icon: <Shield className="h-5 w-5" />,
-        title: t("technologies.stack.security.title") as string,
-        desc: t("technologies.stack.security.desc") as string,
-        chips: parseLines(t("technologies.stack.security.chips") as string),
-        logos: []
-      },
-      {
-        key: "devops",
-        icon: <Sparkles className="h-5 w-5" />,
-        title: t("technologies.stack.devops.title") as string,
-        desc: t("technologies.stack.devops.desc") as string,
-        chips: parseLines(t("technologies.stack.devops.chips") as string),
-        logos: [
-          { src: tech("github.svg"), altKey: "technologies.logos.github" },
-          { src: tech("githubpages.svg"), altKey: "technologies.logos.githubPages" },
-          { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" }
-        ]
-      }
-    ],
-    [t, base]
-  )
+  return [
+    {
+      key: "frontend",
+      icon: <Layers className="h-5 w-5" />,
+      title: t("technologies.stack.frontend.title") as string,
+      desc: t("technologies.stack.frontend.desc") as string,
+      chips: parseLines(t("technologies.stack.frontend.chips") as string),
+      logos: [
+        { src: tech("react.svg"), altKey: "technologies.logos.react" },
+        { src: tech("nextdotjs.svg"), altKey: "technologies.logos.next" },
+        { src: tech("typescript.svg"), altKey: "technologies.logos.typescript" },
+        { src: tech("tailwindcss.svg"), altKey: "technologies.logos.tailwind" },
+        { src: tech("vite.svg"), altKey: "technologies.logos.vite" }
+      ]
+    },
+    {
+      key: "backend",
+      icon: <Server className="h-5 w-5" />,
+      title: t("technologies.stack.backend.title") as string,
+      desc: t("technologies.stack.backend.desc") as string,
+      chips: parseLines(t("technologies.stack.backend.chips") as string),
+      logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }]
+    },
+    {
+      key: "ai",
+      icon: <Cpu className="h-5 w-5" />,
+      title: t("technologies.stack.ai.title") as string,
+      desc: t("technologies.stack.ai.desc") as string,
+      chips: parseLines(t("technologies.stack.ai.chips") as string),
+      logos: []
+    },
+    {
+      key: "seo",
+      icon: <Zap className="h-5 w-5" />,
+      title: t("technologies.stack.seo.title") as string,
+      desc: t("technologies.stack.seo.desc") as string,
+      chips: parseLines(t("technologies.stack.seo.chips") as string),
+      logos: []
+    },
+    {
+      key: "security",
+      icon: <Shield className="h-5 w-5" />,
+      title: t("technologies.stack.security.title") as string,
+      desc: t("technologies.stack.security.desc") as string,
+      chips: parseLines(t("technologies.stack.security.chips") as string),
+      logos: []
+    },
+    {
+      key: "devops",
+      icon: <Sparkles className="h-5 w-5" />,
+      title: t("technologies.stack.devops.title") as string,
+      desc: t("technologies.stack.devops.desc") as string,
+      chips: parseLines(t("technologies.stack.devops.chips") as string),
+      logos: [
+        { src: tech("github.svg"), altKey: "technologies.logos.github" },
+        { src: tech("githubpages.svg"), altKey: "technologies.logos.githubPages" },
+        { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" }
+      ]
+    }
+  ]
+}, [t, base])
+
 
   const homeHref = buildPathWithLocale(locale, "/")
 
@@ -249,7 +250,7 @@ export default function Technologies({ locale, t }: Props) {
         locale={locale}
         t={t}
         brand={{
-          name: "AchiDigital",
+          name: "Framework",
           logoSrc: "/AchiDigital.jpeg",
           logoAltKey: "header.brand.logoAlt",
           homeHref
@@ -272,11 +273,13 @@ export default function Technologies({ locale, t }: Props) {
           )}
         >
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-medium text-primary/90">{t("technologies.hero.kicker") as string}</p>
 
-            <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              {t("technologies.hero.h1") as string}
-            </h1>
+           <h1
+  className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary"
+>
+  {t("technologies.hero.h1") as string}
+</h1>
+
 
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               {t("technologies.hero.sub") as string}
@@ -442,7 +445,7 @@ export default function Technologies({ locale, t }: Props) {
         locale={locale}
         t={t}
         brand={{
-          name: "AchiDigital",
+          name: "Framework",
           logoSrc: "/AchiDigital.jpeg",
           logoAltKey: "header.brand.logoAlt",
           homeHref

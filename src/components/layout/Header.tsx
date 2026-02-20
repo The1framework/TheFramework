@@ -55,18 +55,18 @@ export function Header({
   t,
   locale,
   brand,
-  servicesDropdown = [
-    { href: "/services/full-stack-web-app-development", labelKey: "header.services.fullStack" },
-    { href: "/services/website-optimization-performance-engineering", labelKey: "header.services.performance" },
-    { href: "/services/ux-ui-design-user-experience", labelKey: "header.services.uxui" },
-    { href: "/services/seo", labelKey: "header.services.seo" },
-    { href: "/services/geo-llm-search-optimization", labelKey: "header.services.geo" },
-    { href: "/services/answer-engine-optimization", labelKey: "header.services.aeo" },
-    { href: "/services/paid-advertising-ppc", labelKey: "header.services.ppc" },
-    { href: "/services/content-professional-writing", labelKey: "header.services.content" },
-    { href: "/services/ecommerce-solutions", labelKey: "header.services.ecommerce" },
-    { href: "/services/ai-integrations-automation", labelKey: "header.services.aiAutomation" },
-  ],
+servicesDropdown = [
+  { href: "/services/full-stack", labelKey: "header.services.fullStack" },
+  { href: "/services/performance", labelKey: "header.services.performance" },
+  { href: "/services/ux-ui", labelKey: "header.services.uxui" },
+  { href: "/services/seo", labelKey: "header.services.seo" },
+  { href: "/services/geo-llm", labelKey: "header.services.geo" },
+  { href: "/services/aeo", labelKey: "header.services.aeo" },
+  { href: "/services/content", labelKey: "header.services.content" },
+  { href: "/services/ecommerce", labelKey: "header.services.ecommerce" },
+  { href: "/services/ai-automation", labelKey: "header.services.aiAutomation" }
+],
+
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -113,7 +113,20 @@ export function Header({
     window.requestAnimationFrame(tick)
   }
 
-  // When URL becomes ...#contact (either on home already or after navigation), jump immediately
+  const scrollToTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+
+  const onNavClick = () => {
+    setIsMenuOpen(false)
+    setIsServicesOpen(false)
+    scrollToTop()
+  }
+
+  const onMobileNavClick = () => {
+    setIsMenuOpen(false)
+    setIsServicesOpen(false)
+    scrollToTop()
+  }
+
   useEffect(() => {
     if (location.hash === "#contact") scrollToContact()
   }, [location.hash, location.pathname])
@@ -132,13 +145,12 @@ export function Header({
     navigate(`${homeTo}#contact`)
   }
 
- const nav = [
-  { key: "home", to: routerTo(locale, "/"), labelKey: "header.nav.home" },
-  { key: "about", to: routerTo(locale, "/about"), labelKey: "header.nav.about" },
-  { key: "services", to: routerTo(locale, "/services"), labelKey: "header.nav.services" },
-  { key: "technologies", to: routerTo(locale, "/technologies"), labelKey: "header.nav.technologies" },
-] as const
-
+  const nav = [
+    { key: "home", to: routerTo(locale, "/"), labelKey: "header.nav.home" },
+    { key: "about", to: routerTo(locale, "/about"), labelKey: "header.nav.about" },
+    { key: "services", to: routerTo(locale, "/services"), labelKey: "header.nav.services" },
+    { key: "technologies", to: routerTo(locale, "/technologies"), labelKey: "header.nav.technologies" },
+  ] as const
 
   const ctaHref = `${withBase(homeTo)}#contact`
   const homeHref = brand.homeHref ? withBase(brand.homeHref) : withBase(homeTo)
@@ -150,14 +162,11 @@ export function Header({
     <header
       className={cn(
         "fixed top-1 left-1/2 -translate-x-1/2 z-50 transition-all duration-500",
-        isScrolled
-          ? "w-[calc(100%-2rem)] max-w-6xl glass-panel rounded-2xl py-3 px-5 mt-2"
-          : "w-full max-w-7xl py-6 px-6"
+        isScrolled ? "w-[calc(100%-2rem)] max-w-6xl glass-panel rounded-2xl py-3 px-5 mt-2" : "w-full max-w-7xl py-6 px-6"
       )}
     >
       <nav aria-label={t("header.aria.mainNav")} className="flex items-center justify-between gap-3">
-        {/* Brand / Logo */}
-        <Link to={homeTo} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
+        <Link to={homeTo} onClick={onNavClick} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
           <div className="w-10 h-10 rounded-xl bg-primary neon-glow overflow-hidden transition-transform group-hover:scale-110">
             {brand.logoSrc ? (
               <img
@@ -179,12 +188,12 @@ export function Header({
           <span className="font-display font-bold text-xl text-foreground">{brand.name}</span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1" aria-label={t("header.aria.desktopNav")}>
           <ul className="flex items-center gap-1" role="list">
             <li>
               <Link
                 to={nav[0].to}
+                onClick={onNavClick}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
                 {t(nav[0].labelKey)}
@@ -194,16 +203,17 @@ export function Header({
             <li>
               <Link
                 to={nav[1].to}
+                onClick={onNavClick}
                 className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
               >
                 {t(nav[1].labelKey)}
               </Link>
             </li>
 
-            {/* Services: hover dropdown + click opens /services */}
             <li className="relative" onMouseEnter={openServices} onMouseLeave={closeServices}>
               <Link
                 to={nav[2].to}
+                onClick={onNavClick}
                 className={cn(
                   "animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium inline-flex items-center gap-1",
                   isServicesOpen && "text-foreground"
@@ -233,7 +243,10 @@ export function Header({
                         role="menuitem"
                         to={routerTo(locale, item.href)}
                         className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/40 transition-colors"
-                        onClick={() => setIsServicesOpen(false)}
+                        onClick={() => {
+                          setIsServicesOpen(false)
+                          onNavClick()
+                        }}
                       >
                         {t(item.labelKey)}
                       </Link>
@@ -242,13 +255,15 @@ export function Header({
                 </ul>
               </div>
             </li>
+
             <li>
-                <Link
-                  to={nav[3].to}
-                  className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
-                >
-                  {t(nav[3].labelKey)}
-                </Link>
+              <Link
+                to={nav[3].to}
+                onClick={onNavClick}
+                className="animated-underline px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
+              >
+                {t(nav[3].labelKey)}
+              </Link>
             </li>
 
             <li>
@@ -263,7 +278,6 @@ export function Header({
           </ul>
         </div>
 
-        {/* Right cluster: CTA + Language */}
         <div className="hidden md:flex items-center gap-3">
           <Button asChild variant="hero" size="default">
             <a href={ctaHref} onClick={onContactClick}>
@@ -271,16 +285,9 @@ export function Header({
             </a>
           </Button>
 
-          <div className="flex items-center gap-2" aria-label={t("header.aria.languageSwitcher")}>
-       
-
-         
-
-          
-          </div>
+          <div className="flex items-center gap-2" aria-label={t("header.aria.languageSwitcher")}></div>
         </div>
 
-        {/* Mobile: CTA + Hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <Button asChild variant="hero" size="sm">
             <a href={ctaHref} onClick={onContactClick}>
@@ -300,12 +307,8 @@ export function Header({
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <div
-        className={cn(
-          "md:hidden overflow-hidden transition-all duration-300",
-          isMenuOpen ? "max-h-[520px] mt-4" : "max-h-0"
-        )}
+        className={cn("md:hidden overflow-hidden transition-all duration-300", isMenuOpen ? "max-h-[520px] mt-4" : "max-h-0")}
         aria-hidden={!isMenuOpen}
       >
         <div className="flex flex-col gap-2 pb-4">
@@ -314,7 +317,7 @@ export function Header({
               <Link
                 to={nav[0].to}
                 className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={onMobileNavClick}
               >
                 {t(nav[0].labelKey)}
               </Link>
@@ -324,7 +327,7 @@ export function Header({
               <Link
                 to={nav[1].to}
                 className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={onMobileNavClick}
               >
                 {t(nav[1].labelKey)}
               </Link>
@@ -334,7 +337,7 @@ export function Header({
               <Link
                 to={nav[2].to}
                 className="flex items-center justify-between px-4 py-3 text-muted-foreground hover:text-foreground transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={onMobileNavClick}
               >
                 {t(nav[2].labelKey)}
               </Link>
@@ -345,22 +348,23 @@ export function Header({
                     key={s.href}
                     to={routerTo(locale, s.href)}
                     className="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/30 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={onMobileNavClick}
                   >
                     {t(s.labelKey)}
                   </Link>
                 ))}
               </div>
             </li>
+
             <li>
-  <Link
-    to={nav[3].to}
-    className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
-    onClick={() => setIsMenuOpen(false)}
-  >
-    {t(nav[3].labelKey)}
-  </Link>
-</li>
+              <Link
+                to={nav[3].to}
+                className="block px-4 py-3 rounded-lg transition-colors font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                onClick={onMobileNavClick}
+              >
+                {t(nav[3].labelKey)}
+              </Link>
+            </li>
 
             <li>
               <a

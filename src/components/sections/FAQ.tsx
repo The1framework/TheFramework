@@ -1,41 +1,36 @@
-import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { cn } from '@/lib/utils';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+// src/components/sections/FAQ.tsx
+import { useMemo } from "react"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
+import { cn } from "@/lib/utils"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-const faqs = [
-  {
-    question: 'What services does AchiDigital offer?',
-    answer: 'We offer a comprehensive suite of digital services including web development, UI/UX design, SEO optimization, digital marketing, mobile app development, AI solutions, analytics, and cybersecurity. Our team tailors each solution to meet your specific business needs and goals.',
-  },
-  {
-    question: 'How long does a typical project take?',
-    answer: 'Project timelines vary based on scope and complexity. A simple website might take 4-6 weeks, while a complex web application or mobile app could take 3-6 months. During our initial consultation, we provide a detailed timeline based on your specific requirements.',
-  },
-  {
-    question: 'What is your pricing structure?',
-    answer: 'We offer flexible pricing models including fixed-price projects, hourly rates, and retainer arrangements. Our pricing is transparent and competitive, with no hidden fees. Contact us for a free consultation and customized quote.',
-  },
-  {
-    question: 'Do you provide ongoing support and maintenance?',
-    answer: 'Absolutely! We offer various support packages to ensure your digital assets remain secure, up-to-date, and performing optimally. This includes regular updates, security patches, performance monitoring, and technical support.',
-  },
-  {
-    question: 'Can you work with existing systems and platforms?',
-    answer: 'Yes, we have extensive experience integrating with existing systems, APIs, and platforms. Whether you need to enhance your current website, integrate new tools, or migrate to a new platform, we can help ensure a smooth transition.',
-  },
-  {
-    question: 'What makes AchiDigital different from other agencies?',
-    answer: 'We combine technical excellence with strategic thinking. Our team stays ahead of industry trends, we prioritize measurable results, and we build lasting partnerships with our clients. We are not just service providers—we are your dedicated digital growth partners.',
-  },
-];
+type Props = {
+  locale: "en" | "fr" | "lb"
+  t: (key: string) => string
+}
 
-export function FAQ() {
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal<HTMLElement>();
+function parsePairs(value: string) {
+  const raw = (value || "").trim()
+  if (!raw) return []
+  return raw
+    .split("\n\n")
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .map((block) => {
+      const [qLine, ...rest] = block.split("\n")
+      const question = (qLine || "").replace(/^Q:\s*/i, "").trim()
+      const answer = rest.join("\n").replace(/^A:\s*/i, "").trim()
+      return { question, answer }
+    })
+    .filter((x) => x.question && x.answer)
+}
+
+export function FAQ({ locale, t }: Props) {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollReveal<HTMLElement>(0.12)
+
+  const faqs = useMemo(() => {
+    return parsePairs(t("faq.items") as string)
+  }, [t])
 
   return (
     <section
@@ -44,30 +39,29 @@ export function FAQ() {
       className="relative py-24 md:py-32 overflow-hidden"
       aria-labelledby="faq-heading"
     >
-      {/* Background decorations */}
       <div className="absolute top-0 left-0 w-full h-px section-separator" />
 
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <div className={cn(
-            'text-center mb-12 transition-all duration-700',
-            sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          )}>
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">FAQ</span>
+          <div
+            className={cn(
+              "text-center mb-12 transition-all duration-700",
+              sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 id="faq-heading" className="text-display-md md:text-display-lg mt-4 mb-6">
-              Common <span className="gradient-text">Questions</span>
+              {t("faq.title.prefix") as string}{" "}
+              <span className="gradient-text">{t("faq.title.highlight") as string}</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Find answers to frequently asked questions about our services and process.
-            </p>
+            <p className="text-lg text-muted-foreground">{t("faq.subtitle") as string}</p>
           </div>
 
-          {/* Accordion */}
-          <div className={cn(
-            'transition-all duration-700 delay-200',
-            sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          )}>
+          <div
+            className={cn(
+              "transition-all duration-700 delay-200",
+              sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem
@@ -78,31 +72,25 @@ export function FAQ() {
                   <AccordionTrigger className="text-left font-semibold hover:text-primary py-6 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6">
-                    {faq.answer}
-                  </AccordionContent>
+                  <AccordionContent className="text-muted-foreground pb-6">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
 
-          {/* CTA */}
-          <div className={cn(
-            'text-center mt-12 transition-all duration-700 delay-300',
-            sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          )}>
-            <p className="text-muted-foreground mb-4">
-              Still have questions? We're here to help.
-            </p>
-            <a 
-              href="#contact" 
-              className="animated-underline text-lg font-semibold text-primary"
-            >
-              Contact our team →
+          <div
+            className={cn(
+              "text-center mt-12 transition-all duration-700 delay-300",
+              sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
+            <p className="text-muted-foreground mb-4">{t("faq.cta.line") as string}</p>
+            <a href="#contact" className="animated-underline text-lg font-semibold text-primary">
+              {t("faq.cta.link") as string}
             </a>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }

@@ -79,27 +79,40 @@ export function Hero() {
       />
 
       <div className="container mx-auto px-6 py-20 text-center">
-        <h1
-          id="hero-heading"
-          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance"
-        >
-          {headlineWords.map((word, index) => {
-            const isHighlighted = highlightWords.has(normalizeWord(word))
-            return (
-              <span
-                key={`${word}-${index}`}
-                className={cn(
-                  "inline-block mr-[0.25em]",
-                  isHighlighted ? "gradient-text underline-draw" : "",
-                  "motion-safe:animate-heroWordUpTranslate motion-reduce:animate-none"
-                )}
-                style={{ animationDelay: `${80 + index * 45}ms` } as CSSProperties}
-              >
-                {word}
-              </span>
-            )
-          })}
-        </h1>
+       <h1
+  id="hero-heading"
+  className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance"
+>
+  {[
+    "Web Development &",
+    "SEO Solutions for",
+    "Business Growth",
+  ].map((line, lineIndex) => (
+    <span key={lineIndex} className="block">
+      {line.split(" ").map((word, index) => {
+        const globalIndex = lineIndex * 10 + index
+        const isHighlighted = highlightWords.has(normalizeWord(word))
+
+        return (
+          <span
+            key={`${word}-${index}`}
+            className={cn(
+              "inline-block mr-[0.25em]",
+              isHighlighted ? "gradient-text underline-draw" : "",
+              "motion-safe:animate-heroWordUpTranslate motion-reduce:animate-none"
+            )}
+            style={{
+              animationDelay: `${80 + globalIndex * 45}ms`,
+            } as CSSProperties}
+          >
+            {word}
+          </span>
+        )
+      })}
+    </span>
+  ))}
+      </h1>
+
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance motion-safe:animate-heroFadeUpTranslate motion-reduce:animate-none">
           {subheading}

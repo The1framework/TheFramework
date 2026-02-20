@@ -40,3 +40,6 @@
 .read-the-docs {
   color: #888;
 }
+:root {
+  --primary: 219 57% 39%; /* ≈ #28509E */
+}

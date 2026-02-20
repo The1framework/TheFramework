@@ -24,7 +24,7 @@ export default function Index({ locale, t }: IndexProps) {
         locale={locale}
         t={t}
         brand={{
-          name: "AchiDigital",
+          name: "Framework",
           logoSrc: "/AchiDigital.jpeg",
           logoAltKey: "header.brand.logoAlt"
         }}
@@ -34,7 +34,7 @@ export default function Index({ locale, t }: IndexProps) {
         <Hero />
         <About t={t} />
         <ProcessTimeline />
-        <FAQ />
+        <FAQ locale={locale} t={t} />
         <Contact />
       </main>
 

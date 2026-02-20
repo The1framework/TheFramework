@@ -48,7 +48,6 @@ export function ProcessTimeline() {
           'text-center mb-16 transition-all duration-700',
           sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         )}>
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Process</span>
           <h2 id="process-heading" className="text-display-md md:text-display-lg mt-4 mb-6">
             How We <span className="gradient-text">Work</span>
           </h2>

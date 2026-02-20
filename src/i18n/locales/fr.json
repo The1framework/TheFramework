@@ -343,5 +343,20 @@
         ]
       }
     }
+  },
+  
+  "faq": {
+    "title": {
+      "prefix": "Questions",
+      "highlight": "Fréquentes"
+    },
+    "subtitle": "Trouvez des réponses aux questions les plus fréquentes sur nos services et notre processus.",
+    "items": "Q: Quels services propose Framework ?\nA: Framework propose une offre complète : développement web, UI/UX, SEO, marketing digital, applications mobiles, solutions IA, analytics et cybersécurité. Chaque solution est adaptée à vos objectifs.\n\nQ: Combien de temps dure un projet типique ?\nA: Les délais varient selon la portée. Un site simple peut prendre 4 à 6 semaines, tandis qu’une application plus complexe peut nécessiter 3 à 6 mois. Après la consultation initiale, nous proposons un planning clair.\n\nQ: Comment fonctionne votre tarification ?\nA: Nous proposons des modèles flexibles : forfait, taux horaire et retainer. La tarification est transparente, sans frais cachés. Contactez-nous pour une consultation gratuite et un devis personnalisé.\n\nQ: Proposez-vous du support et de la maintenance ?\nA: Oui. Nous offrons des packs de support pour garantir sécurité, mises à jour et performance : correctifs, monitoring et assistance technique.\n\nQ: Pouvez-vous travailler avec des systèmes et plateformes existants ?\nA: Oui. Nous intégrons des systèmes existants, APIs et plateformes, pour améliorer un site, ajouter des outils ou migrer vers une nouvelle stack.\n\nQ: Qu’est-ce qui différencie Framework des autres agences ?\nA: Nous combinons excellence technique et vision stratégique, avec un focus sur des résultats mesurables et des partenariats durables.",
+    "cta": {
+      "line": "Vous avez encore des questions ? On est là pour vous aider.",
+      "link": "Contacter notre équipe →"
+    }
   }
+
+
 }

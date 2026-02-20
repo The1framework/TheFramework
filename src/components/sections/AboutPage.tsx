@@ -74,17 +74,20 @@ export function AboutPage({ locale, t }: Props) {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-7">
 
-                  <h1
-                    id="about-h1"
-                    className={cn(
-                      "mt-3 font-display text-3xl md:text-5xl font-bold tracking-tight text-balance",
-                      textAlign
-                    )}
-                  >
-                    <span>{t("about.hero.titlePrefix")}</span>{" "}
-                    <span className="gradient-text">{t("about.hero.titleAccent")}</span>
-                    {t("about.hero.titleSuffix") ? <span> {t("about.hero.titleSuffix")}</span> : null}
-                  </h1>
+                <h1
+  id="about-h1"
+  className={cn(
+    "text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary",
+    textAlign
+  )}
+>
+  <span>{t("about.hero.titlePrefix")}</span>{" "}
+  <span>{t("about.hero.titleAccent")}</span>
+  {t("about.hero.titleSuffix") ? <span> {t("about.hero.titleSuffix")}</span> : null}
+</h1>
+
+
+
 
                   <p className={cn("mt-4 text-base md:text-lg text-muted-foreground max-w-2xl", textAlign, alignAuto)}>
                     {t("about.hero.description")}

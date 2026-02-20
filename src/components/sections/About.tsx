@@ -51,9 +51,9 @@ export function About({ t }: Props) {
             sectionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+          {/* <span className="text-sm font-semibold text-primary uppercase tracking-wider">
             {t("aboutSection.header.kicker")}
-          </span>
+          </span> */}
 
           <h2 id="about-heading" className="text-display-md md:text-display-lg mt-4 mb-6">
             {t("aboutSection.header.titlePrefix")}{" "}

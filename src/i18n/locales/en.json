@@ -1,310 +1,321 @@
 {
   "header": {
-    "brand": {
-      "logoAlt": "ACHIdigital digital agency",
-      "name": "AchiDigital"
+  "brand": {
+    "logoAlt": "Framework digital startup",
+    "name": " The Framework"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "technologies": "Technologies"
+  },
+  "services": {
+    "fullStack": "Full-Stack Development",
+    "performance": "Website Optimization & Performance Engineering",
+    "uxui": "UX/UI Design",
+    "seo": "Search Engine Optimization (SEO)",
+    "geo": "GEO & LLM Search Optimization (AI Visibility)",
+    "aeo": "Answer Engine Optimization (AEO)",
+    "ppc": "Paid Advertising (PPC)",
+    "content": "Content Writing",
+    "ecommerce": "E-commerce Solutions",
+    "aiAutomation": "Advanced AI Integrations & Automation"
+  },
+  "cta": {
+    "primary": "Get a Free Audit",
+    "primaryShort": "Audit"
+  },
+  "lang": {
+    "en": "EN",
+    "fr": "FR",
+    "lb": "AR"
+  },
+  "aria": {
+    "mainNav": "Main navigation",
+    "desktopNav": "Primary navigation",
+    "mobileNav": "Primary navigation (mobile)",
+    "servicesMenu": "Services menu",
+    "languageSwitcher": "Language switcher",
+    "homeLink": "Go to homepage",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  }
+  },
+  "aboutSection": {
+  "header": {
+    "kicker": "About",
+    "titlePrefix": "Built for",
+    "titleAccent": "Performance",
+    "titleSuffix": "",
+    "description": "Framework is a performance-first digital startup building minimal, SEO-safe websites with premium design details that stay lightweight."
+  },
+  "focus": {
+    "title": "Our Focus",
+    "description": "At Framework, strategy comes before visuals, performance before effects, and clarity before complexity so your site remains fast, indexable, and scalable."
+  },
+  "chips": {
+    "a": "SEO-safe structure",
+    "b": "Core Web Vitals",
+    "c": "Clean semantics",
+    "d": "Long-term maintainability"
+  },
+  "values": {
+    "a": {
+      "title": "Mission-Driven",
+      "description": "As a startup, we focus on measurable outcomes aligned with real business growth."
     },
-    "nav": { "home": "Home", "about": "About", "services": "Services", "blog": "Blog", "contact": "Contact",      "technologies": "Technologies" },
- "services": {
-      "fullStack": "Full-Stack Development",
-      "performance": "Website Optimization & Performance Engineering",
-      "uxui": "UX/UI Design",
-      "seo": "Search Engine Optimization (SEO)",
-      "geo": "GEO & LLM Search Optimization (AI Visibility)",
-      "aeo": "Answer Engine Optimization (AEO)",
-      "ppc": "Paid Advertising (PPC)",
-      "content": "Content Writing",
-      "ecommerce": "E-commerce Solutions",
-      "aiAutomation": "Advanced AI Integrations & Automation"
+    "b": {
+      "title": "Innovation First",
+      "description": "We use modern web standards and intelligent systems to keep our partners ahead."
     },
-    "cta": { "primary": "Get a Free Audit", "primaryShort": "Audit" },
-    "lang": { "en": "EN", "fr": "FR", "lb": "AR" },
-    "aria": {
-      "mainNav": "Main navigation",
-      "desktopNav": "Primary navigation",
-      "mobileNav": "Primary navigation (mobile)",
-      "servicesMenu": "Services menu",
-      "languageSwitcher": "Language switcher",
-      "homeLink": "Go to homepage",
-      "openMenu": "Open menu",
-      "closeMenu": "Close menu"
+    "c": {
+      "title": "Client-Centric",
+      "description": "Framework builds long-term partnerships through clarity, reliability, and consistent delivery."
+    },
+    "d": {
+      "title": "Growth Focused",
+      "description": "Every build is engineered to scale — performance, SEO, and maintainability."
     }
   },
-   "aboutSection": {
-    "header": {
-      "kicker": "About",
-      "titlePrefix": "Built for",
-      "titleAccent": "Performance",
-      "titleSuffix": "",
-      "description": "Minimal, SEO-safe, and performance-first websites with premium design details that stay lightweight."
-    },
-    "focus": {
-      "title": "Our Focus",
-      "description": "Strategy before visuals, performance before effects, and clarity before complexity so your site stays fast, indexable, and scalable."
-    },
-    "chips": {
-      "a": "SEO-safe structure",
-      "b": "Core Web Vitals",
-      "c": "Clean semantics",
-      "d": "Long-term maintainability"
-    },
-    "values": {
-      "a": {
-        "title": "Mission-Driven",
-        "description": "We focus on measurable outcomes that align with your business goals."
-      },
-      "b": {
-        "title": "Innovation First",
-        "description": "We use modern web standards and smart systems to keep you ahead."
-      },
-      "c": {
-        "title": "Client-Centric",
-        "description": "We build long-term partnerships through clarity, delivery, and reliability."
-      },
-      "d": {
-        "title": "Growth Focused",
-        "description": "Every build is designed to scale — performance, SEO, and maintainability."
-      }
-    },
-    "footerLine": "Designed to feel premium. Built to stay lightweight, stable, and easy to evolve."
+  "footerLine": "Designed to feel premium. Built by a startup that values speed, stability, and long-term evolution."
   },
   "entity": {
-    "definition": "ACHIdigital is a website development and digital growth agency specializing in high-performance, conversion-focused business websites."
+  "definition": "Framework is a website development and digital growth startup specializing in high-performance, conversion-focused business websites."
   },
- "footer": {
-    "brand": {
-      "name": "AchiDigital",
-      "logoSrc": "/AchiDigital.jpeg",
-      "logoAlt": "AchiDigital logo",
-      "wordA": "Achi",
-      "wordB": "Digital",
-      "description": "Performance-driven digital services built for growth, visibility, and long-term scalability."
-    },
-    "columns": {
-      "company": {
-        "title": "Company",
-        "links": {
-          "home": "Home",
-          "about": "About",
-          "services": "Services"
-        }
-      },
-      "legal": {
-        "title": "Legal",
-        "links": {
-          "privacy": "Privacy Policy",
-          "terms": "Terms of Service",
-          "cookies": "Cookie Policy"
-        }
+
+  "footer": {
+  "brand": {
+    "name": "Framework",
+    "logoSrc": "/AchiDigital.jpeg",
+    "logoAlt": "Framework logo",
+    "wordA": "Frame",
+    "wordB": "work",
+    "description": "A performance-focused startup building fast, scalable websites engineered for measurable digital growth."
+  },
+  "columns": {
+    "company": {
+      "title": "Company",
+      "links": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services"
       }
     },
-    "bottom": {
-      "prefix": "©",
-      "suffix": "All rights reserved."
+    "legal": {
+      "title": "Legal",
+      "links": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy"
+      }
     }
   },
- "about": {
-    "hero": {
-      "titlePrefix": "About",
-      "titleAccent": "AchiDigital",
-      "titleSuffix": "",
-      "description": "ACHIdigital is a website development and digital growth agency specializing in high-performance, conversion-focused business websites. We build modern websites with an engineering mindset focused on clarity, performance, and long-term growth."
+  "bottom": {
+    "prefix": "©",
+    "suffix": "All rights reserved."
+  }
+  },
+  "about": {
+  "hero": {
+    "titlePrefix": "About",
+    "titleAccent": "Framework",
+    "titleSuffix": "",
+    "description": "Framework is a website development and digital growth startup specializing in high-performance, conversion-focused business websites. We build modern platforms with an engineering mindset focused on clarity, performance, and long-term growth."
+  },
+  "entity": {
+    "heading": "Official Entity Definition"
+  },
+  "links": {
+    "services": {
+      "label": "Explore Services",
+      "aria": "Go to the services page"
     },
-    "entity": {
-      "heading": "Official Entity Definition"
-    },
-    "links": {
-      "services": {
-        "label": "Explore Services",
-        "aria": "Go to the services page"
-      },
-      "contact": {
-        "label": "Contact",
-        "aria": "Jump to the contact section"
+    "contact": {
+      "label": "Contact",
+      "aria": "Jump to the contact section"
+    }
+  },
+  "sections": {
+    "different": {
+      "h2": "What Makes Us Different",
+      "items": {
+        "a": {
+          "h3": "Strategy Before Design",
+          "p": "We align structure, messaging, and intent before polishing visuals so the final result makes sense to users and search engines."
+        },
+        "b": {
+          "h3": "Performance Before Effects",
+          "p": "We protect Core Web Vitals and real loading speed. Motion is allowed only when it remains lightweight and SEO-safe."
+        },
+        "c": {
+          "h3": "SEO-Safe Engineering",
+          "p": "We build clean semantics, stable routing, and indexable content — no hidden text, no risky shortcuts, no fragile dependencies."
+        },
+        "d": {
+          "h3": "Long-Term Growth Mindset",
+          "p": "We design systems that scale: multilingual-ready, maintainable, and easy to expand without rebuilding from scratch."
+        }
       }
     },
-    "sections": {
-      "different": {
-        "h2": "What Makes Us Different",
-        "items": {
-          "a": {
-            "h3": "Strategy Before Design",
-            "p": "We align structure, messaging, and intent before polishing visuals so the final result makes sense to users and search engines."
-          },
-          "b": {
-            "h3": "Performance Before Effects",
-            "p": "We protect Core Web Vitals and real loading speed. Motion is allowed only when it stays lightweight and SEO-safe."
-          },
-          "c": {
-            "h3": "SEO-Safe Engineering",
-            "p": "We build clean semantics, stable routing, and indexable content no hidden text, no risky hacks, no fragile dependencies."
-          },
-          "d": {
-            "h3": "Long-Term Growth Mindset",
-            "p": "We design systems that can scale: multilingual-ready, maintainable, and easy to expand without rebuilding everything."
-          }
-        }
-      },
-      "philosophy": {
-        "h2": "We Don’t Build Websites - We Build Growth Systems",
-        "p": "A website should not be a static brochure. It should guide decisions, communicate trust, and support visibility across search and user journeys. That requires strong architecture, clarity, and ongoing refinement not just a one-time design."
-      },
-      "responsible": {
-        "h2": "Our Responsible Approach",
-        "tag": "Trust • Privacy • SEO-Safe",
-        "p": "We use modern tools responsibly and professionally. We don’t use tactics that compromise trust, privacy, or indexing integrity.",
-        "items": {
-          "a": "No cloaking. Google and users see the same core content.",
-          "b": "No dynamic SEO text swapping or keyword manipulation.",
-          "c": "Privacy-first mindset with careful handling of data and tracking.",
-          "d": "Human oversight on decisions that affect messaging, quality, and accuracy."
-        }
+    "philosophy": {
+      "h2": "We Don’t Just Build Websites — We Build Growth Systems",
+      "p": "A website should not be a static brochure. It should guide decisions, communicate trust, and support visibility across search and user journeys. That requires strong architecture, clarity, and ongoing refinement — not just a one-time design."
+    },
+    "responsible": {
+      "h2": "Our Responsible Approach",
+      "tag": "Trust • Privacy • SEO-Safe",
+      "p": "As a startup, we use modern tools responsibly and professionally. We avoid tactics that compromise trust, privacy, or indexing integrity.",
+      "items": {
+        "a": "No cloaking. Search engines and users see the same core content.",
+        "b": "No dynamic SEO text swapping or keyword manipulation.",
+        "c": "Privacy-first mindset with careful handling of data and tracking.",
+        "d": "Human oversight on decisions that affect messaging, quality, and accuracy."
       }
     }
+  }
   },
   "home": {
-    "hero": {
-      "kicker": "Digital Agency • SEO-First • Performance Engineered",
-      "kickerSr": "Hero positioning and category descriptor",
+  "hero": {
+    "kicker": "Digital Startup • SEO-First • Performance Engineered",
+    "kickerSr": "Hero positioning and category descriptor",
 
-      "h1": "Web Development & SEO Solutions for Business Growth",
-      "h1Highlights": ["Development", "SEO", "Growth"],
+    "h1": "Web Development & SEO Solutions for Business Growth",
+    "h1Highlights": ["Development", "SEO", "Growth"],
 
-      "subheading": "High-performance, conversion-driven websites built for search visibility, trust, and long-term growth.",
+    "subheading": "High-performance, conversion-driven websites built for search visibility, trust, and long-term growth.",
 
-      "trustItems": [
-        "SEO-first architecture",
-        "Core Web Vitals optimized",
-        "Multilingual",
-        "Privacy-first & consent-compliant"
-      ],
+    "trustItems": [
+      "SEO-first architecture",
+      "Core Web Vitals optimized",
+      "Multilingual-ready",
+      "Privacy-first & consent-compliant"
+    ],
 
-      "primaryCtaLabel": "Get a Free Website Audit",
-      "primaryCtaAria": "Get a free website audit",
-      "primaryCtaHref": "/contact",
+    "primaryCtaLabel": "Get a Free Website Audit",
+    "primaryCtaAria": "Get a free website audit",
+    "primaryCtaHref": "/contact",
 
-      "secondaryCtaLabel": "View Services",
-      "secondaryCtaAria": "View our services",
-      "secondaryCtaHref": "/services",
+    "secondaryCtaLabel": "View Services",
+    "secondaryCtaAria": "View our services",
+    "secondaryCtaHref": "/services",
 
-      "complianceNote": "No tracking before consent. Secure, scalable engineering standards."
-    }
+    "complianceNote": "No tracking before consent. Secure, scalable engineering standards."
+  }
   },
-  "servicesIndex": {
-    "items": {
-      "ai-website-development": "AI Website Development",
-      "seo": "Search Engine Optimization (SEO)",
-      "geo-llm-search-optimization": "GEO & LLM Search Optimization (AI Visibility)",
-      "answer-engine-optimization": "Answer Engine Optimization (AEO)",
-      "ai-integrations-automation": "Advanced AI Integrations & Automation"
+
+  "faq": {
+    "title": {
+      "prefix": "Common",
+      "highlight": "Questions"
+    },
+    "subtitle": "Find answers to frequently asked questions about our services and process.",
+    "items": "Q: What services does Framework offer?\nA: We offer a comprehensive suite of digital services including web development, UI/UX design, SEO optimization, digital marketing, mobile app development, AI solutions, analytics, and cybersecurity. Each solution is tailored to your business goals.\n\nQ: How long does a typical project take?\nA: Timelines vary by scope. A simple website may take 4–6 weeks, while a complex web application or mobile app can take 3–6 months. After the initial consultation, we provide a clear delivery plan.\n\nQ: What is your pricing structure?\nA: We offer flexible pricing models: fixed-price projects, hourly rates, and retainers. Pricing is transparent, with no hidden fees. Contact us for a free consultation and a tailored quote.\n\nQ: Do you provide ongoing support and maintenance?\nA: Yes. We offer support packages to keep your digital assets secure, updated, and performant—covering updates, security patches, monitoring, and technical assistance.\n\nQ: Can you work with existing systems and platforms?\nA: Yes. We can integrate with existing systems, APIs, and platforms—whether improving your current site, adding tools, or migrating to a new stack.\n\nQ: What makes Framework different from other agencies?\nA: We combine technical excellence with strategic thinking—prioritizing measurable outcomes and long-term partnerships. We don’t just deliver work—we support growth.",
+    "cta": {
+      "line": "Still have questions? We’re here to help.",
+      "link": "Contact our team →"
     }
   },
  
- 
-  
   "contact": {
-    "heading": "Contact Us",
-    "intro": "Reach out for business inquiries or project discussions. Every message is reviewed personally and handled with confidentiality.",
+  "heading": "Contact Us",
+  "intro": "Reach out for business inquiries or project discussions. Every message is reviewed personally and handled with confidentiality.",
 
-    "business": {
-      "title": "Business Information",
-      "name": "ACHI Digital",
-      "entityLine": "Web development and digital services for modern businesses.",
-      "areaServed": "Based in Lebanon. Serving clients locally and internationally.",
-      "emailLabel": "Email",
-      "emailValue": "achi.gr@hotmail.com",
-      "phoneLabel": "Phone",
-      "phoneValue": "+961 03 322 811",
-      "phoneTel": "+96103322811",
-      "locationLabel": "Location",
-      "locationValue": "Lebanon",
-      "locationHref": "#contact"
-    },
-
-    "methods": {
-      "whatsappLabel": "WhatsApp",
-      "whatsappValue": "Message us on WhatsApp",
-      "whatsappHref": "https://wa.me/96170000000"
-    },
-
-    "form": {
-      "honeypotLabel": "Website",
-      "fullName": {
-        "label": "Full Name *",
-        "placeholder": "Your name"
-      },
-      "businessEmail": {
-        "label": "Business Email *",
-        "placeholder": "name@company.com"
-      },
-      "company": {
-        "label": "Company (Optional)",
-        "placeholder": "Company name"
-      },
-      "service": {
-        "label": "Service Interest *",
-        "placeholder": "Select a service",
-        "help": "This helps us route your message to the right person.",
-        "options": {
-          "web": "Website Development",
-          "seo": "SEO & Visibility",
-          "design": "UI/UX Design",
-          "ecommerce": "E-commerce",
-          "other": "Other"
-        }
-      },
-      "message": {
-        "label": "Message *",
-        "placeholder": "Tell us what you want to build."
-      },
-      "submit": "Send Message",
-      "submitSubmitting": "Sending…"
-    },
-
-    "privacy": {
-      "text": "Your information is kept private and used only to respond.",
-      "privacyLabel": "Privacy Policy",
-      "privacyHref": "/privacy",
-      "cookiesLabel": "Cookie Policy",
-      "cookiesHref": "/cookies"
-    },
-
-    "next": {
-      "title": "What Happens Next",
-      "text": "We’ll reply by email with next steps. If needed, we may suggest a short call to clarify scope."
-    },
-
-    "alt": {
-      "title": "Prefer an alternative?",
-      "emailText": "Prefer email?",
-      "emailLinkLabel": "Send us an email",
-      "servicesText": "Not ready yet?",
-      "servicesLinkLabel": "Explore our services",
-      "servicesHref": "/services"
-    },
-
-    "toast": {
-      "title": "Message sent",
-      "description": "Thanks! we’ll reply soon."
-    },
-
-    "schema": {
-      "orgName": "ACHI Digital",
-      "url": "https://achidigital.com",
-      "areaServed": "Lebanon",
-      "contactType": "customer support",
-      "availableLanguage": "en, fr, ar"
-    }
+  "business": {
+    "title": "Business Information",
+    "name": "Framework",
+    "entityLine": "Website development and digital growth solutions built by a performance-focused startup.",
+    "areaServed": "Based in Lebanon. Serving clients locally and internationally.",
+    "emailLabel": "Email",
+    "emailValue": "achi.gr@hotmail.com",
+    "phoneLabel": "Phone",
+    "phoneValue": "+961 03 322 811",
+    "phoneTel": "+96103322811",
+    "locationLabel": "Location",
+    "locationValue": "Lebanon",
+    "locationHref": "#contact"
   },
-  "seo": {
-    "siteUrl": "https://achidigital.github.io/ACHI",
-    "organization": {
-      "name": "AchiDigital",
-      "url": "https://achidigital.github.io/ACHI",
-      "logo": "https://achidigital.github.io/ACHI/AchiDigital.jpeg"
-    }
+
+  "methods": {
+    "whatsappLabel": "WhatsApp",
+    "whatsappValue": "Message us on WhatsApp",
+    "whatsappHref": "https://wa.me/96170000000"
   },
-   "servicePages": {
+
+  "form": {
+    "honeypotLabel": "Website",
+    "fullName": {
+      "label": "Full Name *",
+      "placeholder": "Your name"
+    },
+    "businessEmail": {
+      "label": "Business Email *",
+      "placeholder": "name@company.com"
+    },
+    "company": {
+      "label": "Organization (Optional)",
+      "placeholder": "Organization name"
+    },
+    "service": {
+      "label": "Service Interest *",
+      "placeholder": "Select a service",
+      "help": "This helps us route your message to the right person.",
+      "options": {
+        "web": "Website Development",
+        "seo": "SEO & Visibility",
+        "design": "UI/UX Design",
+        "ecommerce": "E-commerce",
+        "other": "Other"
+      }
+    },
+    "message": {
+      "label": "Message *",
+      "placeholder": "Tell us what you want to build."
+    },
+    "submit": "Send Message",
+    "submitSubmitting": "Sending…"
+  },
+
+  "privacy": {
+    "text": "Your information is kept private and used only to respond.",
+    "privacyLabel": "Privacy Policy",
+    "privacyHref": "/privacy",
+    "cookiesLabel": "Cookie Policy",
+    "cookiesHref": "/cookies"
+  },
+
+  "next": {
+    "title": "What Happens Next",
+    "text": "We’ll reply by email with next steps. If needed, we may suggest a short call to clarify scope."
+  },
+
+  "alt": {
+    "title": "Prefer an alternative?",
+    "emailText": "Prefer email?",
+    "emailLinkLabel": "Send us an email",
+    "servicesText": "Not ready yet?",
+    "servicesLinkLabel": "Explore our services",
+    "servicesHref": "/services"
+  },
+
+  "toast": {
+    "title": "Message sent",
+    "description": "Thanks! We’ll reply soon."
+  },
+
+  "schema": {
+    "orgName": "Framework",
+    "url": "https://framework.com",
+    "areaServed": "Lebanon",
+    "contactType": "customer support",
+    "availableLanguage": "en, fr, ar"
+  }
+  },
+
+ 
+  "servicePages": {
     "ai-website-development": {
       "h1": "AI Website Development Built for Growth, Search, and the AI Era",
       "hero": {
@@ -326,18 +337,19 @@
           "6": "When the website foundation is weak, SEO, AI visibility, and advertising performance all suffer."
         }
       },
-      "approach": {
-        "h2": "Our AI-First Website Development Approach",
-        "p1": "We do not treat AI as a gimmick or a shortcut.",
-        "p2": "We treat it as a system-level capability.",
-        "p": "Our AI Website Development approach combines:",
-        "items": {
-          "1": "Modern web engineering (Next.js, React, headless architecture)",
-          "2": "Performance-first and SEO-first foundations",
-          "3": "AI-ready structure that supports GEO, LLM SEO, and AEO",
-          "4": "Conversion-focused UX and scalable content systems"
-        }
-      },
+     "approach": {
+  "h2": "Our Website Development Approach",
+  "p1": "We do not treat modern tooling as a gimmick or a shortcut.",
+  "p2": "We treat it as a system-level capability.",
+  "p": "Our approach combines:",
+  "items": {
+    "1": "Modern web engineering (Next.js, React, headless architecture)",
+    "2": "Performance-first and SEO-first foundations",
+    "3": "Structured foundations that support GEO, LLM SEO, and AEO",
+    "4": "Conversion-focused UX and scalable content systems"
+  }
+}
+,
       "whatIs": {
         "h2": "What Is AI Website Development",
         "p1": "Traditional web development builds fixed pages.",
@@ -765,6 +777,8 @@
     }
   },
   
+
+  
   "services": {
     "page": {
       "hero": {
@@ -773,7 +787,7 @@
       },
       "authority": {
         "h2": "Entity and services scope",
-        "oneSentence": "ACHIdigital delivers focused digital services that keep your website and products fast, reliable, and easy to find."
+        "oneSentence": "Framework delivers focused digital services that keep websites fast, reliable, and easy to discover."
       },
       "list": {
         "h2": "Our Services",
@@ -883,8 +897,17 @@
         "aria": "Breadcrumb",
         "servicesHub": "Services"
       },
+      "toc": {
+        "title": "On this page",
+        "metric1": "Fast",
+        "metric2": "Scalable",
+        "metric3": "SEO-ready"
+      },
       "related": {
         "aria": "Related services link"
+      },
+      "conversion": {
+        "sideTitle": "What you get"
       },
       "notFound": {
         "metaTitle": "Service Not Found",
@@ -896,13 +919,408 @@
         "ctaPrimaryAria": "Go to the services page",
         "ctaSecondaryLabel": "Go Home",
         "ctaSecondaryAria": "Go to the homepage"
+      },
+      "items": {
+       "fullStack": {
+  "metaTitle": "Full-Stack Web & App Development | Framework",
+  "metaDescription": "End-to-end website and web app development: fast, secure, scalable, SEO-ready, and engineered to convert.",
+  "name": "Full-Stack Development",
+  "hero": {
+    "supporting": "End-to-end websites and web apps engineered for speed, SEO foundations, security, and conversion outcomes.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Performance-first build\nSEO-ready structure\nSecure and scalable"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "A full build service for websites and web apps: planning, UX/UI, development, integrations, testing, and launch. Every build ships with a clean, indexable structure, strong performance fundamentals, and a scalable codebase designed to turn traffic into leads or sales."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Discovery + architecture (pages, features, flows)\nFront-end build (responsive, accessible UI)\nBack-end logic (APIs, data, authentication)\nIntegrations (forms, CRM/email, analytics)\nLaunch + stabilization (deployment and handover)"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you build websites and web apps?|Yes. We deliver marketing websites and product-style web applications depending on your goals.\nCan you integrate payments or CRM tools?|Yes. We connect payment providers, CRMs, email platforms, analytics, and automation tools when needed.\nIs it SEO-ready from the start?|Yes. We build with indexable HTML, clean structure, metadata support, and technical SEO foundations.\nHow long does a typical build take?|Timelines depend on scope, but we start by defining a clear roadmap and deliver in stages so you see progress early.\nWhat do you need from us to start?|A short description of your offer, your goals, and any existing brand assets or tools you already use. We guide the rest.\nCan this support multiple languages later?|Yes. We can structure the build for multilingual expansion with clean routing and SEO foundations."
+  },
+  "conversion": {
+    "title": "Ready to build something that converts?",
+    "supporting": "Tell us what you’re building. We’ll recommend the fastest path to a scalable, SEO-ready launch with a clear scope.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Clear scope and roadmap\nClean, maintainable codebase\nSEO-ready foundation\nIntegrations that actually work\nLaunch support and stabilization"
+  },
+  "schema": {
+    "description": "Full-stack development for websites and web applications: planning, UX/UI, engineering, integrations, testing, and launch with performance and SEO foundations.",
+    "areaServed": "Lebanon\nRemote"
+  }
+      },
+
+
+       "performance": {
+  "metaTitle": "Website Performance Optimization & Technical SEO | Framework",
+  "metaDescription": "Improve Core Web Vitals, fix technical SEO issues, increase speed, and turn slow websites into conversion-ready platforms.",
+  "name": "Website Optimization & Performance Engineering",
+  "hero": {
+    "supporting": "Turn a slow, underperforming website into a fast, SEO-aligned, conversion-ready digital asset.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Core Web Vitals improvements\nTechnical SEO alignment\nConversion-focused optimization"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "A performance and technical SEO optimization service designed to improve speed, stability, crawlability, and conversion flow. We align Core Web Vitals, rendering structure, and UX patterns so your website loads faster, ranks better, and converts more traffic into measurable results."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Performance & technical SEO audit (Core Web Vitals, crawlability, bottlenecks)\nSpeed engineering (images, scripts, fonts, caching, server response)\nSEO-safe rendering cleanup (no delayed core content or hidden HTML)\nConversion flow improvements (forms, CTAs, friction removal)\nOptional monitoring roadmap with prioritized improvements"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do I need a rebuild or just optimization?|We start with a structured audit and recommend the highest-impact path. In many cases, optimization delivers strong gains without a full rebuild.\nWhat metrics do you improve?|Core Web Vitals (LCP, CLS, INP), load time, stability, crawl efficiency, and conversion drop-offs.\nWill changes affect SEO?|No. All improvements are SEO-safe and improve crawlability, structure, and ranking signals.\nCan you optimize on mobile too?|Yes. Mobile performance is prioritized because it drives most traffic and conversion loss.\nHow is pricing determined?|Pricing depends on site size, technical complexity, and the depth of optimization required. We define scope clearly before starting."
+  },
+  "conversion": {
+    "title": "Want a faster site that converts?",
+    "supporting": "We identify performance bottlenecks and prioritize fixes that improve rankings, user experience, and revenue impact.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Core Web Vitals roadmap\nFaster load and lower bounce\nSEO and speed alignment\nCleaner conversion flows\nMeasurable performance gains"
+  },
+  "schema": {
+    "description": "Website performance optimization and technical SEO engineering focused on Core Web Vitals, speed improvements, crawlability, and conversion-focused UX enhancements.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+        "uxui": {
+  "metaTitle": "UX/UI Design for Websites & Web Apps | Framework",
+  "metaDescription": "Conversion-focused UX/UI design for websites and web apps. Clear structure, premium visual systems, and SEO-safe user experiences.",
+  "name": "UX/UI Design",
+  "hero": {
+    "supporting": "Design that feels premium, builds trust fast, and guides visitors toward meaningful action.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Conversion-focused layouts\nClear structure & hierarchy\nPerformance-safe motion"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "A UX and UI design service focused on clarity, trust, and measurable conversion outcomes. We design user journeys, information architecture, and scalable visual systems that support performance, SEO, and long-term growth."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "UX strategy (user journeys, funnels, intent mapping)\nInformation architecture (navigation, hierarchy, content clarity)\nUI design system (components, typography, scalable layout)\nConversion-focused layouts (CTAs, trust elements, optimized forms)\nResponsive design + structured developer handoff"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you provide just design or also development?|Both. We can deliver UX/UI design as a standalone service or implement it through full-stack development.\nWill the design be SEO-friendly?|Yes. We design indexable layouts with clear structure and no hidden content patterns.\nDo you create a design system?|Yes. A structured design system ensures consistency and scalability across pages and features.\nCan you redesign an existing website?|Yes. We modernize UX/UI while improving clarity, trust signals, and conversion performance.\nHow is pricing determined?|Pricing depends on scope, number of pages, and complexity. We define clear deliverables before starting."
+  },
+  "conversion": {
+    "title": "Want a design that improves results?",
+    "supporting": "We simplify user journeys, strengthen trust signals, and design structured experiences that convert traffic into measurable outcomes.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Clear UX flows\nPremium UI system\nBetter CTAs & forms\nReduced friction\nReady for development"
+  },
+  "schema": {
+    "description": "UX/UI design for websites and web applications including user journeys, information architecture, scalable design systems, and conversion-focused layouts.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+        "seo": {
+  "metaTitle": "Technical & On-Page SEO Services | Framework",
+  "metaDescription": "Professional SEO services focused on technical foundations, on-page structure, schema, and long-term organic growth.",
+  "name": "Search Engine Optimization (SEO)",
+  "hero": {
+    "supporting": "Technical and on-page SEO built to improve rankings, increase qualified traffic, and create long-term search growth.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Technical SEO foundation\nClean site structure\nMeasurable organic growth"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "A structured SEO service focused on technical health, search intent alignment, and scalable site architecture. We improve crawlability, indexation, metadata, internal linking, and structured data so your website ranks consistently and attracts qualified traffic."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Technical SEO audit (crawl, index, errors, performance signals)\nOn-page optimization (titles, headings, internal links, content structure)\nStructured data and schema setup (organization, service, FAQ)\nSitemap, robots.txt, canonical and hreflang configuration\nSearch Console setup, tracking, and performance monitoring"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you focus only on technical SEO or also content?|We start with technical foundations and structure. Content strategy and optimization are added once the base is stable.\nHow do you measure progress?|We track indexing health, ranking improvements, organic traffic quality, and conversion performance.\nCan you fix duplicate content and canonical issues?|Yes. Canonical structure, duplicate cleanup, and hreflang hygiene are core parts of technical SEO.\nHow long does SEO take to show results?|SEO is a long-term strategy. Technical fixes can show impact quickly, while ranking growth typically builds over several months.\nIs this safe for AI search and answer engines?|Yes. We build clean, structured, and authoritative foundations that support both traditional search and AI-driven discovery."
+  },
+  "conversion": {
+    "title": "Want stronger rankings and qualified leads?",
+    "supporting": "We’ll fix technical gaps, improve structure, and build a scalable SEO foundation designed for sustainable growth.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Technical SEO fixes\nClear internal linking\nSchema-ready structure\nIndexing and crawl support\nConversion-focused tracking"
+  },
+  "schema": {
+    "description": "Search engine optimization services focused on technical SEO, on-page optimization, structured data, and long-term organic growth.",
+    "areaServed": "Lebanon\nRemote"
+  }
+         },
+       "geo": {
+  "metaTitle": "Generative Engine Optimization (GEO) & AI Search Visibility | Framework",
+  "metaDescription": "AI search optimization focused on entity clarity, structured content, and LLM visibility—built on strong SEO foundations.",
+  "name": "GEO & LLM Search Optimization (AI Visibility)",
+  "hero": {
+    "supporting": "Entity and content structure designed to improve visibility across AI-driven search systems—without risky tactics.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Entity clarity\nStructured content\nSEO-safe execution"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "A structured AI visibility service that strengthens entity definitions, semantic signals, and content consistency so generative search systems and large language models can accurately interpret and represent your brand."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Entity and brand signal audit\nSemantic and structured content refinement\nSchema and knowledge consistency review\nFAQ and answer formatting (indexable and citation-friendly)\nAI visibility measurement framework (mentions, representation accuracy)"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Is this different from traditional SEO?|Yes. It builds on SEO foundations but focuses specifically on how AI systems interpret and summarize your brand.\nDo you use dynamic keyword swapping or risky tactics?|No. All optimizations are stable, indexable, and aligned with search engine guidelines.\nWill this harm rankings?|No. Improvements reinforce clarity and authority without changing ranking-safe content.\nHow do you measure AI visibility?|We track brand mentions, representation accuracy, citation frequency, and consistency across AI surfaces.\nHow long does it take to see impact?|Improvements depend on existing authority and structure, but clarity and consistency enhancements can influence AI interpretation progressively over time."
+  },
+  "conversion": {
+    "title": "Want stronger AI visibility without SEO risk?",
+    "supporting": "We refine your entity signals and content structure so AI systems represent your brand clearly and consistently.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Entity audit\nStructured answers\nSchema hygiene\nConsistent brand signals\nTrackable AI visibility"
+  },
+  "schema": {
+    "description": "Generative Engine Optimization and LLM search visibility services focused on entity clarity, structured content, semantic consistency, and SEO-safe execution.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+       "aeo": {
+  "metaTitle": "Answer Engine Optimization (AEO) & Featured Snippet Strategy | Framework",
+  "metaDescription": "Structure your content for featured snippets, AI Overviews, and zero-click search visibility using clear, answer-focused formatting.",
+  "name": "Answer Engine Optimization (AEO)",
+  "hero": {
+    "supporting": "Structure your content so answer engines and search systems can clearly extract, display, and trust your answers—without hiding anything.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Clear FAQs\nAnswer-first formatting\nSearch-safe structure"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "Answer Engine Optimization (AEO) focuses on structuring content for direct-answer surfaces such as featured snippets, AI Overviews, and conversational search results. We refine questions, answers, formatting, and schema so your content remains fully visible, indexable, and aligned with SEO best practices."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Answer opportunity and snippet audit\nQuestion and intent mapping\nAnswer-first content restructuring\nFAQ and structured formatting (where appropriate)\nInternal linking for clear answer paths\nMeasurement and snippet tracking setup"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you rewrite the whole website?|No. We focus on high-impact pages and priority Q&A sections.\nIs FAQ schema always required?|No. Schema is applied only when it reflects real content and improves clarity.\nDoes AEO replace SEO?|No. AEO builds on strong SEO foundations and complements GEO strategies.\nIs the content still visible to users?|Yes. All content remains fully visible in real HTML—no hidden blocks.\nHow long does AEO take to show impact?|Answer visibility can improve as search engines reprocess structured content, but results depend on authority and competition."
+  },
+  "conversion": {
+    "title": "Want your content to be easier to select as the answer?",
+    "supporting": "We’ll refine key sections into clear, structured answers that improve snippet eligibility and user trust.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Featured snippet targeting\nCleaner Q&A structure\nStructured formatting\nSchema alignment\nTrackable visibility"
+  },
+  "schema": {
+    "description": "Answer Engine Optimization services focused on featured snippets, AI Overviews, and structured content formatting for search-safe direct answer visibility.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+
+        "ppc": {
+          "metaTitle": "Paid Advertising (PPC) | Framework",
+          "metaDescription": "Performance-focused PPC campaigns built with clean landing pages, tracking, and measurable ROI.",
+          "name": "Paid Advertising (PPC)",
+          "hero": {
+            "supporting": "Paid acquisition with clean tracking and landing pages designed to convert.",
+            "ctaPrimaryLabel": "Get a free audit",
+            "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+            "ctaSecondaryLabel": "Back to services",
+            "ctaSecondaryAria": "Go back to the services page",
+            "trustItems": "Tracking-first\nLanding page focus\nROI-driven"
+          },
+          "definition": {
+            "title": "What this service is",
+            "body": "PPC campaigns designed for measurable growth: targeting, creative structure, conversion-ready landing pages, and clean analytics to track ROI."
+          },
+          "included": {
+            "title": "What’s included",
+            "items": "Campaign structure and setup\nLanding page alignment (conversion-focused)\nTracking and measurement (GA / events)\nOptimization and reporting cadence\nBudget and performance roadmap"
+          },
+          "faq": {
+            "title": "FAQ",
+            "items": "Do you build landing pages too?|Yes. PPC works best when landing pages are built for conversion.\nCan you track leads properly?|Yes. We set up clean events and measurement.\nDo you manage budgets?|We help plan and optimize spend based on performance goals.\nIs PPC useful without SEO?|Yes, but both together often performs best."
+          },
+          "conversion": {
+            "title": "Want paid traffic that converts?",
+            "supporting": "We’ll align campaigns, landing pages, and tracking so you can measure and scale ROI.",
+            "ctaPrimaryLabel": "Get a free audit",
+            "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+            "ctaSecondaryLabel": "Explore services",
+            "ctaSecondaryAria": "Go to the services page",
+            "sideBullets": "Clean tracking\nBetter landing pages\nLower wasted spend\nMore qualified leads\nClear reporting"
+          },
+          "schema": {
+            "description": "Paid advertising and PPC management with conversion-ready landing pages, tracking setup, optimization, and ROI-focused reporting.",
+            "areaServed": "Lebanon\nRemote"
+          }
+        },
+       "content": {
+  "metaTitle": "Website Content Writing & Conversion Copy | Framework",
+  "metaDescription": "Professional website content writing focused on clarity, SEO structure, and conversion-driven messaging.",
+  "name": "Content Writing",
+  "hero": {
+    "supporting": "High-clarity website content that builds trust, supports SEO structure, and drives measurable action.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Clear messaging\nSEO-aware structure\nConversion-ready copy"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "Professional website and landing page copywriting focused on clarity, positioning, and conversion. We structure content around value propositions, user intent, and clean SEO hierarchy—without fluff or keyword stuffing."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Homepage and core page copywriting\nService and offer page content (scannable and structured)\nCTA and microcopy optimization\nSEO-aware headings and internal structure\nBrand tone consistency and messaging alignment"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you write long blog posts?|When needed. We prioritize core website pages first, then expand into authority content.\nIs the content keyword-stuffed?|No. We integrate keywords naturally within clear, structured messaging.\nCan you match our brand voice?|Yes. We adapt tone to your positioning, audience, and industry.\nDo you rewrite existing pages?|Yes. We refine pages where clarity, structure, or conversion can improve.\nHow do you approach SEO content?|We align messaging with search intent and structured headings while keeping content readable and persuasive."
+  },
+  "conversion": {
+    "title": "Want clearer messaging that converts?",
+    "supporting": "We sharpen your value proposition, simplify page flow, and structure content that supports both SEO and user decisions.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Clear value proposition\nStronger CTAs\nTrust-building sections\nSEO-aware hierarchy\nHigher conversion rates"
+  },
+  "schema": {
+    "description": "Website content writing and conversion copy focused on clear messaging, structured SEO hierarchy, and measurable conversion performance.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+        "ecommerce": {
+  "metaTitle": "E-commerce Website Development & Online Store Solutions | Framework",
+  "metaDescription": "Conversion-focused e-commerce website development with fast product pages, secure checkout, SEO structure, and scalable integrations.",
+  "name": "E-commerce Solutions",
+  "hero": {
+    "supporting": "E-commerce websites built for speed, trust, and scalable online sales performance.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Fast product pages\nSecure checkout\nScalable architecture"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "Professional e-commerce website development focused on product structure, conversion-driven checkout flows, secure payment integration, and SEO-ready foundations. We build online stores designed to perform, scale, and generate measurable revenue."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "Store architecture and product structure planning\nSEO-ready product and collection pages\nCart and checkout optimization with secure payment integration\nAnalytics, event tracking, and conversion setup\nPerformance optimization and scalability foundations"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you integrate payments and shipping?|Yes. We configure secure payment gateways, shipping rules, and operational integrations.\nCan you optimize product pages for SEO?|Yes. We structure product and category pages with clean URLs, schema support, and internal linking.\nIs it fast on mobile?|Yes. Mobile performance and checkout speed are prioritized for conversions.\nCan it scale as we add more products?|Yes. Architecture is designed for catalog growth and traffic expansion.\nWhich platforms do you use?|We select platforms based on scale and needs—custom builds, headless setups, or established systems when appropriate."
+  },
+  "conversion": {
+    "title": "Want an online store that converts and scales?",
+    "supporting": "We build fast, secure, and conversion-driven e-commerce systems with performance and tracking built in.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "Improved product UX\nFaster checkout experience\nSecure payments\nConversion tracking setup\nScalable catalog structure"
+  },
+  "schema": {
+    "description": "E-commerce website development services including product structure, checkout optimization, payment integration, SEO foundations, and scalable store architecture.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        },
+
+       "aiAutomation": {
+  "metaTitle": "AI Integration & Workflow Automation Services | Framework",
+  "metaDescription": "Business-focused AI integration and workflow automation services including chatbots, CRM automation, and scalable system integrations.",
+  "name": "Advanced AI Integrations & Automation",
+  "hero": {
+    "supporting": "Business-driven AI integrations and workflow automation designed to improve operations and customer experience—without SEO risk.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Back to services",
+    "ctaSecondaryAria": "Go back to the services page",
+    "trustItems": "Practical automation\nSecure integrations\nMeasurable ROI"
+  },
+  "definition": {
+    "title": "What this service is",
+    "body": "AI integration and business process automation designed to connect your website, CRM, marketing tools, and internal systems into intelligent workflows. We implement AI chat, lead routing, automation rules, and decision support features in a stable, secure, and SEO-safe way."
+  },
+  "included": {
+    "title": "What’s included",
+    "items": "AI use-case assessment and prioritization\nAI chatbot and assistant integration\nLead qualification and routing automation\nCRM, email, and tool workflow automation\nTracking, analytics, and performance measurement\nSecure deployment and monitoring"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": "Do you add AI without harming SEO?|Yes. Core website content remains stable and indexable—no dynamic SEO text changes.\nCan it integrate with CRM and marketing tools?|Yes. We connect AI to CRM systems, email tools, and operational platforms.\nDo you build custom chatbots?|Yes. We integrate chat and assistant systems aligned with business workflows.\nIs this only for large companies?|No. We scope automation around high-impact, practical use cases for businesses of any size.\nHow long does implementation take?|It depends on complexity, but most focused automations can be deployed incrementally and measured quickly."
+  },
+  "conversion": {
+    "title": "Want AI that delivers measurable impact?",
+    "supporting": "We identify high-ROI automation opportunities and implement them cleanly with tracking and oversight.",
+    "ctaPrimaryLabel": "Get a free audit",
+    "ctaPrimaryAria": "Jump to the contact section to request a free audit",
+    "ctaSecondaryLabel": "Explore services",
+    "ctaSecondaryAria": "Go to the services page",
+    "sideBullets": "High-impact use cases\nIntegrated workflows\nCRM automation\nConversion tracking\nSecure rollout"
+  },
+  "schema": {
+    "description": "AI integration and workflow automation services including chatbot integration, CRM automation, lead routing, and secure system deployment.",
+    "areaServed": "Lebanon\nRemote"
+  }
+        }
+
       }
     }
   },
+
+
+
   "technologies": {
     "hero": {
       "kicker": "Technology",
-      "h1": "Web & AI Technologies Behind High-Performance Websites",
+      "h1": "Web Technologies Behind High-Performance Websites",
       "sub": "A curated stack built for speed, stability, and AI-ready growth — designed to scale without sacrificing SEO, performance, or user experience.",
       "primary": "Explore Our Services",
       "primaryAria": "Explore our services",
@@ -997,7 +1415,65 @@
       "vercel": "Vercel logo",
       "githubPages": "GitHub Pages logo"
     }
+  },
+   "seo": {
+  "siteUrl": "https://achidigital.github.io/ACHI",
+  "organization": {
+    "name": "Framework",
+    "url": "https://achidigital.github.io/ACHI",
+    "logo": "https://achidigital.github.io/ACHI/AchiDigital.jpeg",
+    "siteName": "Framework",
+    "defaults": {
+      "title": "Framework | Digital Agency for Web Development, UX/UI & Technical SEO",
+      "description": "Framework is a professional digital agency delivering web development, UX/UI design, technical SEO, and performance optimization. We build fast, scalable websites engineered for visibility, Core Web Vitals, and measurable growth.",
+      "ogImage": "/image.png"
+    },
+    "routes": {
+      "home": {
+        "title": "Framework | Web Development Agency, UX/UI Design & Technical SEO",
+        "description": "Digital agency specializing in high-performance website development, UX/UI design, technical SEO, and performance optimization. We build fast, scalable, conversion-focused websites engineered for search visibility and long-term growth."
+      },
+      "about": {
+        "title": "About Framework | Web Development & Technical SEO Agency",
+        "description": "Framework is a results-driven digital agency focused on clean engineering, performance optimization, and measurable outcomes. We design and develop fast, reliable websites built with strong UX principles and technical SEO foundations."
+      },
+      "services": {
+        "title": "Digital Services | Web Development, UX/UI, SEO & Performance | Framework",
+        "description": "Explore our digital services: custom website development, full-stack builds, UX/UI design systems, technical SEO audits, and performance engineering focused on speed, stability, scalability, and business growth."
+      },
+      "technologies": {
+        "title": "Technologies | Modern Web Stack & SEO-Ready Architecture | Framework",
+        "description": "We use a modern, production-ready technology stack including React, TypeScript, and performance-first tooling to build secure, maintainable, and SEO-optimized websites with strong Core Web Vitals performance."
+      },
+      "contact": {
+        "title": "Contact Framework | Start Your Website or SEO Project",
+        "description": "Start your website project with Framework. Get expert web development, UX/UI design, technical SEO optimization, and performance consulting focused on visibility, speed, and measurable results."
+      },
+      "serviceGeneric": {
+        "title": "Digital Service | Web Development & SEO Solutions | Framework",
+        "description": "Professional digital services across website development, UX/UI design, technical SEO, and performance optimization designed to improve speed, visibility, scalability, and conversion rates."
+      },
+      "serviceSlugs": {
+        "ai-website-development": {
+          "title": "Website Development Services | Custom & Scalable Builds | Framework",
+          "description": "Custom website development focused on performance, technical SEO structure, clean architecture, and scalable deployment. Built for speed, discoverability, and long-term business growth."
+        },
+        "full-stack-development": {
+          "title": "Full-Stack Web Development Company | Scalable Solutions | Framework",
+          "description": "Full-stack web development services covering frontend, backend, integrations, and secure deployment. We build scalable, maintainable systems with strong performance and SEO foundations."
+        },
+        "website-optimization-performance-engineering": {
+          "title": "Website Optimization & Performance Engineering | Core Web Vitals Experts | Framework",
+          "description": "Performance engineering services focused on Core Web Vitals improvement, faster load times, better stability, cleaner code, and technical fixes that strengthen SEO and user experience."
+        },
+        "ux-ui-design": {
+          "title": "UX/UI Design Services | Conversion-Focused Interface Design | Framework",
+          "description": "Professional UX/UI design services delivering accessible interfaces, structured design systems, and conversion-focused layouts optimized for usability, engagement, and business growth."
+        }
+      }
+    }
   }
+ }
 }
 
 

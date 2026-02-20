@@ -170,15 +170,13 @@ export default function Services(_: ServicesPageProps) {
               <div className="absolute inset-px rounded-[1.4rem] bg-gradient-to-br from-white/5 via-transparent to-primary/10 pointer-events-none" />
 
               <div className="relative z-10 max-w-3xl mx-auto text-center">
-                <h1
-                  id="services-hero-heading"
-                  className={cn(
-                    "text-display-md md:text-display-lg lg:text-display-xl font-display mb-6 text-balance",
-                    "gradient-text"
-                  )}
-                >
-                  {t("services.page.hero.h1") as string}
-                </h1>
+             <h1
+  id="services-hero-heading"
+  className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary"
+>
+  {t("services.page.hero.h1") as string}
+</h1>
+
 
                 <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
                   {t("services.page.hero.supporting") as string}
