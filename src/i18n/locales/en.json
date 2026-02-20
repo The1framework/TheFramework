@@ -77,7 +77,7 @@
     },
     "d": {
       "title": "Growth Focused",
-      "description": "Every build is engineered to scale — performance, SEO, and maintainability."
+      "description": "Every build is engineered to scale performance, SEO, and maintainability."
     }
   },
   "footerLine": "Designed to feel premium. Built by a startup that values speed, stability, and long-term evolution."
@@ -152,17 +152,13 @@
         },
         "c": {
           "h3": "SEO-Safe Engineering",
-          "p": "We build clean semantics, stable routing, and indexable content — no hidden text, no risky shortcuts, no fragile dependencies."
+          "p": "We build clean semantics, stable routing, and indexable content no hidden text, no risky shortcuts, no fragile dependencies."
         },
         "d": {
           "h3": "Long-Term Growth Mindset",
           "p": "We design systems that scale: multilingual-ready, maintainable, and easy to expand without rebuilding from scratch."
         }
       }
-    },
-    "philosophy": {
-      "h2": "We Don’t Just Build Websites — We Build Growth Systems",
-      "p": "A website should not be a static brochure. It should guide decisions, communicate trust, and support visibility across search and user journeys. That requires strong architecture, clarity, and ongoing refinement — not just a one-time design."
     },
     "responsible": {
       "h2": "Our Responsible Approach",
@@ -212,7 +208,7 @@
       "highlight": "Questions"
     },
     "subtitle": "Find answers to frequently asked questions about our services and process.",
-    "items": "Q: What services does Framework offer?\nA: We offer a comprehensive suite of digital services including web development, UI/UX design, SEO optimization, digital marketing, mobile app development, AI solutions, analytics, and cybersecurity. Each solution is tailored to your business goals.\n\nQ: How long does a typical project take?\nA: Timelines vary by scope. A simple website may take 4–6 weeks, while a complex web application or mobile app can take 3–6 months. After the initial consultation, we provide a clear delivery plan.\n\nQ: What is your pricing structure?\nA: We offer flexible pricing models: fixed-price projects, hourly rates, and retainers. Pricing is transparent, with no hidden fees. Contact us for a free consultation and a tailored quote.\n\nQ: Do you provide ongoing support and maintenance?\nA: Yes. We offer support packages to keep your digital assets secure, updated, and performant—covering updates, security patches, monitoring, and technical assistance.\n\nQ: Can you work with existing systems and platforms?\nA: Yes. We can integrate with existing systems, APIs, and platforms—whether improving your current site, adding tools, or migrating to a new stack.\n\nQ: What makes Framework different from other agencies?\nA: We combine technical excellence with strategic thinking—prioritizing measurable outcomes and long-term partnerships. We don’t just deliver work—we support growth.",
+    "items": "Q: What services does Framework offer?\nA: We offer a comprehensive suite of digital services including web development, UI/UX design, SEO optimization, digital marketing, mobile app development, AI solutions, analytics, and cybersecurity. Each solution is tailored to your business goals.\n\nQ: How long does a typical project take?\nA: Timelines vary by scope. A simple website may take 4–6 weeks, while a complex web application or mobile app can take 3–6 months. After the initial consultation, we provide a clear delivery plan.\n\nQ: What is your pricing structure?\nA: We offer flexible pricing models: fixed-price projects, hourly rates, and retainers. Pricing is transparent, with no hidden fees. Contact us for a free consultation and a tailored quote.\n\nQ: Do you provide ongoing support and maintenance?\nA: Yes. We offer support packages to keep your digital assets secure, updated, and performant covering updates, security patches, monitoring, and technical assistance.\n\nQ: Can you work with existing systems and platforms?\nA: Yes. We can integrate with existing systems, APIs, and platforms whether improving your current site, adding tools, or migrating to a new stack.\n\nQ: What makes Framework different from other agencies?\nA: We combine technical excellence with strategic thinking prioritizing measurable outcomes and long-term partnerships. We don’t just deliver work we support growth.",
     "cta": {
       "line": "Still have questions? We’re here to help.",
       "link": "Contact our team →"
@@ -780,117 +776,157 @@
 
   
   "services": {
-    "page": {
+     "page": {
       "hero": {
         "h1": "Our Digital Services",
         "supporting": "A clear hub for our core digital services in development, design, performance, and visibility."
       },
       "authority": {
         "h2": "Entity and services scope",
-        "oneSentence": "Framework delivers focused digital services that keep websites fast, reliable, and easy to discover."
+        "oneSentence": "Framework delivers focused digital services that keep websites fast, reliable, and easy to discover.",
+        "pills": [
+          {
+            "kicker": "Execution",
+            "text": "Built for real shipping: clean architecture, predictable delivery, and measurable outcomes."
+          },
+          {
+            "kicker": "Performance",
+            "text": "Fast pages, strong Core Web Vitals, and stable UX that supports conversions."
+          },
+          {
+            "kicker": "Visibility",
+            "text": "Search-first structure for SEO, AI search, and answer engines without hacks."
+          }
+        ]
       },
       "list": {
         "h2": "Our Services",
+        "supporting": "Choose a service to explore details, scope, and deliverables. Each service is designed to plug into a growth-focused roadmap.",
+        "microCta": "View service details",
         "items": {
           "aiWebsiteDev": {
             "label": "AI Website Development",
-            "aria": "Open the AI Website Development service page"
+            "aria": "Open the AI Website Development service page",
+            "blurb": "Modern sites engineered for clarity, speed, and conversion ready for AI search and future personalization."
           },
           "fullStackDev": {
             "label": "Full-Stack Development",
-            "aria": "Open the Full-Stack Development service page"
+            "aria": "Open the Full-Stack Development service page",
+            "blurb": "Production-grade web apps with clean code, scalable architecture, and reliable delivery from idea to launch."
           },
           "performanceOptimization": {
             "label": "Website Optimization & Performance Engineering",
-            "aria": "Open the Website Optimization and Performance Engineering service page"
+            "aria": "Open the Website Optimization and Performance Engineering service page",
+            "blurb": "Fix bottlenecks, improve Core Web Vitals, and make every page feel instant without breaking design."
           },
           "uxui": {
             "label": "UX/UI Design",
-            "aria": "Open the UX and UI Design service page"
+            "aria": "Open the UX/UI Design service page",
+            "blurb": "Premium interfaces with clear hierarchy, strong usability, and a design system that scales across pages."
           },
           "seo": {
             "label": "Search Engine Optimization (SEO)",
-            "aria": "Open the Search Engine Optimization service page"
+            "aria": "Open the Search Engine Optimization service page",
+            "blurb": "SEO built on technical excellence and structured content driving rankings, qualified traffic, and long-term authority."
           },
           "geoLLM": {
             "label": "GEO & LLM Search Optimization (AI Visibility)",
-            "aria": "Open the GEO and LLM Search Optimization service page"
+            "aria": "Open the GEO and LLM Search Optimization service page",
+            "blurb": "Make your brand discoverable in AI results with clean entities, schema, and content that models can trust."
           },
           "aeo": {
             "label": "Answer Engine Optimization (AEO)",
-            "aria": "Open the Answer Engine Optimization service page"
+            "aria": "Open the Answer Engine Optimization service page",
+            "blurb": "Win answer boxes and AI summaries with structured pages that respond directly to real user questions."
           },
           "ppc": {
             "label": "Paid Advertising (PPC)",
-            "aria": "Open the Paid Advertising PPC service page"
+            "aria": "Open the Paid Advertising PPC service page",
+            "blurb": "Launch campaigns that convert: clean landing flows, strong tracking, and performance-led iteration."
           },
           "contentWriting": {
             "label": "Content Writing",
-            "aria": "Open the Content Writing service page"
+            "aria": "Open the Content Writing service page",
+            "blurb": "Search-aligned content that reads like a brand clear, credible, and built to convert."
           },
           "ecommerce": {
             "label": "E-commerce Solutions",
-            "aria": "Open the E-commerce Solutions service page"
+            "aria": "Open the E-commerce Solutions service page",
+            "blurb": "Fast product experiences, optimized checkout flows, and scalable storefront foundations."
           },
           "aiAutomation": {
             "label": "Advanced AI Integrations & Automation",
-            "aria": "Open the Advanced AI Integrations and Automation service page"
+            "aria": "Open the Advanced AI Integrations and Automation service page",
+            "blurb": "Automate workflows and integrate AI tools in a way that’s reliable, secure, and actually usable."
           }
         }
       },
-      "together": {
-        "h2": "How Our Services Work Together",
-        "body": "Development, design, performance, and visibility services are planned as one system, so improvements in one area strengthen the whole."
-      },
       "forWho": {
         "h2": "Who These Services Are For",
+        "supporting": "Whether you are launching from scratch or upgrading what you already have, we meet you where the real friction lives.",
+        "microNote": "Typical fit: teams that value performance, clarity, and measurable growth.",
         "items": [
-          "Small & mid-size businesses",
-          "SaaS and product teams",
-          "E-commerce brands",
-          "Professional services firms",
-          "Founders and leadership teams",
-          "In-house marketing and growth teams"
+          "Founders and operators who want a site that converts not just looks good.",
+          "Businesses with slow websites and weak Core Web Vitals that hurt rankings and leads.",
+          "Teams rebuilding their brand with a modern UI system and consistent UX across pages.",
+          "Companies investing in SEO who need a strategy that connects content, structure, and performance.",
+          "Product teams that need full-stack execution with clean architecture and scalable code.",
+          "Businesses preparing for AI search and answer engines with stronger entity and schema foundations."
         ]
       },
       "outcomes": {
         "h2": "Outcomes You Can Expect",
+        "supporting": "Clear deliverables, clean implementation, and improvements you can actually measure.",
+        "microNote": "Measured through analytics, search performance, and conversion signals.",
+        "tag": "Results",
         "items": [
-          "Clear service structure and navigation",
-          "Faster, more stable experiences",
-          "Stronger search and discovery signals",
-          "Higher-quality leads and enquiries",
-          "Better performance from paid campaigns",
-          "A digital foundation that is ready to grow"
+          "Faster load times and improved Core Web Vitals across key pages.",
+          "Stronger search visibility through cleaner structure, intent-led content, and technical fixes.",
+          "Higher conversion rates from better UX flows and clearer page hierarchy.",
+          "A scalable UI system that keeps the website consistent as you add new pages.",
+          "Improved tracking and attribution so decisions are made with real data.",
+          "A foundation ready for AI visibility: entities, schema, and answer-friendly content."
         ]
       },
       "cta": {
         "h2": "Not Sure Which Service You Need?",
+        "supporting": "Request a free audit and we’ll map the fastest path to performance, visibility, and growth based on what your site actually needs.",
         "primary": "Request a Free Audit",
         "secondary": "Get Expert Guidance",
-        "tertiary": "Talk to Our Team"
+        "primaryAria": "Request a free audit",
+        "secondaryAria": "Get expert guidance",
+        "microTrust": "Actionable, focused, and built around your goals."
       },
-      "faq": {
-        "h2": "Services FAQs",
-        "items": [
-          {
-            "q": "How do I know which service to start with?",
-            "a": "We review your website, current performance, and priorities, then recommend a starting point such as a new build, optimization, or a focused visibility engagement."
-          },
-          {
-            "q": "Can we combine multiple services in one engagement?",
-            "a": "Yes. Many projects combine development, UX, and search work. We build a roadmap so technical, content, and visibility efforts support each other."
-          },
-          {
-            "q": "Do I need AI-focused services if I only care about Google Search?",
-            "a": "Not always. For many teams, a strong technical and SEO foundation is the right first step, with AI-related work added when content and visibility needs grow."
-          },
-          {
-            "q": "Do you work on existing websites or only new builds?",
-            "a": "Both. We can improve an existing site or design and build a new one when the current setup limits performance, search, or future growth."
-          }
-        ]
-      }
+     "faq": {
+  "h2": "Services FAQs",
+  "supporting": "Quick answers to common questions about scope, timelines, and how we work.",
+  "micro": "Tap to expand",
+  "tag": "Answer",
+  "tagline": "Clear, direct, and action-focused.",
+  "count": "5",
+  "items": {
+    "0": {
+      "q": "Do you offer one service only, or do you combine multiple services?",
+      "a": "You can start with a single service or combine multiple. We often begin with an audit to prioritize the highest-impact improvements first, then expand as needed."
+    },
+    "1": {
+      "q": "Can you improve performance without changing the design?",
+      "a": "Yes. Performance engineering focuses on code, assets, and loading behavior. We optimize Core Web Vitals while preserving your UI and brand identity."
+    },
+    "2": {
+      "q": "How do you approach SEO in 2026?",
+      "a": "We focus on technical excellence, structured content aligned with intent, and a fast user experience plus foundations for AI search, GEO, and answer engines."
+    },
+    "3": {
+      "q": "Do you work with existing websites or only new builds?",
+      "a": "Both. We can build from scratch or improve an existing site. The approach depends on your current stack, goals, and what’s blocking growth."
+    },
+    "4": {
+      "q": "What do you need from us to get started?",
+      "a": "Access to your website, analytics (if available), and a clear goal. If you don’t have analytics set up, we can help implement tracking properly."
+    }
+  }
+}
     },
     "single": {
       "breadcrumb": {
@@ -1079,10 +1115,10 @@
          },
        "geo": {
   "metaTitle": "Generative Engine Optimization (GEO) & AI Search Visibility | Framework",
-  "metaDescription": "AI search optimization focused on entity clarity, structured content, and LLM visibility—built on strong SEO foundations.",
+  "metaDescription": "AI search optimization focused on entity clarity, structured content, and LLM visibility built on strong SEO foundations.",
   "name": "GEO & LLM Search Optimization (AI Visibility)",
   "hero": {
-    "supporting": "Entity and content structure designed to improve visibility across AI-driven search systems—without risky tactics.",
+    "supporting": "Entity and content structure designed to improve visibility across AI-driven search systems without risky tactics.",
     "ctaPrimaryLabel": "Get a free audit",
     "ctaPrimaryAria": "Jump to the contact section to request a free audit",
     "ctaSecondaryLabel": "Back to services",
@@ -1121,7 +1157,7 @@
   "metaDescription": "Structure your content for featured snippets, AI Overviews, and zero-click search visibility using clear, answer-focused formatting.",
   "name": "Answer Engine Optimization (AEO)",
   "hero": {
-    "supporting": "Structure your content so answer engines and search systems can clearly extract, display, and trust your answers—without hiding anything.",
+    "supporting": "Structure your content so answer engines and search systems can clearly extract, display, and trust your answers without hiding anything.",
     "ctaPrimaryLabel": "Get a free audit",
     "ctaPrimaryAria": "Jump to the contact section to request a free audit",
     "ctaSecondaryLabel": "Back to services",
@@ -1138,7 +1174,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "items": "Do you rewrite the whole website?|No. We focus on high-impact pages and priority Q&A sections.\nIs FAQ schema always required?|No. Schema is applied only when it reflects real content and improves clarity.\nDoes AEO replace SEO?|No. AEO builds on strong SEO foundations and complements GEO strategies.\nIs the content still visible to users?|Yes. All content remains fully visible in real HTML—no hidden blocks.\nHow long does AEO take to show impact?|Answer visibility can improve as search engines reprocess structured content, but results depend on authority and competition."
+    "items": "Do you rewrite the whole website?|No. We focus on high-impact pages and priority Q&A sections.\nIs FAQ schema always required?|No. Schema is applied only when it reflects real content and improves clarity.\nDoes AEO replace SEO?|No. AEO builds on strong SEO foundations and complements GEO strategies.\nIs the content still visible to users?|Yes. All content remains fully visible in real HTML no hidden blocks.\nHow long does AEO take to show impact?|Answer visibility can improve as search engines reprocess structured content, but results depend on authority and competition."
   },
   "conversion": {
     "title": "Want your content to be easier to select as the answer?",
@@ -1208,7 +1244,7 @@
   },
   "definition": {
     "title": "What this service is",
-    "body": "Professional website and landing page copywriting focused on clarity, positioning, and conversion. We structure content around value propositions, user intent, and clean SEO hierarchy—without fluff or keyword stuffing."
+    "body": "Professional website and landing page copywriting focused on clarity, positioning, and conversion. We structure content around value propositions, user intent, and clean SEO hierarchy without fluff or keyword stuffing."
   },
   "included": {
     "title": "What’s included",
@@ -1255,7 +1291,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "items": "Do you integrate payments and shipping?|Yes. We configure secure payment gateways, shipping rules, and operational integrations.\nCan you optimize product pages for SEO?|Yes. We structure product and category pages with clean URLs, schema support, and internal linking.\nIs it fast on mobile?|Yes. Mobile performance and checkout speed are prioritized for conversions.\nCan it scale as we add more products?|Yes. Architecture is designed for catalog growth and traffic expansion.\nWhich platforms do you use?|We select platforms based on scale and needs—custom builds, headless setups, or established systems when appropriate."
+    "items": "Do you integrate payments and shipping?|Yes. We configure secure payment gateways, shipping rules, and operational integrations.\nCan you optimize product pages for SEO?|Yes. We structure product and category pages with clean URLs, schema support, and internal linking.\nIs it fast on mobile?|Yes. Mobile performance and checkout speed are prioritized for conversions.\nCan it scale as we add more products?|Yes. Architecture is designed for catalog growth and traffic expansion.\nWhich platforms do you use?|We select platforms based on scale and needs custom builds, headless setups, or established systems when appropriate."
   },
   "conversion": {
     "title": "Want an online store that converts and scales?",
@@ -1277,7 +1313,7 @@
   "metaDescription": "Business-focused AI integration and workflow automation services including chatbots, CRM automation, and scalable system integrations.",
   "name": "Advanced AI Integrations & Automation",
   "hero": {
-    "supporting": "Business-driven AI integrations and workflow automation designed to improve operations and customer experience—without SEO risk.",
+    "supporting": "Business-driven AI integrations and workflow automation designed to improve operations and customer experience without SEO risk.",
     "ctaPrimaryLabel": "Get a free audit",
     "ctaPrimaryAria": "Jump to the contact section to request a free audit",
     "ctaSecondaryLabel": "Back to services",
@@ -1294,7 +1330,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "items": "Do you add AI without harming SEO?|Yes. Core website content remains stable and indexable—no dynamic SEO text changes.\nCan it integrate with CRM and marketing tools?|Yes. We connect AI to CRM systems, email tools, and operational platforms.\nDo you build custom chatbots?|Yes. We integrate chat and assistant systems aligned with business workflows.\nIs this only for large companies?|No. We scope automation around high-impact, practical use cases for businesses of any size.\nHow long does implementation take?|It depends on complexity, but most focused automations can be deployed incrementally and measured quickly."
+    "items": "Do you add AI without harming SEO?|Yes. Core website content remains stable and indexable no dynamic SEO text changes.\nCan it integrate with CRM and marketing tools?|Yes. We connect AI to CRM systems, email tools, and operational platforms.\nDo you build custom chatbots?|Yes. We integrate chat and assistant systems aligned with business workflows.\nIs this only for large companies?|No. We scope automation around high-impact, practical use cases for businesses of any size.\nHow long does implementation take?|It depends on complexity, but most focused automations can be deployed incrementally and measured quickly."
   },
   "conversion": {
     "title": "Want AI that delivers measurable impact?",
@@ -1321,7 +1357,7 @@
     "hero": {
       "kicker": "Technology",
       "h1": "Web Technologies Behind High-Performance Websites",
-      "sub": "A curated stack built for speed, stability, and AI-ready growth — designed to scale without sacrificing SEO, performance, or user experience.",
+      "sub": "A curated stack built for speed, stability, and AI-ready growth designed to scale without sacrificing SEO, performance, or user experience.",
       "primary": "Explore Our Services",
       "primaryAria": "Explore our services",
       "secondary": "Start Your Project",
@@ -1330,14 +1366,14 @@
 
     "why": {
       "h2": "Why the Right Technology Stack Matters",
-      "p": "Your technology stack shapes speed, crawlability, security, and how easily your platform can evolve — especially when adding automation or AI-powered features.",
+      "p": "Your technology stack shapes speed, crawlability, security, and how easily your platform can evolve especially when adding automation or AI-powered features.",
       "bullets": "Performance impacts search visibility and conversions.\nCore Web Vitals matter for rankings and UX.\nScalable foundations reduce long-term cost.\nSecure systems protect data and trust.\nAI-ready architecture enables smarter workflows.\nCleaner builds mean faster deployments and fewer bugs.",
       "authority": "Our stack decisions are guided by measurable performance, SEO compatibility, scalability requirements, and AI integration readiness."
     },
 
     "stack": {
       "h2": "Our Core Technology Stack",
-      "p": "A clean, modern stack — designed for speed, stability, and AI-ready growth.",
+      "p": "A clean, modern stack designed for speed, stability, and AI-ready growth.",
       "hoverHint": "Hover to reveal details",
 
       "frontend": {
@@ -1360,7 +1396,7 @@
 
       "seo": {
         "title": "Performance & SEO",
-        "desc": "SEO and speed built into the foundation — not added later.",
+        "desc": "SEO and speed built into the foundation - not added later.",
         "chips": "SSR / SSG\nStructured Data\nCore Web Vitals\nCaching / CDN"
       },
 
@@ -1379,8 +1415,8 @@
 
     "choose": {
       "h2": "How We Choose the Right Tech for Each Project",
-      "p": "We select technologies based on your business goals and measurable outcomes — not trends.",
-      "statement": "We don’t pick tools for hype. We choose a stack based on performance targets, SEO requirements, scalability needs, security standards, and AI-readiness — aligned with your budget and timeline.",
+      "p": "We select technologies based on your business goals and measurable outcomes not trends.",
+      "statement": "We don’t pick tools for hype. We choose a stack based on performance targets, SEO requirements, scalability needs, security standards, and AI-readiness aligned with your budget and timeline.",
       "points": "Business goals first\nSEO requirements\nScalability needs\nBudget alignment\nAI-readiness\nLong-term maintainability"
     },
 
@@ -1390,16 +1426,16 @@
       "q1": "What technology stack do you use?",
       "a1": "We use a modern web stack centered around React, TypeScript, and performance-first tooling, with scalable backend options and AI-ready architecture when needed.",
       "q2": "Why does your stack help with SEO?",
-      "a2": "Because we prioritize crawlability, fast load times, clean structure, and performance metrics like Core Web Vitals — which directly affect search visibility and user experience.",
+      "a2": "Because we prioritize crawlability, fast load times, clean structure, and performance metrics like Core Web Vitals which directly affect search visibility and user experience.",
       "q3": "Can your websites scale as the business grows?",
-      "a3": "Yes. We build modular foundations that support growth — from new pages and features to integrations, automation, and more advanced infrastructure over time.",
+      "a3": "Yes. We build modular foundations that support growth from new pages and features to integrations, automation, and more advanced infrastructure over time.",
       "q4": "Can your stack support AI integrations?",
       "a4": "Yes. We design for AI-readiness with structured data, integration-friendly APIs, and architecture that supports assistants, automation workflows, and semantic search without harming SEO."
     },
 
     "cta": {
       "h2": "Build With a Future-Proof Technology Stack",
-      "p": "If you want speed, SEO, and AI-ready growth — the foundation matters. Let’s build a stack that scales with your business.",
+      "p": "If you want speed, SEO, and AI-ready growth - the foundation matters. Let’s build a stack that scales with your business.",
       "button": "Start Your Project",
       "aria": "Start your project"
     },
