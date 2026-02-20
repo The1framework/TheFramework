@@ -25,7 +25,7 @@ export default function Index({ locale, t }: IndexProps) {
         t={t}
         brand={{
           name: "Framework",
-          logoSrc: "/AchiDigital.jpeg",
+          logoSrc: "/logo.png",
           logoAltKey: "header.brand.logoAlt"
         }}
       />

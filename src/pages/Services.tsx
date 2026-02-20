@@ -140,7 +140,7 @@ export default function Services(_: ServicesPageProps) {
         t={t as (key: string) => string}
         brand={{
           name: (t("header.brand.name") as string) || "",
-          logoSrc: "AchiDigital.jpeg",
+          logoSrc: "logo.png",
           logoAltKey: "header.brand.logoAlt",
         }}
       />

@@ -251,7 +251,7 @@ const cards = useMemo(() => {
         t={t}
         brand={{
           name: "Framework",
-          logoSrc: "/AchiDigital.jpeg",
+          logoSrc: "/logo.png",
           logoAltKey: "header.brand.logoAlt",
           homeHref
         }}
@@ -446,7 +446,7 @@ const cards = useMemo(() => {
         t={t}
         brand={{
           name: "Framework",
-          logoSrc: "/AchiDigital.jpeg",
+          logoSrc: "/logo.png",
           logoAltKey: "header.brand.logoAlt",
           homeHref
         }}

@@ -89,7 +89,7 @@
   "footer": {
   "brand": {
     "name": "Framework",
-    "logoSrc": "/AchiDigital.jpeg",
+    "logoSrc": "/logo.png",
     "logoAlt": "Framework logo",
     "wordA": "Frame",
     "wordB": "work",
@@ -1419,35 +1419,35 @@
    "seo": {
   "siteUrl": "https://achidigital.github.io/ACHI",
   "organization": {
-    "name": "Framework",
+    "name": "The Framework",
     "url": "https://achidigital.github.io/ACHI",
     "logo": "https://achidigital.github.io/ACHI/AchiDigital.jpeg",
-    "siteName": "Framework",
+    "siteName": "The Framework",
     "defaults": {
-      "title": "Framework | Digital Agency for Web Development, UX/UI & Technical SEO",
-      "description": "Framework is a professional digital agency delivering web development, UX/UI design, technical SEO, and performance optimization. We build fast, scalable websites engineered for visibility, Core Web Vitals, and measurable growth.",
+      "title": "The Framework | Digital Agency for Web Development, UX/UI & Technical SEO",
+      "description": "The Framework is a professional digital agency delivering web development, UX/UI design, technical SEO, and performance optimization. We build fast, scalable websites engineered for visibility, Core Web Vitals, and measurable growth.",
       "ogImage": "/image.png"
     },
     "routes": {
       "home": {
-        "title": "Framework | Web Development Agency, UX/UI Design & Technical SEO",
+        "title": "The Framework | Web Development Agency, UX/UI Design & Technical SEO",
         "description": "Digital agency specializing in high-performance website development, UX/UI design, technical SEO, and performance optimization. We build fast, scalable, conversion-focused websites engineered for search visibility and long-term growth."
       },
       "about": {
-        "title": "About Framework | Web Development & Technical SEO Agency",
-        "description": "Framework is a results-driven digital agency focused on clean engineering, performance optimization, and measurable outcomes. We design and develop fast, reliable websites built with strong UX principles and technical SEO foundations."
+        "title": "About The Framework | Web Development & Technical SEO Agency",
+        "description": "The Framework is a results-driven digital agency focused on clean engineering, performance optimization, and measurable outcomes. We design and develop fast, reliable websites built with strong UX principles and technical SEO foundations."
       },
       "services": {
-        "title": "Digital Services | Web Development, UX/UI, SEO & Performance | Framework",
+        "title": "Digital Services | Web Development, UX/UI, SEO & Performance | The Framework",
         "description": "Explore our digital services: custom website development, full-stack builds, UX/UI design systems, technical SEO audits, and performance engineering focused on speed, stability, scalability, and business growth."
       },
       "technologies": {
-        "title": "Technologies | Modern Web Stack & SEO-Ready Architecture | Framework",
+        "title": "Technologies | Modern Web Stack & SEO-Ready Architecture | The Framework",
         "description": "We use a modern, production-ready technology stack including React, TypeScript, and performance-first tooling to build secure, maintainable, and SEO-optimized websites with strong Core Web Vitals performance."
       },
       "contact": {
-        "title": "Contact Framework | Start Your Website or SEO Project",
-        "description": "Start your website project with Framework. Get expert web development, UX/UI design, technical SEO optimization, and performance consulting focused on visibility, speed, and measurable results."
+        "title": "Contact The Framework | Start Your Website or SEO Project",
+        "description": "Start your website project with The Framework. Get expert web development, UX/UI design, technical SEO optimization, and performance consulting focused on visibility, speed, and measurable results."
       },
       "serviceGeneric": {
         "title": "Digital Service | Web Development & SEO Solutions | Framework",
