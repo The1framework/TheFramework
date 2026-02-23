@@ -19,8 +19,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Hero Primary Button - Neon glow effect
-        hero: "bg-primary text-primary-foreground font-semibold neon-glow hover:shadow-[0_0_30px_hsl(var(--glow-primary)/0.5),0_0_60px_hsl(var(--glow-primary)/0.3)] hover:scale-105 active:scale-100",
-        // Hero Secondary Button - Glass effect
+hero:
+  "bg-primary text-primary-foreground font-semibold border border-transparent hover:bg-primary/90 active:bg-primary/95",        // Hero Secondary Button - Glass effect
         heroSecondary: "glass-panel text-foreground font-semibold border border-primary/30 hover:border-primary/60 hover:bg-primary/10 hover:shadow-lg",
         // Accent glow button
         glow: "bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover:shadow-[0_0_40px_hsl(var(--glow-accent)/0.4)] hover:scale-105 active:scale-100",

@@ -167,8 +167,7 @@ servicesDropdown = [
     >
       <nav aria-label={t("header.aria.mainNav")} className="flex items-center justify-between gap-3">
         <Link to={homeTo} onClick={onNavClick} className="flex items-center gap-2 group min-w-[160px]" aria-label={t("header.aria.homeLink")}>
-          <div className="w-10 h-10 rounded-xl bg-primary neon-glow overflow-hidden transition-transform group-hover:scale-110">
-            {brand.logoSrc ? (
+<div className="w-10 h-10 rounded-xl bg-primary overflow-hidden">            {brand.logoSrc ? (
               <img
                 src={withBase(brand.logoSrc)}
                 alt={t(brand.logoAltKey)}

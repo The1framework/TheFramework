@@ -88,11 +88,11 @@
 
   "footer": {
   "brand": {
-    "name": "Framework",
+    "name": "The Framework",
     "logoSrc": "/logo.png",
     "logoAlt": "Framework logo",
-    "wordA": "Frame",
-    "wordB": "work",
+    "wordA": "The ",
+    "wordB": "FrameWork",
     "description": "A performance-focused startup building fast, scalable websites engineered for measurable digital growth."
   },
   "columns": {
