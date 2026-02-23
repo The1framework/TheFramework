@@ -781,26 +781,9 @@
      "page": {
       "hero": {
         "h1": "Our Digital Services",
-        "supporting": "A clear hub for our core digital services in development, design, performance, and visibility."
+        "supporting": "A clear hub for our core digital services in web development, UX/UI design, performance optimization, and search visibility, where Framework delivers focused solutions that keep websites fast, reliable, high-performing, and easy to discover online."
       },
-      "authority": {
-        "h2": "Entity and services scope",
-        "oneSentence": "Framework delivers focused digital services that keep websites fast, reliable, and easy to discover.",
-        "pills": [
-          {
-            "kicker": "Execution",
-            "text": "Built for real shipping: clean architecture, predictable delivery, and measurable outcomes."
-          },
-          {
-            "kicker": "Performance",
-            "text": "Fast pages, strong Core Web Vitals, and stable UX that supports conversions."
-          },
-          {
-            "kicker": "Visibility",
-            "text": "Search-first structure for SEO, AI search, and answer engines without hacks."
-          }
-        ]
-      },
+     
       "list": {
         "h2": "Our Services",
         "supporting": "Choose a service to explore details, scope, and deliverables. Each service is designed to plug into a growth-focused roadmap.",

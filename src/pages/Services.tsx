@@ -129,67 +129,37 @@ const faqItems = useMemo(() => {
 
   return (
     <main className="pt-32 pb-20">
-      <section
-        ref={heroRef}
-        id="services-hero"
-        aria-labelledby="services-hero-heading"
-        className="relative overflow-hidden"
-      >
-        <div className="absolute inset-0 -z-10" aria-hidden="true">
-          <div className="absolute -top-32 -left-20 w-80 h-80 bg-primary/15 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 -right-10 w-96 h-96 bg-accent/15 rounded-full blur-3xl" />
-          <div className="absolute inset-0 opacity-[0.03]" />
-        </div>
+    <section
+  ref={heroRef}
+  id="services-hero"
+  aria-labelledby="services-hero-heading"
+  className="relative overflow-hidden"
+>
+  <div className="container mx-auto px-6">
+    <div
+      className={cn(
+        "glass-panel rounded-3xl px-6 md:px-10 py-12 md:py-16 relative border border-white/10",
+        "shadow-[0_0_60px_rgba(56,189,248,0.25)] backdrop-blur-2xl overflow-hidden",
+        "transition-all duration-700",
+        heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      )}
+    >
+      <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <h1
+          id="services-hero-heading"
+          className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary"
+        >
+          {t("services.page.hero.h1") as string}
+        </h1>
 
-        <div className="container mx-auto px-6">
-          <div
-            className={cn(
-              "glass-panel rounded-3xl px-6 md:px-10 py-12 md:py-16 relative border border-white/10",
-              "shadow-[0_0_60px_rgba(56,189,248,0.25)] backdrop-blur-2xl overflow-hidden",
-              "transition-all duration-700",
-              heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            )}
-          >
-            <div className="absolute inset-px rounded-[1.4rem] bg-gradient-to-br from-white/5 via-transparent to-primary/10 pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <h1
-                id="services-hero-heading"
-                className="text-display-lg md:text-display-xl font-display mb-6 max-w-5xl mx-auto text-balance text-primary"
-              >
-                {t("services.page.hero.h1") as string}
-              </h1>
-
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
-                {t("services.page.hero.supporting") as string}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="services-authority"
-        aria-labelledby="services-authority-heading"
-        className="mt-12 md:mt-16"
-      >
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 id="services-authority-heading" className="sr-only">
-              {t("services.page.authority.h2") as string}
-            </h2>
-            <p
-              className={cn(
-                "text-sm sm:text-base md:text-lg text-muted-foreground/90",
-                "rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4",
-                "shadow-[0_0_35px_rgba(56,189,248,0.25)]"
-              )}
-            >
-              {t("services.page.authority.oneSentence") as string}
-            </p>
-          </div>
-        </div>
-      </section>
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
+          {(t("services.page.hero.supporting") as string)}
+        </p>
+      </div>
+    </div>
+  </div>
+    </section>
+  
 
       <section
         ref={listRef}

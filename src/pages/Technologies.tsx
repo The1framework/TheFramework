@@ -85,7 +85,6 @@ function TechCard({
 
           <div className="min-w-0">
             <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
-            <p className="mt-1 text-xs text-muted-foreground">{t("technologies.stack.hoverHint") as string}</p>
           </div>
         </div>
 
@@ -225,12 +224,6 @@ export default function Technologies({ locale, t }: Props) {
 
   return (
     <main className="relative">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute top-[40%] -left-32 h-[420px] w-[420px] rounded-full bg-primary/8 blur-3xl" />
-        <div className="absolute bottom-[-180px] right-[-140px] h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
-      </div>
-
       <section
         ref={hero.ref}
         className={cn(
@@ -256,14 +249,11 @@ export default function Technologies({ locale, t }: Props) {
               </a>
             </Button>
 
-           <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
-  <a
-    href="/#contact"
-    aria-label={t("technologies.hero.secondaryAria") as string}
-  >
-    {t("technologies.hero.secondary") as string}
-  </a>
-</Button>
+            <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
+              <a href="/#contact" aria-label={t("technologies.hero.secondaryAria") as string}>
+                {t("technologies.hero.secondary") as string}
+              </a>
+            </Button>
           </div>
         </div>
       </section>
