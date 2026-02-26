@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex,follow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script>
+      (function () {
+        var l = window.location;
+
+        // GitHub Pages repo base (project site)
+        var base = "/TheFramework/";
+
+        // Prevent loops if we already redirected
+        if (l.search && l.search.indexOf("?p=") === 0) return;
+
+        // Build the full intended client-side route
+        var full = l.pathname + l.search + l.hash;
+
+        // Normalize if GitHub serves "/TheFramework" without trailing slash
+        if (l.pathname === "/TheFramework") {
+          l.replace(base);
+          return;
+        }
+
+        // If already under base, strip the base from the stored path
+        if (full.indexOf(base) === 0) {
+          full = full.slice(base.length - 1);
+        }
+
+        // If empty, just go home
+        if (!full || full === "/") {
+          l.replace(base);
+          return;
+        }
+
+        // Redirect to the SPA entry with the encoded path
+        l.replace(base + "?p=" + encodeURIComponent(full));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

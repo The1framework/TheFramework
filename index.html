@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Framework | Digital Solutions, Web Development & Performance-Driven Growth</title>
+    <title>The Framework | Digital Solutions, Web Development & Performance-Driven Growth</title>
     <meta
       name="description"
-      content="Framework is a product-driven startup delivering digital solutions that improve performance, visibility, and conversions—covering full-stack development, UX/UI design, SEO, content, e-commerce, paid campaigns, and intelligent automation."
+      content="The Framework is a product-driven startup delivering digital solutions that improve performance, visibility, and conversions—covering full-stack development, UX/UI design, SEO, content, e-commerce, paid campaigns, and intelligent automation."
     />
     <meta name="author" content="Framework" />
     <meta
       name="keywords"
-      content="Framework, digital solutions, web development, full-stack development, website optimization, performance engineering, UX UI design, search engine optimization, technical SEO, Core Web Vitals, content writing, e-commerce solutions, conversion rate optimization, paid advertising PPC, answer engine optimization, automation, integrations"
+      content="The Framework, digital solutions, web development, full-stack development, website optimization, performance engineering, UX UI design, search engine optimization, technical SEO, Core Web Vitals, content writing, e-commerce solutions, conversion rate optimization, paid advertising PPC, answer engine optimization, automation, integrations"
     />
 
     <meta property="og:title" content="Framework | Digital Solutions, Web Development & Performance-Driven Growth" />
@@ -41,6 +41,19 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- GitHub Pages SPA fallback: decode ?p=... into a real path before React loads -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (!l.search || l.search.indexOf("?p=") !== 0) return;
+
+        var p = decodeURIComponent(l.search.slice(3));
+        if (!p || p === "/") return;
+
+        window.history.replaceState(null, "", p);
+      })();
+    </script>
   </head>
 
   <body>
