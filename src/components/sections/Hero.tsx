@@ -1,5 +1,6 @@
 import { useMemo, useRef } from "react"
 import type { CSSProperties } from "react"
+import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useMagneticButton } from "@/hooks/useMagneticButton"
 import { useMousePosition } from "@/hooks/useMousePosition"
@@ -8,10 +9,7 @@ import { cn } from "@/lib/utils"
 import { useI18n } from "@/i18n/useI18n"
 
 function normalizeWord(w: string) {
-  return w
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "")
-    .trim()
+  return w.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "").trim()
 }
 
 export function Hero() {
@@ -25,7 +23,6 @@ export function Hero() {
 
   const headline = (t("home.hero.h1") as string) || ""
   const subheading = (t("home.hero.subheading") as string) || ""
-  const complianceNote = (t("home.hero.complianceNote") as string) || ""
 
   const headlineWords = useMemo(() => headline.split(/\s+/).filter(Boolean), [headline])
 
@@ -40,8 +37,8 @@ export function Hero() {
     return Array.isArray(list) ? (list as string[]) : []
   }, [t])
 
-const primaryHref = "/#contact"
-  const secondaryHref = (t("home.hero.secondaryCtaHref") as string) || "/services"
+  const primaryTo = "/#contact"
+  const secondaryTo = (t("home.hero.secondaryCtaHref") as string) || "/services"
 
   return (
     <section
@@ -132,16 +129,24 @@ const primaryHref = "/#contact"
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 motion-safe:animate-heroFadeUpTranslate motion-reduce:animate-none">
           <Button asChild variant="hero" size="xl" className="magnetic-btn micro-bounce group btn-press">
-            <a {...primaryBtnProps} href={primaryHref} aria-label={t("home.hero.primaryCtaAria") as string}>
+            <Link
+              {...primaryBtnProps}
+              to={primaryTo}
+              aria-label={t("home.hero.primaryCtaAria") as string}
+            >
               {t("home.hero.primaryCtaLabel") as string}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </a>
+            </Link>
           </Button>
 
           <Button asChild variant="heroSecondary" size="xl" className="magnetic-btn group btn-press">
-            <a {...secondaryBtnProps} href={secondaryHref} aria-label={t("home.hero.secondaryCtaAria") as string}>
+            <Link
+              {...secondaryBtnProps}
+              to={secondaryTo}
+              aria-label={t("home.hero.secondaryCtaAria") as string}
+            >
               {t("home.hero.secondaryCtaLabel") as string}
-            </a>
+            </Link>
           </Button>
         </div>
 
