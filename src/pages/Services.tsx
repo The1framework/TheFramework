@@ -2,6 +2,7 @@ import type React from "react"
 import { useMemo } from "react"
 import type { Locale } from "@/i18n"
 import { cn } from "@/lib/utils"
+import { Link } from "react-router-dom"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 import {
   Code2,
@@ -197,10 +198,7 @@ const faqItems = useMemo(() => {
 
               return (
                 <li key={service.key}>
-                  <a
-                    href={service.href}
-                    aria-label={aria}
-                    className={cn(
+                  <Link to={service.href} aria-label={aria} className= {cn(
                       "group block glass-panel rounded-2xl px-5 py-4 h-full",
                       "border border-white/10 bg-white/5 backdrop-blur-2xl",
                       "hover:border-cyan-400/80 hover:bg-white/10",
@@ -222,7 +220,7 @@ const faqItems = useMemo(() => {
                         </span>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               )
             })}
@@ -258,9 +256,7 @@ const faqItems = useMemo(() => {
         {t("services.page.cta.h2") as string}
       </h2>
 
-      <a
-        href="/#contact"
-        className={cn(
+     <Link to="/#contact" className= {cn(
           "inline-flex items-center justify-center",
           "px-8 py-4 rounded-full",
           "text-sm md:text-base font-semibold",
@@ -272,7 +268,7 @@ const faqItems = useMemo(() => {
         )}
       >
         {t("services.page.cta.secondary") as string}
-      </a>
+      </Link>
     </div>
   </div>
 </section>
