@@ -1,8 +1,8 @@
-// src/pages/Index.tsx
 import { useEffect } from "react"
 import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline"
+import { AiAssistant } from "@/components/sections/AiAssistant"
 import { FAQ } from "@/components/sections/FAQ"
 import { Contact } from "@/components/sections/Contact"
 
@@ -21,6 +21,7 @@ export default function Index({ locale, t }: IndexProps) {
       <Hero />
       <About t={t} />
       <ProcessTimeline />
+      <AiAssistant locale={locale} />
       <FAQ locale={locale} t={t} />
       <Contact />
     </main>

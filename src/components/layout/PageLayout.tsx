@@ -1,7 +1,7 @@
-// src/components/layout/PageLayout.tsx
 import type { ReactNode } from "react"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
+import ChatbotWidget from "@/components/chatbot/ChatbotWidget"
 
 type Props = {
   locale: "en" | "fr" | "lb"
@@ -22,6 +22,7 @@ export function PageLayout({ locale, t, children }: Props) {
       <Header locale={locale} t={t} brand={brand} />
       <main>{children}</main>
       <Footer locale={locale} t={t} />
+      <ChatbotWidget />
     </div>
   )
 }

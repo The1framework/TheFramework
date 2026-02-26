@@ -1507,7 +1507,40 @@
   "meta": {
     "requestedPath": "Requested path:"
   }
+},
+
+"chatbot": {
+  "floating": {
+    "open": "Open AI assistant",
+    "close": "Close AI assistant"
+  },
+  "panel": {
+    "title": "Framework AI",
+    "subtitle": "Ask about digital strategy, technology, growth, or the right solution for your business.",
+    "inputPlaceholder": "Ask anything about your project…",
+    "send": "Send",
+    "disclaimer": "This assistant provides strategic guidance. For project details, reach out to our team.",
+    "suggestionsTitle": "Try asking"
+  },
+  "homeSection": {
+    "kicker": "AI-Powered Guidance",
+    "title": "Plan smarter with our AI before you build",
+    "description": "Get instant insights about our services, technologies, SEO strategy, AI integrations, and what approach fits your business goals.",
+    "ctaOpen": "Chat with AI",
+    "ctaFaq": "Browse FAQs",
+    "ctaServices": "Discover services"
+  },
+  "suggestions": {
+    "q1": "What solutions does The Framework provide?",
+    "q2": "How can AI improve my website?",
+    "q3": "What is GEO & AI visibility?",
+    "q4": "What is the best tech stack for my project?"
+  },
+  "fallback": {
+    "generic": "How can I help you?"
+  }
 }
+
 }
 
 
