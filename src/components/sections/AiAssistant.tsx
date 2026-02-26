@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { useI18n } from "@/i18n/useI18n"
 import { tString } from "@/i18n/ts"
 import { buildPathWithLocale } from "@/utils/langRouting"
+import { Link } from "react-router-dom"
 
 type Props = {
   locale: "en" | "fr" | "lb"
@@ -12,18 +13,12 @@ export function AiAssistant({ locale }: Props) {
   const { t } = useI18n()
   const ts = useCallback((key: string) => tString(t, key), [t])
 
-  const faqHref = buildPathWithLocale(locale, "/#faq")
-  const servicesHref = buildPathWithLocale(locale, "/services")
+  const servicesTo = buildPathWithLocale(locale, "/services")
 
   return (
-    <section
-      className="py-20 relative"
-      aria-label={ts("chatbot.homeSection.kicker")}
-    >
+    <section className="py-20 relative" aria-label={ts("chatbot.homeSection.kicker")}>
       <div className="mx-auto max-w-6xl px-4">
         <div className="relative overflow-hidden rounded-3xl border bg-muted/20 backdrop-blur-xl p-10 md:p-12 shadow-xl">
-
-          {/* subtle gradient accent */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute -top-20 -right-20 h-64 w-64 bg-primary/10 blur-3xl rounded-full" />
           </div>
@@ -51,15 +46,7 @@ export function AiAssistant({ locale }: Props) {
               </Button>
 
               <Button asChild variant="outline" size="lg">
-                <a href={faqHref}>
-                  {ts("chatbot.homeSection.ctaFaq")}
-                </a>
-              </Button>
-
-              <Button asChild variant="outline" size="lg">
-                <a href={servicesHref}>
-                  {ts("chatbot.homeSection.ctaServices")}
-                </a>
+                <Link to={servicesTo}>{ts("chatbot.homeSection.ctaServices")}</Link>
               </Button>
             </div>
           </div>
