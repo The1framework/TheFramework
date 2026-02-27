@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 import { useCallback, useEffect, useMemo } from "react"
 import { useParams } from "react-router-dom"
 import { ArrowRight, CheckCircle2, Sparkles, Layers3 } from "lucide-react"
-
+import { NavLink } from "@/components/NavLink"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -283,16 +283,16 @@ export default function ServiceSlug({ locale, t }: Props) {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button asChild variant="hero" size="xl" className="btn-press group">
-                  <a href={lp(servicesHubPath)} aria-label={t("services.single.notFound.ctaPrimaryAria") as string}>
+                  <NavLink to={lp(servicesHubPath)} aria-label={t("services.single.notFound.ctaPrimaryAria") as string}>
                     {t("services.single.notFound.ctaPrimaryLabel") as string}
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </a>
+                  </NavLink>
                 </Button>
 
                 <Button asChild variant="outline" size="xl" className="btn-press">
-                  <a href={lp("/")} aria-label={t("services.single.notFound.ctaSecondaryAria") as string}>
+                  <NavLink to={lp("/")} aria-label={t("services.single.notFound.ctaSecondaryAria") as string}>
                     {t("services.single.notFound.ctaSecondaryLabel") as string}
-                  </a>
+                  </NavLink>
                 </Button>
               </div>
             </div>
@@ -407,11 +407,7 @@ export default function ServiceSlug({ locale, t }: Props) {
               </div>
 
               <div className="lg:col-span-5">
-                <BentoCard
-                  icon={<Layers3 className="h-5 w-5" aria-hidden="true" />}
-                  title={includedTitle}
-                  items={includedItems}
-                />
+                <BentoCard icon={<Layers3 className="h-5 w-5" aria-hidden="true" />} title={includedTitle} items={includedItems} />
               </div>
             </div>
 
@@ -476,15 +472,16 @@ export default function ServiceSlug({ locale, t }: Props) {
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <Button asChild variant="hero" size="xl" className="btn-press group">
-                    <a href={conversionPrimaryHref} aria-label={conversionPrimaryAria}>
+                    <NavLink to={conversionPrimaryHref} aria-label={conversionPrimaryAria}>
                       {conversionPrimaryLabel}
                       <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                    </a>
+                    </NavLink>
                   </Button>
+
                   <Button asChild variant="outline" size="xl" className="btn-press">
-                    <a href={conversionSecondaryHref} aria-label={conversionSecondaryAria}>
+                    <NavLink to={conversionSecondaryHref} aria-label={conversionSecondaryAria}>
                       {conversionSecondaryLabel}
-                    </a>
+                    </NavLink>
                   </Button>
                 </div>
               </div>
@@ -514,9 +511,6 @@ export default function ServiceSlug({ locale, t }: Props) {
                       </div>
                     ))}
                 </div>
-
-
-               
               </div>
             </div>
           </div>
