@@ -21,8 +21,9 @@
       content="A product-driven startup delivering digital solutions for performance, visibility, and conversion—full-stack development, UX/UI, SEO, content, e-commerce, paid campaigns, and smart automation."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og.png" />
-    <meta property="og:url" content="https://framework.com" />
+    <!-- IMPORTANT: no leading slash on project sites -->
+    <meta property="og:image" content="og.png" />
+    <meta property="og:url" content="https://the1framework.github.io/TheFramework/" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@framework" />
@@ -31,8 +32,11 @@
       name="twitter:description"
       content="A product-driven startup delivering digital solutions for performance, visibility, and conversion—full-stack development, UX/UI, SEO, content, e-commerce, paid campaigns, and smart automation."
     />
-    <meta name="twitter:image" content="/og.png" />
+    <!-- IMPORTANT: no leading slash on project sites -->
+    <meta name="twitter:image" content="og.png" />
 
+    <!-- (Optional) Your canonical is currently framework.com which is not your GitHub Pages site -->
+    <!-- Keep if intentional; otherwise change later -->
     <link rel="canonical" href="https://framework.com" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,42 +46,42 @@
       rel="stylesheet"
     />
 
-  <!-- GitHub Pages SPA fallback: decode ?p=... and restore route under the repo base -->
-<script>
-  (function () {
-    var l = window.location;
+    <!-- GitHub Pages SPA fallback: decode ?p=... and restore route under Vite BASE_URL -->
+    <script type="module">
+      (function () {
+        const l = window.location
 
-    // GitHub Pages repo base (project site)
-    var base = "/TheFramework/";
+        // Works in DEV ("/") and BUILD ("/TheFramework/")
+        const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
 
-    // Only run when coming from 404.html redirect
-    if (!l.search || l.search.indexOf("?p=") !== 0) return;
+        const params = new URLSearchParams(l.search)
+        const p = params.get("p")
+        if (!p) return
 
-    // Extract encoded path
-    var encoded = l.search.slice(3);
-    var p = "";
-    try {
-      p = decodeURIComponent(encoded);
-    } catch (e) {
-      p = encoded; // fallback
-    }
+        // Remove p so we don't keep it in the URL
+        params.delete("p")
 
-    if (!p || p === "/") {
-      // Clean URL to base home
-      window.history.replaceState(null, "", base);
-      return;
-    }
+        let path = ""
+        try {
+          path = decodeURIComponent(p)
+        } catch {
+          path = p
+        }
 
-    // Ensure leading slash
-    if (p.charAt(0) !== "/") p = "/" + p;
+        if (!path || path === "/") {
+          window.history.replaceState(null, "", base)
+          return
+        }
 
-    // If p already includes the base, keep it. Otherwise prefix it.
-    var next = p.indexOf(base) === 0 ? p : base.replace(/\/$/, "") + p;
+        if (!path.startsWith("/")) path = "/" + path
 
-    // Replace the URL before React Router loads
-    window.history.replaceState(null, "", next);
-  })();
-</script>
+        // Ensure final URL is base + internal path (no double slashes)
+        const next =
+          base.replace(/\/$/, "") + path + (params.toString() ? `?${params.toString()}` : "") + l.hash
+
+        window.history.replaceState(null, "", next)
+      })()
+    </script>
   </head>
 
   <body>

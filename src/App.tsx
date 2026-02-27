@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 
 import LangRouter, { useLangRouter } from "@/routing/LangRouter"
 import ScrollToTop from "@/routing/ScrollToTop"
@@ -58,11 +58,10 @@ export default function App() {
         <Toaster />
         <Sonner />
 
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <LangRouter>
-            <RoutedApp />
-          </LangRouter>
-        </BrowserRouter>
+        {/* BrowserRouter MUST live in src/main.tsx (single router) */}
+        <LangRouter>
+          <RoutedApp />
+        </LangRouter>
       </TooltipProvider>
     </QueryClientProvider>
   )
