@@ -27,7 +27,7 @@ function TechCard({
   icon,
   desc,
   chips,
-  logos
+  logos,
 }: {
   t: (key: string) => string
   title: string
@@ -144,7 +144,9 @@ function TechCard({
 }
 
 export default function Technologies({ t }: Props) {
-  const servicesHref = "/services"
+  // IMPORTANT: router path (NOT a raw href) — must go through <NavLink to="...">
+  const servicesTo = "/services"
+
   const hero = useScrollReveal<HTMLElement>(0.08)
   const why = useScrollReveal<HTMLElement>(0.12)
   const grid = useScrollReveal<HTMLElement>(0.1)
@@ -153,6 +155,7 @@ export default function Technologies({ t }: Props) {
 
   const whyBullets = useMemo(() => parseLines(t("technologies.why.bullets") as string), [t])
 
+  // Base-safe asset prefix for GitHub Pages project sites
   const base = (import.meta.env.BASE_URL || "/").replace(/\/?$/, "/")
 
   const cards = useMemo(() => {
@@ -170,8 +173,8 @@ export default function Technologies({ t }: Props) {
           { src: tech("nextdotjs.svg"), altKey: "technologies.logos.next" },
           { src: tech("typescript.svg"), altKey: "technologies.logos.typescript" },
           { src: tech("tailwindcss.svg"), altKey: "technologies.logos.tailwind" },
-          { src: tech("vite.svg"), altKey: "technologies.logos.vite" }
-        ]
+          { src: tech("vite.svg"), altKey: "technologies.logos.vite" },
+        ],
       },
       {
         key: "backend",
@@ -179,7 +182,7 @@ export default function Technologies({ t }: Props) {
         title: t("technologies.stack.backend.title") as string,
         desc: t("technologies.stack.backend.desc") as string,
         chips: parseLines(t("technologies.stack.backend.chips") as string),
-        logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }]
+        logos: [{ src: tech("nodedotjs.svg"), altKey: "technologies.logos.node" }],
       },
       {
         key: "ai",
@@ -187,7 +190,7 @@ export default function Technologies({ t }: Props) {
         title: t("technologies.stack.ai.title") as string,
         desc: t("technologies.stack.ai.desc") as string,
         chips: parseLines(t("technologies.stack.ai.chips") as string),
-        logos: []
+        logos: [],
       },
       {
         key: "seo",
@@ -195,7 +198,7 @@ export default function Technologies({ t }: Props) {
         title: t("technologies.stack.seo.title") as string,
         desc: t("technologies.stack.seo.desc") as string,
         chips: parseLines(t("technologies.stack.seo.chips") as string),
-        logos: []
+        logos: [],
       },
       {
         key: "security",
@@ -203,7 +206,7 @@ export default function Technologies({ t }: Props) {
         title: t("technologies.stack.security.title") as string,
         desc: t("technologies.stack.security.desc") as string,
         chips: parseLines(t("technologies.stack.security.chips") as string),
-        logos: []
+        logos: [],
       },
       {
         key: "devops",
@@ -214,9 +217,9 @@ export default function Technologies({ t }: Props) {
         logos: [
           { src: tech("github.svg"), altKey: "technologies.logos.github" },
           { src: tech("githubpages.svg"), altKey: "technologies.logos.githubPages" },
-          { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" }
-        ]
-      }
+          { src: tech("vercel.svg"), altKey: "technologies.logos.vercel" },
+        ],
+      },
     ]
   }, [t, base])
 
@@ -240,23 +243,20 @@ export default function Technologies({ t }: Props) {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-  <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
-    <NavLink to={servicesHref} aria-label={t("technologies.hero.primaryAria") as string}>
-      {t("technologies.hero.primary") as string}
-      <ArrowRight
-        className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
-        aria-hidden="true"
-      />
-    </NavLink>
-  </Button>
+            <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
+              <NavLink to={servicesTo} aria-label={t("technologies.hero.primaryAria") as string}>
+                {t("technologies.hero.primary") as string}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </NavLink>
+            </Button>
 
-  <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
-    {/* for hash links, keep it internal but base-safe */}
-    <NavLink to={{ pathname: "/", hash: "contact" }} aria-label={t("technologies.hero.secondaryAria") as string}>
-      {t("technologies.hero.secondary") as string}
-    </NavLink>
-  </Button>
-</div>
+            <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
+              {/* Hash link stays internal + basename-safe */}
+              <NavLink to={{ pathname: "/", hash: "contact" }} aria-label={t("technologies.hero.secondaryAria") as string}>
+                {t("technologies.hero.secondary") as string}
+              </NavLink>
+            </Button>
+          </div>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 // src/pages/ServiceSlug.tsx
 import type { ReactNode } from "react"
 import { useCallback, useEffect, useMemo } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { ArrowRight, CheckCircle2, Sparkles, Layers3 } from "lucide-react"
 import { NavLink } from "@/components/NavLink"
 import { cn } from "@/lib/utils"
@@ -101,7 +101,8 @@ type ServiceKey = (typeof SERVICE_SLUG_TO_KEY)[keyof typeof SERVICE_SLUG_TO_KEY]
 
 const LEGACY_SLUG_TO_NEW = {
   "full-stack-web-app-development": "full-stack",
-  "website-optimization-performance-engineering": "performance",
+  "website-optimization-performance": "performance", // ✅ add this
+  "website-optimization-performance-engineering": "performance", // (keep if you want)
   "ux-ui-design-user-experience": "ux-ui",
   "geo-llm-search-optimization": "geo-llm",
   "answer-engine-optimization": "aeo",
@@ -163,11 +164,13 @@ function BentoCard({
 }
 
 export default function ServiceSlug({ locale, t }: Props) {
+  const navigate = useNavigate()
   const params = useParams<{ serviceSlug?: string }>()
   const rawSlug = (params.serviceSlug || "").trim()
 
   const lp = useCallback((path: string) => buildPathWithLocale(locale, path), [locale])
 
+  // router paths (basename-safe). Locale will be preserved via NavLink (preserveLang default true).
   const servicesHubPath = "/services"
   const contactPath = "/#contact"
 
@@ -191,13 +194,13 @@ export default function ServiceSlug({ locale, t }: Props) {
   const faqReveal = useScrollReveal<HTMLDivElement>(0.12)
   const convReveal = useScrollReveal<HTMLDivElement>(0.12)
 
+  // ✅ FIX: legacy slug redirect MUST stay inside the SPA router (basename-safe),
+  // so we use navigate() instead of window.location.replace().
   useEffect(() => {
     if (!resolved.isLegacy) return
     const target = lp(`/services/${resolved.canonicalSlug}`)
-    if (window.location.pathname + window.location.search + window.location.hash !== target) {
-      window.location.replace(target)
-    }
-  }, [resolved.isLegacy, resolved.canonicalSlug, lp])
+    navigate(target, { replace: true })
+  }, [resolved.isLegacy, resolved.canonicalSlug, lp, navigate])
 
   const siteUrl = (t("seo.siteUrl") as string) || ""
   const canonicalServicePath = `/services/${resolved.canonicalSlug}`
@@ -305,11 +308,8 @@ export default function ServiceSlug({ locale, t }: Props) {
   const serviceName = t(`${serviceKeyBase}.name`) as string
   const heroSupporting = t(`${serviceKeyBase}.hero.supporting`) as string
 
-  const heroCtaSecondaryLabel = t(`${serviceKeyBase}.hero.ctaSecondaryLabel`) as string
-  const heroCtaSecondaryAria = t(`${serviceKeyBase}.hero.ctaSecondaryAria`) as string
-  const heroCtaSecondaryHref = lp(servicesHubPath)
-
   const trustItems = parseLines(t(`${serviceKeyBase}.hero.trustItems`) as string)
+  const trustAria = t(`${serviceKeyBase}.hero.trustAria`) as string
 
   const definitionTitle = t(`${serviceKeyBase}.definition.title`) as string
   const definitionBody = t(`${serviceKeyBase}.definition.body`) as string
@@ -324,12 +324,13 @@ export default function ServiceSlug({ locale, t }: Props) {
   const conversionSupporting = t(`${serviceKeyBase}.conversion.supporting`) as string
   const conversionPrimaryLabel = t(`${serviceKeyBase}.conversion.ctaPrimaryLabel`) as string
   const conversionPrimaryAria = t(`${serviceKeyBase}.conversion.ctaPrimaryAria`) as string
-  const conversionPrimaryHref = lp(contactPath)
   const conversionSecondaryLabel = t(`${serviceKeyBase}.conversion.ctaSecondaryLabel`) as string
   const conversionSecondaryAria = t(`${serviceKeyBase}.conversion.ctaSecondaryAria`) as string
-  const conversionSecondaryHref = lp(servicesHubPath)
 
-  const trustAria = t(`${serviceKeyBase}.hero.trustAria`) as string
+  // IMPORTANT:
+  // Use router paths and let NavLink + basename handle /TheFramework/.
+  const conversionPrimaryTo = lp(contactPath)
+  const conversionSecondaryTo = lp(servicesHubPath)
 
   return (
     <main className="relative">
@@ -472,14 +473,14 @@ export default function ServiceSlug({ locale, t }: Props) {
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <Button asChild variant="hero" size="xl" className="btn-press group">
-                    <NavLink to={conversionPrimaryHref} aria-label={conversionPrimaryAria}>
+                    <NavLink to={conversionPrimaryTo} aria-label={conversionPrimaryAria}>
                       {conversionPrimaryLabel}
                       <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                     </NavLink>
                   </Button>
 
                   <Button asChild variant="outline" size="xl" className="btn-press">
-                    <NavLink to={conversionSecondaryHref} aria-label={conversionSecondaryAria}>
+                    <NavLink to={conversionSecondaryTo} aria-label={conversionSecondaryAria}>
                       {conversionSecondaryLabel}
                     </NavLink>
                   </Button>
