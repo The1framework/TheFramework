@@ -14,19 +14,22 @@
         // Prevent loops if we already redirected
         if (l.search && l.search.indexOf("?p=") === 0) return;
 
-        // Build the full intended client-side route
-        var full = l.pathname + l.search + l.hash;
-
         // Normalize if GitHub serves "/TheFramework" without trailing slash
         if (l.pathname === "/TheFramework") {
           l.replace(base);
           return;
         }
 
-        // If already under base, strip the base from the stored path
+        // Build the full intended client-side route
+        var full = l.pathname + l.search + l.hash;
+
+        // If already under base, strip the base from the stored path (store as app-internal path)
         if (full.indexOf(base) === 0) {
           full = full.slice(base.length - 1);
         }
+
+        // Ensure it starts with "/" (router expects this)
+        if (full && full.charAt(0) !== "/") full = "/" + full;
 
         // If empty, just go home
         if (!full || full === "/") {

@@ -42,18 +42,42 @@
       rel="stylesheet"
     />
 
-    <!-- GitHub Pages SPA fallback: decode ?p=... into a real path before React loads -->
-    <script>
-      (function () {
-        var l = window.location;
-        if (!l.search || l.search.indexOf("?p=") !== 0) return;
+  <!-- GitHub Pages SPA fallback: decode ?p=... and restore route under the repo base -->
+<script>
+  (function () {
+    var l = window.location;
 
-        var p = decodeURIComponent(l.search.slice(3));
-        if (!p || p === "/") return;
+    // GitHub Pages repo base (project site)
+    var base = "/TheFramework/";
 
-        window.history.replaceState(null, "", p);
-      })();
-    </script>
+    // Only run when coming from 404.html redirect
+    if (!l.search || l.search.indexOf("?p=") !== 0) return;
+
+    // Extract encoded path
+    var encoded = l.search.slice(3);
+    var p = "";
+    try {
+      p = decodeURIComponent(encoded);
+    } catch (e) {
+      p = encoded; // fallback
+    }
+
+    if (!p || p === "/") {
+      // Clean URL to base home
+      window.history.replaceState(null, "", base);
+      return;
+    }
+
+    // Ensure leading slash
+    if (p.charAt(0) !== "/") p = "/" + p;
+
+    // If p already includes the base, keep it. Otherwise prefix it.
+    var next = p.indexOf(base) === 0 ? p : base.replace(/\/$/, "") + p;
+
+    // Replace the URL before React Router loads
+    window.history.replaceState(null, "", next);
+  })();
+</script>
   </head>
 
   <body>

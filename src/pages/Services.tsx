@@ -2,7 +2,7 @@ import type React from "react"
 import { useMemo } from "react"
 import type { Locale } from "@/i18n"
 import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { NavLink } from "@/components/NavLink"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 import {
   Code2,
@@ -89,9 +89,6 @@ const SERVICES: ServiceItem[] = [
     icon: Workflow,
   },
 ]
-
-const CTA_PRIMARY_HREF = "/contact"
-const CTA_SECONDARY_HREF = "/contact"
 
 type ServicesPageProps = {
   locale: Locale
@@ -198,7 +195,7 @@ const faqItems = useMemo(() => {
 
               return (
                 <li key={service.key}>
-                  <Link to={service.href} aria-label={aria} className= {cn(
+                  <NavLink to={service.href} aria-label={aria} className= {cn(
                       "group block glass-panel rounded-2xl px-5 py-4 h-full",
                       "border border-white/10 bg-white/5 backdrop-blur-2xl",
                       "hover:border-cyan-400/80 hover:bg-white/10",
@@ -220,7 +217,7 @@ const faqItems = useMemo(() => {
                         </span>
                       </div>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
               )
             })}
@@ -256,19 +253,21 @@ const faqItems = useMemo(() => {
         {t("services.page.cta.h2") as string}
       </h2>
 
-     <Link to="/#contact" className= {cn(
-          "inline-flex items-center justify-center",
-          "px-8 py-4 rounded-full",
-          "text-sm md:text-base font-semibold",
-          "bg-[#28509E] text-white",
-          "shadow-[0_0_35px_rgba(40,80,158,0.45)]",
-          "hover:bg-[#1f3f7c]",
-          "hover:shadow-[0_0_55px_rgba(40,80,158,0.65)]",
-          "transition-all duration-300 motion-safe:hover:-translate-y-1"
-        )}
-      >
-        {t("services.page.cta.secondary") as string}
-      </Link>
+    <NavLink
+  to={{ pathname: "/", hash: "contact" }}
+  className={cn(
+    "inline-flex items-center justify-center",
+    "px-8 py-4 rounded-full",
+    "text-sm md:text-base font-semibold",
+    "bg-[#28509E] text-white",
+    "shadow-[0_0_35px_rgba(40,80,158,0.45)]",
+    "hover:bg-[#1f3f7c]",
+    "hover:shadow-[0_0_55px_rgba(40,80,158,0.65)]",
+    "transition-all duration-300 motion-safe:hover:-translate-y-1"
+  )}
+>
+  {t("services.page.cta.secondary") as string}
+</NavLink>
     </div>
   </div>
 </section>

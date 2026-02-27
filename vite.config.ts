@@ -6,15 +6,13 @@ import { componentTagger } from "lovable-tagger"
 
 export default defineConfig(({ command, mode }) => ({
   /**
-   * DEV → "/"
-   * BUILD → automatically detect repo name from environment
+   * GitHub Pages Project Site Base
+   * DEV  → "/"
+   * BUILD → "/TheFramework/"
+   *
+   * This MUST be hardcoded for GitHub Pages project deployments.
    */
-  base:
-    command === "build"
-      ? process.env.GITHUB_REPOSITORY?.includes("TheFramework")
-        ? "/TheFramework/"
-        : "/ACHI/"
-      : "/",
+  base: command === "build" ? "/TheFramework/" : "/",
 
   server: {
     host: "::",
@@ -24,7 +22,10 @@ export default defineConfig(({ command, mode }) => ({
     },
   },
 
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
 
   resolve: {
     alias: {

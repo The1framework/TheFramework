@@ -2,12 +2,12 @@
 import type React from "react"
 import { useMemo } from "react"
 import { ArrowRight, Cpu, Layers, Server, Sparkles, Shield, Zap } from "lucide-react"
+import { NavLink } from "@/components/NavLink"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
-import { buildPathWithLocale } from "@/utils/langRouting"
 
 type Props = {
   locale: "en" | "fr" | "lb"
@@ -143,10 +143,8 @@ function TechCard({
   )
 }
 
-export default function Technologies({ locale, t }: Props) {
-  const servicesHref = buildPathWithLocale(locale, "/services")
-  const contactHref = buildPathWithLocale(locale, "/contact")
-
+export default function Technologies({ t }: Props) {
+  const servicesHref = "/services"
   const hero = useScrollReveal<HTMLElement>(0.08)
   const why = useScrollReveal<HTMLElement>(0.12)
   const grid = useScrollReveal<HTMLElement>(0.1)
@@ -242,19 +240,23 @@ export default function Technologies({ locale, t }: Props) {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
-              <a href={servicesHref} aria-label={t("technologies.hero.primaryAria") as string}>
-                {t("technologies.hero.primary") as string}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </a>
-            </Button>
+  <Button asChild variant="hero" size="xl" className="magnetic-btn group btn-press">
+    <NavLink to={servicesHref} aria-label={t("technologies.hero.primaryAria") as string}>
+      {t("technologies.hero.primary") as string}
+      <ArrowRight
+        className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+        aria-hidden="true"
+      />
+    </NavLink>
+  </Button>
 
-            <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
-              <a href="/#contact" aria-label={t("technologies.hero.secondaryAria") as string}>
-                {t("technologies.hero.secondary") as string}
-              </a>
-            </Button>
-          </div>
+  <Button asChild variant="outline" size="xl" className="magnetic-btn group btn-press">
+    {/* for hash links, keep it internal but base-safe */}
+    <NavLink to={{ pathname: "/", hash: "contact" }} aria-label={t("technologies.hero.secondaryAria") as string}>
+      {t("technologies.hero.secondary") as string}
+    </NavLink>
+  </Button>
+</div>
         </div>
       </section>
 
