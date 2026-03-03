@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useMemo, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
-import { Bounds, Environment, Float, OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
 import { LoopRepeat } from "three"
 import { clone as skeletonClone } from "three/examples/jsm/utils/SkeletonUtils.js"
 import type { RootState } from "@react-three/fiber"
@@ -141,7 +141,6 @@ function styleRobotAndSymbols(root: Group) {
 
 function RobotModel({ url }: { url: string }) {
   const gltf = useGLTF(url) as unknown as { scene: Group; animations: AnimationClip[] }
-
   const scene = useMemo(() => skeletonClone(gltf.scene) as Group, [gltf.scene])
 
   const pivotRef = useRef<Group>(null)
@@ -153,7 +152,6 @@ function RobotModel({ url }: { url: string }) {
   }
 
   const { actions, mixer } = anim
-
   const symbolMeshesRef = useRef<Mesh[]>([])
 
   useEffect(() => {
@@ -181,7 +179,6 @@ function RobotModel({ url }: { url: string }) {
 
   useFrame(({ clock }, delta) => {
     const t = clock.getElapsedTime()
-
     mixer.update(delta)
 
     if (pivotRef.current) {
@@ -189,41 +186,40 @@ function RobotModel({ url }: { url: string }) {
     }
 
     const symbols = symbolMeshesRef.current
-    if (symbols.length > 0) {
-      const idxA = Math.floor((t * 1.6) % GRADIENT_BLUES.length)
-      const idxB = (idxA + 1) % GRADIENT_BLUES.length
-      const blend = (Math.sin(t * 2.2) + 1) / 2
-      const c = blend < 0.5 ? GRADIENT_BLUES[idxA] : GRADIENT_BLUES[idxB]
+    if (symbols.length === 0) return
 
-      symbols.forEach((mesh, i) => {
-        const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
-        const pulse = 0.16 + 0.08 * Math.sin(t * 2.8 + i * 0.35)
+    const idxA = Math.floor((t * 1.6) % GRADIENT_BLUES.length)
+    const idxB = (idxA + 1) % GRADIENT_BLUES.length
+    const blend = (Math.sin(t * 2.2) + 1) / 2
+    const c = blend < 0.5 ? GRADIENT_BLUES[idxA] : GRADIENT_BLUES[idxB]
 
-        mats.forEach((m) => {
-          const mm = m as unknown as {
-            emissive?: { set: (x: string) => void }
-            emissiveIntensity?: number
-            color?: { set: (x: string) => void }
-            needsUpdate?: boolean
-          }
+    symbols.forEach((mesh, i) => {
+      const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
+      const pulse = 0.16 + 0.08 * Math.sin(t * 2.8 + i * 0.35)
 
-          if (mm.color?.set) mm.color.set(c)
-          if (mm.emissive?.set) mm.emissive.set(c)
-          mm.emissiveIntensity = pulse
-          mm.needsUpdate = true
-        })
+      mats.forEach((m) => {
+        const mm = m as unknown as {
+          emissive?: { set: (x: string) => void }
+          emissiveIntensity?: number
+          color?: { set: (x: string) => void }
+          needsUpdate?: boolean
+        }
+
+        if (mm.color?.set) mm.color.set(c)
+        if (mm.emissive?.set) mm.emissive.set(c)
+        mm.emissiveIntensity = pulse
+        mm.needsUpdate = true
       })
-    }
+    })
   })
 
+  // ✅ manual scale/position to always fit (replaces Bounds)
   return (
-    <Float speed={0.9} rotationIntensity={0.08} floatIntensity={0.16}>
-      <group ref={pivotRef}>
-        <group ref={modelRef}>
-          <primitive object={scene} />
-        </group>
+    <group ref={pivotRef}>
+      <group ref={modelRef} position={[0, -0.9, 0]} scale={1.25}>
+        <primitive object={scene} />
       </group>
-    </Float>
+    </group>
   )
 }
 
@@ -231,8 +227,8 @@ function LoadingFallback() {
   return <div className="h-full w-full bg-transparent" />
 }
 
-function useWebGLRecovery() {
-  const [key, setKey] = useState(0)
+export default function HeroRobot3D({ modelUrl, className }: Props) {
+  const [webglOk, setWebglOk] = useState(true)
   const cleanupRef = useRef<(() => void) | null>(null)
 
   const onCreated = (state: RootState) => {
@@ -240,11 +236,10 @@ function useWebGLRecovery() {
 
     const handleLost = (e: Event) => {
       e.preventDefault()
-      setKey((k) => k + 1)
+      setWebglOk(false)
     }
 
     canvas.addEventListener("webglcontextlost", handleLost, false)
-
     cleanupRef.current = () => {
       canvas.removeEventListener("webglcontextlost", handleLost, false)
     }
@@ -257,42 +252,45 @@ function useWebGLRecovery() {
     }
   }, [])
 
-  return { key, onCreated }
-}
-
-export default function HeroRobot3D({ modelUrl, className }: Props) {
-  const { key, onCreated } = useWebGLRecovery()
-
   return (
     <div className={["relative h-[360px] sm:h-[420px] md:h-[520px] w-full bg-transparent overflow-hidden", className ?? ""].join(" ")}>
-      <Suspense fallback={<LoadingFallback />}>
-        <Canvas
-          key={key}
-          className="absolute inset-0"
-          dpr={1}
-          camera={{ position: [0, 0, 6], fov: 40 }}
-          gl={{
-            antialias: false,
-            alpha: true,
-            premultipliedAlpha: true,
-            powerPreference: "high-performance",
-            preserveDrawingBuffer: false,
-          }}
-          onCreated={onCreated}
-        >
-          <ambientLight intensity={0.95} />
-          <directionalLight position={[3, 4, 2]} intensity={1.2} />
-          <directionalLight position={[-3, 2, -2]} intensity={0.75} />
+      {webglOk ? (
+        <Suspense fallback={<LoadingFallback />}>
+          <Canvas
+            className="absolute inset-0"
+            frameloop="always"
+            dpr={1}
+            camera={{ position: [0, 0, 6], fov: 40 }}
+            gl={{
+              antialias: false,
+              alpha: true,
+              premultipliedAlpha: true,
+              powerPreference: "high-performance",
+              preserveDrawingBuffer: false,
+            }}
+            onCreated={onCreated}
+          >
+            <ambientLight intensity={0.95} />
+            <directionalLight position={[3, 4, 2]} intensity={1.1} />
+            <directionalLight position={[-3, 2, -2]} intensity={0.7} />
 
-          <Environment preset="city" />
+            {/* ✅ removed Environment (most common GPU killer) */}
 
-          <Bounds fit clip margin={1.35}>
             <RobotModel url={modelUrl} />
-          </Bounds>
 
-          <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
-        </Canvas>
-      </Suspense>
+            <OrbitControls enablePan={false} enableZoom={false} enableRotate={false} />
+          </Canvas>
+        </Suspense>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img
+            src={import.meta.env.BASE_URL + "image.png"}
+            alt=""
+            className="h-full w-full object-contain opacity-100"
+            draggable={false}
+          />
+        </div>
+      )}
     </div>
   )
 }
