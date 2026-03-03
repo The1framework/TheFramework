@@ -23,7 +23,6 @@ type Props = {
 const BRAND_BLUE = "#28509E"
 const LIGHT_BLUE = "#7FB6FF"
 const SOFT_GREY = "#D6DFEA"
-const GRADIENT_BLUES: string[] = ["#0EA5E9", "#3B82F6", "#2563EB", "#6366F1", "#1D4ED8"]
 
 type MeshInfo = {
   mesh: Mesh
@@ -73,6 +72,7 @@ function setMatColor(
     emissiveIntensity?: number
     metalness?: number
     roughness?: number
+    toneMapped?: boolean
     needsUpdate?: boolean
   }
 
@@ -80,34 +80,28 @@ function setMatColor(
 
   if (emissive && mat.emissive?.set) {
     mat.emissive.set(emissive)
-    mat.emissiveIntensity = emissiveIntensity ?? 0.08
+    mat.emissiveIntensity = emissiveIntensity ?? 0.12
   }
 
-  if (typeof mat.metalness === "number") mat.metalness = 0.06
-  if (typeof mat.roughness === "number") mat.roughness = 0.55
+  if (typeof mat.metalness === "number") mat.metalness = 0.02
+  if (typeof mat.roughness === "number") mat.roughness = 0.62
 
   mat.needsUpdate = true
 }
 
 function styleRobotAndSymbols(root: Group) {
   const infos = getMeshInfos(root)
-  if (infos.length === 0) return { symbolMeshes: [] as Mesh[] }
-
-  const BODY_COUNT = 3
-  const ACCENT_COUNT = 6
-
-  const body = new Set(infos.slice(0, BODY_COUNT).map((x) => x.mesh.uuid))
-  const accentCandidates = new Set(infos.slice(BODY_COUNT, BODY_COUNT + ACCENT_COUNT).map((x) => x.mesh.uuid))
-
-  const smallStart = Math.min(infos.length, 14)
-  const small = new Set(infos.slice(smallStart).map((x) => x.mesh.uuid))
+  if (infos.length === 0) return
 
   const ys = infos.map((x) => x.centerY)
   const minY = Math.min(...ys)
   const maxY = Math.max(...ys)
   const yRange = Math.max(0.0001, maxY - minY)
+
   const headLine = minY + yRange * 0.72
-  const feetLine = minY + yRange * 0.22
+  const midLine = minY + yRange * 0.52
+
+  const big = new Set(infos.slice(0, 4).map((x) => x.mesh.uuid))
 
   root.traverse((obj) => {
     const mesh = obj as unknown as Mesh
@@ -117,26 +111,30 @@ function styleRobotAndSymbols(root: Group) {
     const info = infos.find((x) => x.mesh.uuid === mesh.uuid)
     const y = info?.centerY ?? 0
 
-    if (body.has(mesh.uuid)) {
-      mats.forEach((m) => setMatColor(m, BRAND_BLUE, BRAND_BLUE, 0.05))
-      return
-    }
+    const isBig = big.has(mesh.uuid)
+    const isHead = y >= headLine
+    const isFaceZone = isHead && y <= headLine + yRange * 0.14
+    const isHandsZone = y >= midLine && y <= headLine && !isBig
 
-    if (small.has(mesh.uuid)) {
-      mats.forEach((m) => setMatColor(m, GRADIENT_BLUES[2], GRADIENT_BLUES[2], 0.22))
-      return
-    }
+    mats.forEach((m) => {
+      if (isFaceZone) {
+        setMatColor(m, LIGHT_BLUE, LIGHT_BLUE, 0.26)
+        return
+      }
 
-    const isHeadOrFeet = y >= headLine || y <= feetLine
-    const isAccent = accentCandidates.has(mesh.uuid)
+      if (isHandsZone) {
+        setMatColor(m, SOFT_GREY, LIGHT_BLUE, 0.18)
+        return
+      }
 
-    if (isHeadOrFeet || isAccent) {
-      mats.forEach((m, idx) => setMatColor(m, idx % 2 === 0 ? LIGHT_BLUE : SOFT_GREY))
-    }
+      if (isBig) {
+        setMatColor(m, BRAND_BLUE, LIGHT_BLUE, 0.12)
+        return
+      }
+
+      setMatColor(m, LIGHT_BLUE, LIGHT_BLUE, 0.12)
+    })
   })
-
-  const symbolMeshes = infos.filter((x) => small.has(x.mesh.uuid)).map((x) => x.mesh)
-  return { symbolMeshes }
 }
 
 function RobotModel({ url }: { url: string }) {
@@ -152,11 +150,9 @@ function RobotModel({ url }: { url: string }) {
   }
 
   const { actions, mixer } = anim
-  const symbolMeshesRef = useRef<Mesh[]>([])
 
   useEffect(() => {
-    const { symbolMeshes } = styleRobotAndSymbols(scene)
-    symbolMeshesRef.current = symbolMeshes
+    styleRobotAndSymbols(scene)
   }, [scene])
 
   useEffect(() => {
@@ -182,38 +178,10 @@ function RobotModel({ url }: { url: string }) {
     mixer.update(delta)
 
     if (pivotRef.current) {
-      pivotRef.current.rotation.y = t * 0.55
+      pivotRef.current.rotation.y = t * 0.45
     }
-
-    const symbols = symbolMeshesRef.current
-    if (symbols.length === 0) return
-
-    const idxA = Math.floor((t * 1.6) % GRADIENT_BLUES.length)
-    const idxB = (idxA + 1) % GRADIENT_BLUES.length
-    const blend = (Math.sin(t * 2.2) + 1) / 2
-    const c = blend < 0.5 ? GRADIENT_BLUES[idxA] : GRADIENT_BLUES[idxB]
-
-    symbols.forEach((mesh, i) => {
-      const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
-      const pulse = 0.16 + 0.08 * Math.sin(t * 2.8 + i * 0.35)
-
-      mats.forEach((m) => {
-        const mm = m as unknown as {
-          emissive?: { set: (x: string) => void }
-          emissiveIntensity?: number
-          color?: { set: (x: string) => void }
-          needsUpdate?: boolean
-        }
-
-        if (mm.color?.set) mm.color.set(c)
-        if (mm.emissive?.set) mm.emissive.set(c)
-        mm.emissiveIntensity = pulse
-        mm.needsUpdate = true
-      })
-    })
   })
 
-  // ✅ manual scale/position to always fit (replaces Bounds)
   return (
     <group ref={pivotRef}>
       <group ref={modelRef} position={[0, -0.9, 0]} scale={1.25}>
@@ -243,6 +211,8 @@ export default function HeroRobot3D({ modelUrl, className }: Props) {
     cleanupRef.current = () => {
       canvas.removeEventListener("webglcontextlost", handleLost, false)
     }
+
+    state.gl.setPixelRatio(1.25)
   }
 
   useEffect(() => {
@@ -259,10 +229,10 @@ export default function HeroRobot3D({ modelUrl, className }: Props) {
           <Canvas
             className="absolute inset-0"
             frameloop="always"
-            dpr={1}
+            dpr={[1, 1.5]}
             camera={{ position: [0, 0, 6], fov: 40 }}
             gl={{
-              antialias: false,
+              antialias: true,
               alpha: true,
               premultipliedAlpha: true,
               powerPreference: "high-performance",
@@ -270,11 +240,10 @@ export default function HeroRobot3D({ modelUrl, className }: Props) {
             }}
             onCreated={onCreated}
           >
-            <ambientLight intensity={0.95} />
-            <directionalLight position={[3, 4, 2]} intensity={1.1} />
-            <directionalLight position={[-3, 2, -2]} intensity={0.7} />
-
-            {/* ✅ removed Environment (most common GPU killer) */}
+            <ambientLight intensity={1.35} />
+            <directionalLight position={[4, 6, 4]} intensity={1.15} />
+            <directionalLight position={[-4, 3, -2]} intensity={0.85} />
+            <hemisphereLight intensity={0.55} />
 
             <RobotModel url={modelUrl} />
 
