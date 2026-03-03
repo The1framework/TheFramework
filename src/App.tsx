@@ -34,12 +34,24 @@ function RoutedApp() {
     <>
       <ScrollToTop />
       <Routes location={cleanLocation} key={`${cleanLocation.pathname}${cleanLocation.search || ""}`}>
+        {/* ✅ GitHub Pages sometimes serves /index.html — treat it as home */}
+        <Route path="/index.html" element={<Navigate to="/" replace />} />
+        <Route path="index.html" element={<Navigate to="/" replace />} />
+
+        {/* ✅ Locale index.html hardening */}
+        <Route path="/fr/index.html" element={<Navigate to={localeRoot("fr")} replace />} />
+        <Route path="fr/index.html" element={<Navigate to={localeRoot("fr")} replace />} />
+        <Route path="/lb/index.html" element={<Navigate to={localeRoot("lb")} replace />} />
+        <Route path="lb/index.html" element={<Navigate to={localeRoot("lb")} replace />} />
+
+        {/* Main routes */}
         <Route path="/" element={wrap(<Index locale={locale} t={t} />)} />
         <Route path="/about" element={wrap(<About locale={locale} t={t} />)} />
         <Route path="/services" element={wrap(<Services locale={locale} t={t} />)} />
         <Route path="/services/:serviceSlug" element={wrap(<ServiceSlug locale={locale} t={t} />)} />
         <Route path="/technologies" element={wrap(<Technologies locale={locale} t={t} />)} />
 
+        {/* Locale roots */}
         <Route path="/fr" element={<Navigate to={localeRoot("fr")} replace />} />
         <Route path="/fr/" element={<Navigate to={localeRoot("fr")} replace />} />
         <Route path="/lb" element={<Navigate to={localeRoot("lb")} replace />} />

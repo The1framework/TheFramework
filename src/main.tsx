@@ -7,10 +7,10 @@ import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <HelmetProvider>
+    <HelmetProvider>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <App />
-      </HelmetProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </HelmetProvider>
   </React.StrictMode>
 )
