@@ -295,4 +295,4 @@ export default function HeroRobot3D({ modelUrl, className }: Props) {
   )
 }
 
-useGLTF.preload("/robot.glb")
+useGLTF.preload(`${import.meta.env.BASE_URL}robot.glb`)

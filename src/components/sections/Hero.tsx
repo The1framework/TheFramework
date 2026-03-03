@@ -26,15 +26,9 @@ export function Hero() {
   const primaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
   const secondaryBtnProps = useMagneticButton<HTMLAnchorElement>(0.2)
 
-  // Keep everything i18n-driven
   const headline = (t("home.hero.h1") as string) || ""
   const subheading = (t("home.hero.subheading") as string) || ""
 
-  /**
-   * Prefer multi-line H1 from translations:
-   * home.hero.h1Lines: ["line 1", "line 2", "line 3"]
-   * If not present, fallback to single line `home.hero.h1`
-   */
   const h1Lines = useMemo(() => {
     const lines = toStringArray(t("home.hero.h1Lines") as unknown)
     if (lines.length > 0) return lines
@@ -53,6 +47,8 @@ export function Hero() {
   const primaryTo = "/#contact"
   const secondaryTo = (t("home.hero.secondaryCtaHref") as string) || "/services"
 
+  const modelUrl = useMemo(() => `${import.meta.env.BASE_URL}robot.glb`, [])
+
   return (
     <section
       ref={containerRef}
@@ -60,7 +56,6 @@ export function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
       aria-labelledby="hero-heading"
     >
-      {/* Background */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl floating-shape" />
         <div
@@ -78,7 +73,6 @@ export function Hero() {
         />
       </div>
 
-      {/* Spotlight */}
       <div
         className="absolute inset-0 hero-spotlight pointer-events-none -z-5"
         style={
@@ -90,10 +84,8 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      {/* Split layout */}
       <div className="container mx-auto px-6 py-20">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12">
-          {/* LEFT: Text */}
           <div className="text-center md:text-left">
             <h1
               id="hero-heading"
@@ -131,7 +123,6 @@ export function Hero() {
               {subheading}
             </p>
 
-            {/* Trust line */}
             {trustItems.length > 0 ? (
               <p className="mb-10 text-xs md:text-sm text-muted-foreground/80">
                 {trustItems.map((item, idx) => (
@@ -159,9 +150,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT: 3D */}
           <div className="relative">
-            <HeroRobot3D modelUrl="/robot.glb" />
+            <HeroRobot3D modelUrl={modelUrl} />
           </div>
         </div>
       </div>
