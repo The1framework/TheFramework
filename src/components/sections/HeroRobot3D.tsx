@@ -1,8 +1,9 @@
-import { Suspense, useEffect, useMemo, useRef } from "react"
+import { Suspense, useEffect, useMemo, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Bounds, Environment, Float, OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
 import { LoopRepeat } from "three"
 import { clone as skeletonClone } from "three/examples/jsm/utils/SkeletonUtils.js"
+import type { RootState } from "@react-three/fiber"
 import type {
   Group,
   Material,
@@ -141,7 +142,6 @@ function styleRobotAndSymbols(root: Group) {
 function RobotModel({ url }: { url: string }) {
   const gltf = useGLTF(url) as unknown as { scene: Group; animations: AnimationClip[] }
 
-  // ✅ rig-safe clone (fixes body animation on skinned meshes)
   const scene = useMemo(() => skeletonClone(gltf.scene) as Group, [gltf.scene])
 
   const pivotRef = useRef<Group>(null)
@@ -161,7 +161,6 @@ function RobotModel({ url }: { url: string }) {
     symbolMeshesRef.current = symbolMeshes
   }, [scene])
 
-  // ✅ play ALL actions (viewer-like)
   useEffect(() => {
     const all = Object.values(actions).filter((a): a is AnimationAction => Boolean(a))
     if (all.length === 0) return
@@ -183,15 +182,12 @@ function RobotModel({ url }: { url: string }) {
   useFrame(({ clock }, delta) => {
     const t = clock.getElapsedTime()
 
-    // ✅ ensure animation updates every frame
     mixer.update(delta)
 
-    // optional showcase rotation (doesn't break rig animation)
     if (pivotRef.current) {
       pivotRef.current.rotation.y = t * 0.55
     }
 
-    // symbol glow animation
     const symbols = symbolMeshesRef.current
     if (symbols.length > 0) {
       const idxA = Math.floor((t * 1.6) % GRADIENT_BLUES.length)
@@ -235,15 +231,54 @@ function LoadingFallback() {
   return <div className="h-full w-full bg-transparent" />
 }
 
+function useWebGLRecovery() {
+  const [key, setKey] = useState(0)
+  const cleanupRef = useRef<(() => void) | null>(null)
+
+  const onCreated = (state: RootState) => {
+    const canvas = state.gl.domElement
+
+    const handleLost = (e: Event) => {
+      e.preventDefault()
+      setKey((k) => k + 1)
+    }
+
+    canvas.addEventListener("webglcontextlost", handleLost, false)
+
+    cleanupRef.current = () => {
+      canvas.removeEventListener("webglcontextlost", handleLost, false)
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      cleanupRef.current?.()
+      cleanupRef.current = null
+    }
+  }, [])
+
+  return { key, onCreated }
+}
+
 export default function HeroRobot3D({ modelUrl, className }: Props) {
+  const { key, onCreated } = useWebGLRecovery()
+
   return (
     <div className={["relative h-[360px] sm:h-[420px] md:h-[520px] w-full bg-transparent overflow-hidden", className ?? ""].join(" ")}>
       <Suspense fallback={<LoadingFallback />}>
         <Canvas
+          key={key}
           className="absolute inset-0"
-          dpr={[1, 2]}
+          dpr={1}
           camera={{ position: [0, 0, 6], fov: 40 }}
-          gl={{ antialias: true, alpha: true, premultipliedAlpha: true }}
+          gl={{
+            antialias: false,
+            alpha: true,
+            premultipliedAlpha: true,
+            powerPreference: "high-performance",
+            preserveDrawingBuffer: false,
+          }}
+          onCreated={onCreated}
         >
           <ambientLight intensity={0.95} />
           <directionalLight position={[3, 4, 2]} intensity={1.2} />
@@ -251,7 +286,6 @@ export default function HeroRobot3D({ modelUrl, className }: Props) {
 
           <Environment preset="city" />
 
-          {/* ✅ remove observe to avoid fighting animated bounds */}
           <Bounds fit clip margin={1.35}>
             <RobotModel url={modelUrl} />
           </Bounds>
